@@ -9,7 +9,7 @@ from matplotlib import rcParams
 import numpy as np
 import math
 
-# Plotdesign
+### Plotdesign ###
 plt.style.use('seaborn')
 
 

@@ -32,7 +32,6 @@ height_over_time = v_0 * t * math.cos(math.radians(phi)) - (1/2) * g * (t ** 2)
 bahnkurve = plt.plot(distance_over_time, height_over_time, color = (0, 0, 0, 1),label='Bahnkurve', zorder=1)
 
 
-
 ### Vektoren ###
 # Skalierung
 scale = 0.1
@@ -73,11 +72,9 @@ for step in range(int(t[-1] // time_step) + 1):
 	# Erstelle Ursprungspunkte
 	plt.plot(x_origin, y_origin, "o",color = (0,0,0,1), zorder=60)
 
-### Style ###
+
+### Beschriftung ###
 plt.xlabel("Weite in Metern")
 plt.ylabel("Höhe in Metern")
-plt.gca().set_xlim(left=0)
-plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc=4,
-           ncol=2, mode="expand", borderaxespad=0.)
 
 plt.show()

@@ -5,7 +5,6 @@ TODO:	- Interaktivität: Live Parameterveränderung
 """
 
 import matplotlib.pyplot as plt
-from matplotlib import rcParams
 import numpy as np
 import math
 

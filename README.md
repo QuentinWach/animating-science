@@ -1,5 +1,4 @@
-# Bahnkurve
-### Quentin Wach, 17. Oktober 2018
+# Bahnkurve des schrägen Wurfs
 
 ![Abb.1](./Abbildung_1.png "Vektorgleichung")
 

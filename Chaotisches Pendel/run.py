@@ -124,7 +124,7 @@ def animate(i):
 
     return line, dots, time_text
 
-anim = animation.FuncAnimation(fig, animate, frames=np.arange(0, 2000), interval=100)
-anim.save('pendel.gif', dpi=80, writer='imagemagick')
+#anim = animation.FuncAnimation(fig, animate, frames=np.arange(0, 2000), interval=100)
+#anim.save('pendel.gif', dpi=80, writer='imagemagick')
 
-#plt.show()
+plt.show()

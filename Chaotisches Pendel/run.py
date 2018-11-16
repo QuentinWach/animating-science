@@ -8,7 +8,6 @@
 """
 TODO: 1) Make dots fade smoothely over time
       2) Let the simulation run without time reset
-      3) Save animation as movie or gif
 """
 
 from numpy import sin, cos
@@ -124,7 +123,7 @@ def animate(i):
 
     return line, dots, time_text
 
-#anim = animation.FuncAnimation(fig, animate, frames=np.arange(0, 2000), interval=100)
+anim = animation.FuncAnimation(fig, animate, frames=np.arange(0, len(y), 1), interval=15)
 #anim.save('pendel.gif', dpi=80, writer='imagemagick')
 
 plt.show()

@@ -6,7 +6,7 @@
 # https://matplotlib.org/examples/animation/double_pendulum_animated.html
 
 """
-TODO: 1) Make dots fade smoothely over time
+TODO: 1) Make dots fade smoothly over time
       2) Let the simulation run without time reset
 """
 

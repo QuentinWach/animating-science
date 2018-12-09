@@ -2,13 +2,6 @@
 # ========================
 # Theoretische Physik
 # Quentin Wach, 14. November 2018
-# orientiert am Beispiel von 
-# https://matplotlib.org/examples/animation/double_pendulum_animated.html
-
-"""
-TODO: 1) Make dots fade smoothly over time
-      2) Let the simulation run without time reset
-"""
 
 from numpy import sin, cos
 import numpy as np
@@ -36,7 +29,7 @@ w2 = 0.0 # Anfangsgeschwindigkeit 2 [°/s]
 # Anfangsbedingung
 state = np.radians([th1, w1, th2, w2])
 
-# Ableiten der Bedingung state zum Zeitpunkt t
+# Bilden des DGL Systems
 def derivs(state, t):
 
     dydx = np.zeros_like(state)
@@ -59,7 +52,7 @@ def derivs(state, t):
 
     return dydx
 
-# Integriere die gewöhnliche DGL 
+# Integriere das System der gewöhnlichen DGLs und gewinne die Koordinaten
 y = integrate.odeint(derivs, state, t)
 x1 = L1*sin(y[:, 0])
 y1 = -L1*cos(y[:, 0])
@@ -104,15 +97,12 @@ def animate(i):
     print("x(" + str(i) + ") = " + str(thisx))
     print("y(" + str(i) + ") = " + str(thisy))
 
-    # Merke vergangene Koordinaten im Gedächtnis
+    # Merke vergangene Koordinaten
     if i <= 1000:
-      pastx.append(thisx[2])
-      pasty.append(thisy[2])
+      pastx.append(thisx[2]); pasty.append(thisy[2])
     else:
-      pastx.pop(0)
-      pasty.pop(0)
-      pastx.append(thisx[2])
-      pasty.append(thisy[2])
+      pastx.pop(0); pasty.pop(0)
+      pastx.append(thisx[2]); pasty.append(thisy[2])
 
     # Datenupdate
     line.set_data(thisx, thisy)
@@ -124,6 +114,6 @@ def animate(i):
     return line, dots, time_text
 
 anim = animation.FuncAnimation(fig, animate, frames=np.arange(0, len(y), 1), interval=15)
-#anim.save('pendel.gif', dpi=80, writer='imagemagick')
+#anim.save('pendel.gif', dpi=80, writer='imagemagick') # Zum speichern der Animation als .gif
 
 plt.show()

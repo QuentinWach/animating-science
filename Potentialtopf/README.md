@@ -16,7 +16,6 @@ plt.style.use("default")
 # Konstanten
 x = 0 # Startmesspunkt des Ortes
 L = 2 # Breite des Topfes, rechtes Limit des Ortes
-m = 1 # Masse
 res = 0.01 # Auflösung
 
 
@@ -65,5 +64,5 @@ plt.show()
 ```
 
 
-![png](output_1_0.png)
+![png](Abb_3.png)
 

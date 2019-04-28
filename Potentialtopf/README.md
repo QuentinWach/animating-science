@@ -8,14 +8,16 @@
 
 # Module
 import math
-import numpy as np
 import matplotlib.pyplot as plt
 
 plt.style.use("default")
+plt.style.use("seaborn-dark")
+plt.style.use("grayscale")
 
 # Konstanten
 x = 0 # Startmesspunkt des Ortes
 L = 2 # Breite des Topfes, rechtes Limit des Ortes
+m = 1 # Masse
 res = 0.01 # Auflösung
 
 
@@ -46,17 +48,20 @@ while x < (L+res):
     x += res
     
 # Plot
+fig = plt.figure(figsize=(9,5), dpi=300)
+fig.patch.set_facecolor('white')
+
 plt.plot(x_point, i_point, label="i)")
-plt.plot(x_point, ii_point, label="ii)")
-plt.plot(x_point, iii1_point, "--", label="iii) 1")
-plt.plot(x_point, iii2_point, "--", label="iii) 2")
-plt.plot(x_point, iii3_point, "--", label="iii) 3")
+plt.plot(x_point, ii_point, "-.", label="ii)")
+plt.plot(x_point, iii1_point, ":", label="iii) 1")
+plt.plot(x_point, iii2_point, ":", label="iii) 2")
+plt.plot(x_point, iii3_point, ":", label="iii) 3")
 
 plt.xlabel('Ort der Breite L = 2')
 plt.ylabel('Aufenthaltswahrscheinlichkeit')
 plt.xticks([])
 
-plt.title("Potentialtopf")
+#plt.title("Potentialtopf")
 
 plt.legend()
 
@@ -65,4 +70,3 @@ plt.show()
 
 
 ![png](Abb_3.png)
-

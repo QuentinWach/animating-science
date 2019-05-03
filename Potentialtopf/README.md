@@ -4,8 +4,6 @@
 
 
 ```python
-# ========= Blatt 2, Aufgabe 1 c) ========== 
-
 # Module
 import math
 import matplotlib.pyplot as plt

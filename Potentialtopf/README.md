@@ -56,7 +56,7 @@ plt.plot(x_point, iii2_point, ":", label="iii) 2")
 plt.plot(x_point, iii3_point, ":", label="iii) 3")
 
 plt.xlabel('Ort der Breite L = 2')
-plt.ylabel('Aufenthaltswahrscheinlichkeit')
+plt.ylabel('Aufenthaltswahrscheinlichkeitsdichte')
 plt.xticks([])
 
 #plt.title("Potentialtopf")

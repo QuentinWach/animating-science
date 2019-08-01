@@ -10,14 +10,15 @@ M_MARS = 0
 UT_SUN = 1
 UT_EARTH = 365
 UT_MARS = 720
-# Abstände zur Sonne (relativ)
+# Abstände zur Sonne [1000km]
 D_SUN = 0
-D_EARTH = 1
-D_MARS = 1.5
-# Radien der Körper [m]
-R_SUN =     69634200000000
-R_EARTH =          6371001
-R_MARS =           3389500
+D_EARTH = 496000000
+D_MARS = 1.5 * D_EARTH
+
+# Radien der Körper [1000km]
+R_SUN =     69634200
+R_EARTH =   6.371001
+R_MARS =    3.389500
 
 #-----------------------------------------------------------------------------
 class Planet:
@@ -64,15 +65,40 @@ for t in range(TIME):
     # Mars
     mars.X.append(mars.planet_orbit(t)[0])
     mars.Y.append(mars.planet_orbit(t)[1])  
-    
-# Plotte die Bahnen
-#plt.plot(sun.X, sun.Y)
-plt.plot(earth.X, earth.Y)
-plt.plot(mars.X, mars.Y)
+   
+#----------------------------------------------------------------------------- 
+# Plotte
 
+# Plotdesign
+plt.style.use("default")
+plt.style.use("seaborn-dark")
+plt.style.use("grayscale")
+fig = plt.figure(figsize=(7,7), dpi=120)
+fig.patch.set_facecolor('white')
+fig.canvas.set_window_title('Skyhook')
+plt.xticks([])
+plt.yticks([])
+
+# Planetenskalierung
+trueScale = False
+m_scale = 10**(-7)
+def marker_scale(R):
+    if trueScale == 1:
+        return R * m_scale
+    else:
+        return 10
+
+# Sonne
+plt.plot(0,0, "o", color="#ffbd5b", markersize=marker_scale(R_SUN))
+# Erde
+plt.plot(earth.X, earth.Y) # Bahn
+plt.plot(earth.X[100], earth.Y[100], "o", color="#618abf", 
+         markersize=marker_scale(R_EARTH)) # Körper
+# Mars
+plt.plot(mars.X, mars.Y) # Bahn
+plt.plot(mars.X[100], mars.Y[100], "o", color="#f2663c",
+         markersize=marker_scale(R_MARS)) # Körper
 plt.show()
-
-
 
 
 #-----------------------------------------------------------------------------

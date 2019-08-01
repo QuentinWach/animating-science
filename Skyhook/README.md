@@ -20,6 +20,8 @@ Deadline:   10. Oktober
     2)  [X] Planetenklasse
     3)  [X] Planetenbahnen aus Klasse
     4)  [ ] Animation der Planetenbewegungen
+    5)  [X] Funktion: An/Aus wahre/konstante Skalierung der Radien
+    6)  [ ] Plotte Skalen [km] und Zeitleiste [Tage]
 2)  [ ] Interaktion Raumschiff im Gravitationsfeld
 3)  [ ] Orbit Raumschiff
 4)  [ ] Raumschiff --> rotierender Skyhook

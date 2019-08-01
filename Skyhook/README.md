@@ -16,6 +16,9 @@ Deadline:   10. Oktober
 
 ### TODO
 1)  [ ] vereinfachte Planetebahnen (Sonne, Erde Mars)
+1.1)    [ ] Planetenklasse
+1.2)    [ ] Planetenbahnen aus Klasse
+1.3)    [ ] Animation der Planetenbewegungen
 2)  [ ] Interaktion Raumschiff im Gravitationsfeld
 3)  [ ] Orbit Raumschiff
 4)  [ ] Raumschiff --> rotierender Skyhook

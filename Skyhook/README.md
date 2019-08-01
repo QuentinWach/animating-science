@@ -1,12 +1,12 @@
 # Skyhook
 
 ### Projektbeschreibung                          
-"Traditionelle Raumfahrt ist teuer, ![png](docs/Abb.1.png){:style="float: right;margin-right: 7px;margin-top: 7px;"} gefährlich und unfassbar Ressourcen-intensiv. Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook oder Spacetether, ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt." 
-(siehe Video)                                    
+"Traditionelle Raumfahrt ist teuer, gefährlich und unfassbar Ressourcen-intensiv. 
+Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook oder Spacetether, 
+ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt." 
+(siehe Video) Wir simulieren eine Skyhook Infrastruktur im Sonnensystem.
 
-Wir simulieren eine Skyhook Infrastruktur im Sonnensystem.
-
-Deadline:   10. Oktober
+Deadline: 10. Oktober 2019
 
 
 ### Referenzen

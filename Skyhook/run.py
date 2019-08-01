@@ -1,6 +1,7 @@
 # Module
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
 # Massen der Körper [kg]
 M_SUN = 0
@@ -10,12 +11,12 @@ M_MARS = 0
 UT_SUN = 1
 UT_EARTH = 365
 UT_MARS = 720
-# Abstände zur Sonne [1000km]
+# Abstände zur Sonne [10³km]
 D_SUN = 0
 D_EARTH = 496000000
 D_MARS = 1.5 * D_EARTH
 
-# Radien der Körper [1000km]
+# Radien der Körper [10³km]
 R_SUN =     69634200
 R_EARTH =   6.371001
 R_MARS =    3.389500
@@ -44,8 +45,8 @@ class Planet:
         t:  spez. Zeitpunkt
         """
         self.pt = 2 * np.pi * t / self.ut
-        x = self.d * np.sin(self.pt)
-        y = self.d * np.cos(self.pt)
+        x = self.d * np.cos(self.pt)
+        y = self.d * np.sin(self.pt)
         return x, y
 
 # Erstelle Planetenobjekte
@@ -54,7 +55,7 @@ earth = Planet(M_EARTH, UT_EARTH, D_EARTH, R_EARTH)
 mars = Planet(M_MARS, UT_MARS, D_MARS, R_MARS)
 
 # Sammle die Positionen der Planeten im Zeitverlauf
-TIME = 1000
+TIME = 721 #UT_EARTH * UT_MARS #for perfect looping
 for t in range(TIME):
     # Sonne
     #sun.X.append(sun.planet_orbit(t)[0])
@@ -73,7 +74,7 @@ for t in range(TIME):
 plt.style.use("default")
 plt.style.use("seaborn-dark")
 plt.style.use("grayscale")
-fig = plt.figure(figsize=(7,7), dpi=120)
+fig, ax = plt.subplots(figsize=(7,7), dpi=120)
 fig.patch.set_facecolor('white')
 fig.canvas.set_window_title('Skyhook')
 plt.xticks([])
@@ -92,49 +93,29 @@ def marker_scale(R):
 plt.plot(0,0, "o", color="#ffbd5b", markersize=marker_scale(R_SUN))
 # Erde
 plt.plot(earth.X, earth.Y) # Bahn
-plt.plot(earth.X[100], earth.Y[100], "o", color="#618abf", 
-         markersize=marker_scale(R_EARTH)) # Körper
+earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf", markersize=marker_scale(R_EARTH))
 # Mars
 plt.plot(mars.X, mars.Y) # Bahn
-plt.plot(mars.X[100], mars.Y[100], "o", color="#f2663c",
-         markersize=marker_scale(R_MARS)) # Körper
-plt.show()
-
+mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c", markersize=marker_scale(R_MARS) )
 
 #-----------------------------------------------------------------------------
-# Animiere die Simulation
-"""
+# Animiere die Planeten
 def animate(i):
-    # Koordinaten der drei Punkte
-    thisx = [0, x1[i], x2[i]]
-    thisy = [0, y1[i], y2[i]]
-
-    # Drucke die Koordinaten im Terminal
-    print("x(" + str(i) + ") = " + str(thisx))
-    print("y(" + str(i) + ") = " + str(thisy))
-
-    # Merke vergangene Koordinaten
-    if i <= 1000:
-      pastx.append(thisx[2]); pasty.append(thisy[2])
-    else:
-      pastx.pop(0); pasty.pop(0)
-      pastx.append(thisx[2]); pasty.append(thisy[2])
-
     # Datenupdate
-    line.set_data(thisx, thisy)
-    dots.set_data(pastx, pasty)
+    earth_plot.set_data(earth.X[i], earth.Y[i])
+    mars_plot.set_data(mars.X[i], mars.Y[i])
 
     # Zeittextupdate
-    time_text.set_text(time_template % (i*dt))
+    #time_text.set_text(time_template % (i*dt))
 
-    return line, dots, time_text
+    return earth_plot, mars_plot,
 
 #-----------------------------------------------------------------------------
 # Starte die Simulation
 if __name__ == '__main__':
     anim = animation.FuncAnimation(fig, animate, 
-        frames=np.arange(0, len(y), 1), interval=15)
-    #anim.save('pendel.gif', dpi=80, writer='imagemagick') 
+        frames=365, interval=1)
+    anim.save('docs/Abb.1.anim.gif', dpi=80, writer='imagemagick', fps=60) 
+    #anim.save('docs/Abb.1.anim.mp4', writer='ffmpeg', fps=60, bitrate=1800)
+plt.show()
 
-    plt.show()
-"""

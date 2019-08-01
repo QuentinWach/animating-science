@@ -10,8 +10,8 @@ Deadline: 10. Oktober 2019
 
 
 ### Referenzen
-1) https://www.youtube.com/watch?v=aoMOSa9kXPw 
-2) https://sites.google.com/view/quellenskyhook/
++ https://www.youtube.com/watch?v=aoMOSa9kXPw 
++ https://sites.google.com/view/quellenskyhook/
 
 ---
 
@@ -28,6 +28,9 @@ Deadline: 10. Oktober 2019
 4)  [ ] Raumschiff --> rotierender Skyhook
 5)  [ ] Raumschiff Orbit um Erde mit Skyhook
 6)  [ ] Raumschiff von einem Planeten zum nächsten schießen
+    1)  [ ] Rotation der Planeten
+    2)  [ ] Luftwiderstand der Atmossphäre (Luftdichtefeld)
+    3)  [ ] Monde 
 7)  [ ] Raumschiff mit Skyhook senden und auffangen zwischen Erde und Mars
 8)  [ ] Periodischer aumtomatischer Austausch von Raumschiffen zwischen Skyhooks auf versch. Planeten
 

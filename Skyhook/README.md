@@ -1,6 +1,6 @@
 # Skyhook
 
-### Projektbeschreibung: 
+### Projektbeschreibung 
 "Traditionelle Raumfahrt ist teuer, gefährlich und unfassbar Ressourcen-intensiv. 
 Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook oder Spacetether, 
 ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt." (siehe Video)
@@ -8,9 +8,11 @@ Wir simulieren eine Skyhook Infrastruktur im Sonnensystem.
 
 Deadline:   10. Oktober
 
-### Referenzen:
-https://www.youtube.com/watch?v=aoMOSa9kXPw 
-https://sites.google.com/view/quellenskyhook/
+### Referenzen
+1) https://www.youtube.com/watch?v=aoMOSa9kXPw 
+2) https://sites.google.com/view/quellenskyhook/
+
+---
 
 ### TODO
 1)  [ ] vereinfachte Planetebahnen (Sonne, Erde Mars)
@@ -21,4 +23,8 @@ https://sites.google.com/view/quellenskyhook/
 6)  [ ] Raumschiff von einem Planeten zum nächsten schießen
 7)  [ ] Raumschiff mit Skyhook senden und auffangen zwischen Erde und Mars
 8)  [ ] Periodischer aumtomatischer Austausch von Raumschiffen zwischen Skyhooks auf versch. Planeten
+
+---
+
+Geschrieben in Python3.5. Die nötigen Module finden sich in requirements.txt und lassen sich über pip install in einem virtualenv installieren. (Achtung: Derzeit viele überflüssige Module.)
 

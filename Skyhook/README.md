@@ -1,5 +1,5 @@
 <div align="center">
-<img src="docs/Abb.1.anim.gif" alt="logo" width="300px" height="300px"></img>
+<img src="docs/Abb/Abb.1.anim.gif" alt="logo" width="300px" height="300px"></img>
 </div>
 
 # Skyhook
@@ -34,14 +34,16 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     5)  [X] Funktion: An/Aus wahre/konstante Skalierung der Radien
     6)  [ ] Plotte Skalen [km] und Zeitleiste [Tage]
 2)  [ ] Interaktion Raumschiff RS im Gravitationsfeld
-    1)  [ ] Init RS-Klasse an Startposition mit Masse, Größe und v-Vektor
-    2)  [ ] Kraftwirkung auf das RS pro Zeitrschritt anwenden
+    1)  [ ] Init RS-Klasse an Startposition mit Masse, Größe und zu def. Geschwindigkeitsvektor v
+    2)  [ ] Definiere die Postion des Raumschiffs nach Abschuss mit v pro Zeitrschritt
+    3)  [ ] Logistische Regression zur Findung der besten Flugbahn
+            + Flugdauer soll möglichst klein sein
+            + geg.: Zeitpunkt bzw. Planetenkonstellation + Abschusszus. (Achtung! Nicht zu hoch! Ausprobieren)
+            + Geschwindigkeit soll Fluchtgeschwindigkeit + Abschusszus. entsprechen
 3)  [ ] Orbit Raumschiff
 4)  [ ] Raumschiff --> rotierender Skyhook
 5)  [ ] Raumschiff Orbit um Erde mit Skyhook
 6)  [ ] Raumschiff von einem Planeten zum nächsten schießen
-    1)  [ ] Rotation der Planeten
-    2)  [ ] Luftwiderstand der Atmossphäre (Luftdichtefeld)
-    3)  [ ] Monde 
+    + Zielgeschwindigkeit des RS = Geschwindigkeit des Planeten
 7)  [ ] Raumschiff mit Skyhook senden und auffangen zwischen Erde und Mars
 8)  [ ] Periodischer aumtomatischer Austausch von Raumschiffen zwischen Skyhooks auf versch. Planeten

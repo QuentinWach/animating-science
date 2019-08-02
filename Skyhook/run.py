@@ -7,6 +7,7 @@ import matplotlib.animation as animation
 M_SUN = 0
 M_EARTH = 0
 M_MARS = 0 
+M_ROC = 0
 # Umlaufzeiten [Tage]
 UT_SUN = 1
 UT_EARTH = 365
@@ -15,12 +16,11 @@ UT_MARS = 720
 D_SUN = 0
 D_EARTH = 496000000
 D_MARS = 1.5 * D_EARTH
-
 # Radien der Körper [10³km]
 R_SUN =     69634200
 R_EARTH =   6.371001
 R_MARS =    3.389500
-
+R_ROC =            1
 #-----------------------------------------------------------------------------
 class Planet:
     def __init__(self, M, UT, D, R):
@@ -34,7 +34,6 @@ class Planet:
         self.ut = UT
         self.d = D
         self.r = R
-        
         # Sammlung der Datenpunkte
         self.X = []
         self.Y = []
@@ -49,10 +48,39 @@ class Planet:
         y = self.d * np.sin(self.pt)
         return x, y
 
+"""
+class Rocket:
+    def __init__(self, m, r, x, y, v_x, v_y):
+        # Position der Rakete
+        self.x = 0
+        self.y = 0
+        # Geschwindigkeitsvec
+        self.v_x = 0
+        self.v_y = 0
+        # Masse
+        self.m = m
+        # Radius
+        self.r = r
+
+    def posUpdate(self, t, dt, m, x, y, v_x, v_y):
+        Takes timestep, planetpositions and masses, 
+        position- and velocity vector, Masse der Rakete as input and returns 
+        the new position.
+
+"""
+
+
 # Erstelle Planetenobjekte
 sun = Planet(M_SUN, UT_SUN, D_SUN, R_SUN)
 earth = Planet(M_EARTH, UT_EARTH, D_EARTH, R_EARTH)
 mars = Planet(M_MARS, UT_MARS, D_MARS, R_MARS)
+
+# Erstelle Raketenobjekt
+#rocket = Rocket()
+# Setze Rakete zum Startzeitpunkt an Seite der Erde fest
+
+# Bestimme die Abschussrichtung und Geschwindigkeit um von der Startpos
+# den Mars zu treffen. 
 
 # Sammle die Positionen der Planeten im Zeitverlauf
 TIME = 721 #UT_EARTH * UT_MARS #for perfect looping
@@ -68,8 +96,6 @@ for t in range(TIME):
     mars.Y.append(mars.planet_orbit(t)[1])  
    
 #----------------------------------------------------------------------------- 
-# Plotte
-
 # Plotdesign
 plt.style.use("default")
 plt.style.use("seaborn-dark")
@@ -115,7 +141,7 @@ def animate(i):
 if __name__ == '__main__':
     anim = animation.FuncAnimation(fig, animate, 
         frames=365, interval=1)
-    anim.save('docs/Abb.1.anim.gif', dpi=80, writer='imagemagick', fps=60) 
+    #anim.save('docs/Abb.1.anim.gif', dpi=80, writer='imagemagick', fps=60) 
     #anim.save('docs/Abb.1.anim.mp4', writer='ffmpeg', fps=60, bitrate=1800)
 plt.show()
 

@@ -26,14 +26,16 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
 ---
 
 #### TODO  *Deadline: 10. Oktober 2019*
-1)  [ ] vereinfachte Planetebahnen (Sonne, Erde Mars)
-    1)  [X] Funktion Planetenbahn
+1)  [X] vereinfachte Planetebahnen (Sonne, Erde Mars)
+    1)  [X] Funktion: Planetenbahn
     2)  [X] Planetenklasse
     3)  [X] Planetenbahnen aus Klasse
     4)  [X] Animation der Planetenbewegungen
     5)  [X] Funktion: An/Aus wahre/konstante Skalierung der Radien
     6)  [ ] Plotte Skalen [km] und Zeitleiste [Tage]
-2)  [ ] Interaktion Raumschiff im Gravitationsfeld
+2)  [ ] Interaktion Raumschiff RS im Gravitationsfeld
+    1)  [ ] Init RS-Klasse an Startposition mit Masse, Größe und v-Vektor
+    2)  [ ] Kraftwirkung auf das RS pro Zeitrschritt anwenden
 3)  [ ] Orbit Raumschiff
 4)  [ ] Raumschiff --> rotierender Skyhook
 5)  [ ] Raumschiff Orbit um Erde mit Skyhook

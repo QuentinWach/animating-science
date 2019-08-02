@@ -1,7 +1,7 @@
 # Skyhook
     
-|"Traditionelle Raumfahrt ist teuer, gefährlich und unfassbar Ressourcen-intensiv. Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook oder Spacetether,  ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt." (siehe Video) Wir simulieren eine Skyhook Infrastruktur im Sonnensystem.  | ![gif](docs/Abb.1.anim.gif) |
-|--|--|
+"Traditionelle Raumfahrt ist teuer, gefährlich und unfassbar Ressourcen-intensiv. Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook oder Spacetether,  ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt." (siehe Video) Wir simulieren eine Skyhook Infrastruktur im Sonnensystem.
+![gif](docs/Abb.1.anim.gif)
 
 ---
 
@@ -27,7 +27,7 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     1)  [X] Funktion Planetenbahn
     2)  [X] Planetenklasse
     3)  [X] Planetenbahnen aus Klasse
-    4)  [ ] Animation der Planetenbewegungen
+    4)  [X] Animation der Planetenbewegungen
     5)  [X] Funktion: An/Aus wahre/konstante Skalierung der Radien
     6)  [ ] Plotte Skalen [km] und Zeitleiste [Tage]
 2)  [ ] Interaktion Raumschiff im Gravitationsfeld

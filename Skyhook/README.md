@@ -26,21 +26,18 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
 ---
 
 #### TODO  *Deadline: 10. Oktober 2019*
-1)  [X] vereinfachte Planetebahnen (Sonne, Erde Mars)
+1)  [X] vereinfachte Planetebahnen (Sonne, Erde, Mars)
     1)  [X] Funktion: Planetenbahn
     2)  [X] Planetenklasse
     3)  [X] Planetenbahnen aus Klasse
     4)  [X] Animation der Planetenbewegungen
     5)  [X] Funktion: An/Aus wahre/konstante Skalierung der Radien
     6)  [ ] Plotte Skalen [km] und Zeitleiste [Tage]
-2)  [ ] Interaktion Raumschiff RS im Gravitationsfeld
-    1)  [ ] Init RS-Klasse an Startposition mit Masse, Größe und zu def. Geschwindigkeitsvektor v
-    2)  [ ] Definiere die Postion des Raumschiffs nach Abschuss mit v pro Zeitrschritt
-    3)  [ ] Logistische Regression zur Findung der besten Flugbahn
-            + Flugdauer soll möglichst klein sein
-            + geg.: Zeitpunkt bzw. Planetenkonstellation + Abschusszus. (Achtung! Nicht zu hoch! Ausprobieren)
-            + Geschwindigkeit soll Fluchtgeschwindigkeit + Abschusszus. entsprechen
-3)  [ ] Orbit Raumschiff
+2)  [ ] Einfacher Flug Raumschiff RS im Gravitationsfeld der Sonne von Erde zu Mars
+        + Flugdauer soll möglichst klein sein
+        + geg.: Zeitpunkt bzw. Planetenkonstellation + Abschusszus. (Achtung! Nicht zu hoch! Ausprobieren)
+        + Geschwindigkeit soll Fluchtgeschwindigkeit + Abschusszus. entsprechen
+3)  [ ] Orbit Raumschiff im Grav der Erde
 4)  [ ] Raumschiff --> rotierender Skyhook
 5)  [ ] Raumschiff Orbit um Erde mit Skyhook
 6)  [ ] Raumschiff von einem Planeten zum nächsten schießen

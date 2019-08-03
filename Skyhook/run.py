@@ -51,10 +51,13 @@ class Planet:
         y = self.d * np.sin(self.pt)
         return x, y
 
+        
+
 # Erstelle Planetenobjekte
 sun = Planet(M_SUN, UT_SUN, D_SUN, R_SUN)
 earth = Planet(M_EARTH, UT_EARTH, D_EARTH, R_EARTH)
 mars = Planet(M_MARS, UT_MARS, D_MARS, R_MARS)
+
 
 # Sammle die Positionen der Planeten im Zeitverlauf
 TIME = 730 #UT_EARTH * UT_MARS #for perfect looping
@@ -68,6 +71,7 @@ for t in range(TIME):
     # Mars
     mars.X.append(mars.planet_orbit(t)[0])
     mars.Y.append(mars.planet_orbit(t)[1])  
+
 
 #----------------------------------------------------------------------------- 
 # Plotdesign
@@ -119,9 +123,9 @@ if __name__ == '__main__':
     anim = animation.FuncAnimation(fig, animate, 
         frames=730, interval=1)
     print("Animation done. Saving...")
-    anim.save('docs/Abb/Abb.1.anim.gif', dpi=60, writer='imagemagick', fps=60)
-    print("Saving GIF done.")
-    #anim.save('docs/Abb/Abb.1.anim.mp4', writer='ffmpeg', fps=60, bitrate=1800)
+    #anim.save('docs/Abb/Abb.1.anim.gif', dpi=60, writer='imagemagick', fps=60)
+    #print("Saving GIF done.")
+    #anim.save('docs/Abb/Abb.2.anim.mp4', writer='ffmpeg', fps=60, bitrate=1800)
     #print("Saving MP4 done. Showing plot...")
 plt.show()
 

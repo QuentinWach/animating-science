@@ -34,9 +34,9 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     5)  [X] Funktion: An/Aus wahre/konstante Skalierung der Radien
     6)  [ ] Plotte Skalen [km] und Zeitleiste [Tage]
 2)  [ ] Einfacher Flug Raumschiff RS im Gravitationsfeld der Sonne von Erde zu Mars
-        + Flugdauer soll möglichst klein sein
-        + geg.: Zeitpunkt bzw. Planetenkonstellation + Abschusszus. (Achtung! Nicht zu hoch! Ausprobieren)
-        + Geschwindigkeit soll Fluchtgeschwindigkeit + Abschusszus. entsprechen
+    + Flugdauer soll möglichst klein sein
+    + geg.: Zeitpunkt bzw. Planetenkonstellation + Abschusszus. (Achtung! Nicht zu hoch! Ausprobieren)
+    + Geschwindigkeit soll Fluchtgeschwindigkeit + Abschusszus. entsprechen
 3)  [ ] Orbit Raumschiff im Grav der Erde
 4)  [ ] Raumschiff --> rotierender Skyhook
 5)  [ ] Raumschiff Orbit um Erde mit Skyhook

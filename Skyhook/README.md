@@ -11,6 +11,7 @@
 ### Referenzen
 + https://www.youtube.com/watch?v=aoMOSa9kXPw 
 + https://sites.google.com/view/quellenskyhook/
++ https://www.youtube.com/watch?v=qPQQwqGWktE
 
 ### Setup
 Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt` und lassen sich über `pip install` in einer virtuellen Umgebung installieren. (Achtung: Derzeit viele überflüssige Module.)
@@ -37,7 +38,11 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     + Flugdauer soll möglichst klein sein
     + geg.: Zeitpunkt bzw. Planetenkonstellation + Abschusszus. (Achtung! Nicht zu hoch! Ausprobieren)
     + Geschwindigkeit soll Fluchtgeschwindigkeit + Abschusszus. entsprechen
-3)  [ ] Orbit Raumschiff im Grav der Erde
+    1)  [ ] Gravitative Anziehung (lineare Näherung) pro Zeitrschritt durch Sonne aus Rakete
+    2)  [ ] Bewegungsupd durch a. Grav + b. Eigensgeschw. pro Zeiteinheit
+    3)  [ ]
+3)  [ ] Tennis mit Raumschiff zwischen Mars und Erde (Nur BEtrachtung der Flugbahnen)
+3)  [ ] Orbit Raumschiff im Grav der Erde2
 4)  [ ] Raumschiff --> rotierender Skyhook
 5)  [ ] Raumschiff Orbit um Erde mit Skyhook
 6)  [ ] Raumschiff von einem Planeten zum nächsten schießen

@@ -51,12 +51,37 @@ class Planet:
         y = self.d * np.sin(self.pt)
         return x, y
 
-        
-
 # Erstelle Planetenobjekte
 sun = Planet(M_SUN, UT_SUN, D_SUN, R_SUN)
 earth = Planet(M_EARTH, UT_EARTH, D_EARTH, R_EARTH)
 mars = Planet(M_MARS, UT_MARS, D_MARS, R_MARS)
+
+class Rakete:
+    def __init__(self, t, R):
+        self.t = t # Zeitpunkt der Erstellung
+        self.R = R # Orbit zum Zeitpunkt t --> Erde oder Mars?
+        self.phi = t # radialer Winkelparameter [Tage]
+        self.v_x = 0
+        self.v_y = 0
+        # Sammlung der Datenpunkte
+        self.X = []
+        self.Y = []
+
+    def flugbahn(self, t_start, t):
+        # t_start: Startzeitpunkt des Fluges
+        G = 6.6743 * 10 ** (-2) # Angepasste Gravitationskonstante
+        # Radiale Anziehung zur Sonne
+        r = (self.X[t]**2 + self.Y[t]**2)**0.5
+        a = - G * M /(r**2)
+        dr = 1/2 * a * t**2
+        dx = np.cos(2*np.pi*self.phi/UT_EARTH) * dr
+        dy = np.sin(2*np.pi*self.phi/UT_EARTH) * dr
+        # Geschwindigkeitsvektor der Startgeschw.
+        v0 = (2 * np.pi * R) / UT_EARTH
+        v0_x = np.cos(2*np.pi*t/UT_EARTH) * v0
+        v0_y = np.sin(2*np.pi*t/UT_EARTH) * v0
+        return x, y # [10³km] 
+
 
 
 # Sammle die Positionen der Planeten im Zeitverlauf

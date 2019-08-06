@@ -2,7 +2,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import math
 
+# Gravitatioskonstante [m³/(kg * s²)]
+G = 6.67430 /1.33 * 10
 # Massen der Körper [kg]
 M_SUN = 1.98 * (10**30)
 M_EARTH = 0
@@ -56,8 +59,7 @@ mars = Planet(M_MARS, UT_MARS, D_MARS, R_MARS)
 
 
 vx_Erde = 0
-vy_Erde = 1.3*(D_EARTH * 2 * np.pi) / 365
-print(vy_Erde)
+vy_Erde = 0* 1.25 * (D_EARTH * 2 * np.pi) / 365
 
 class Rakete:
     def __init__(self):
@@ -69,7 +71,7 @@ class Rakete:
         self.Vy = []
 
         # Angepasste Gravitationskonstante
-        self.G = 66.743
+        self.G = G
         # Initialisiere die Startbedingungen (t=0)
         # Geschossgeschwindigkeit = 2 * Erdgeschwindigkeit
         self.vx_start = vx_Erde
@@ -80,33 +82,33 @@ class Rakete:
         self.Y.append(self.y_start)
         self.Vx.append(self.vx_start)
         self.Vy.append(self.vy_start)
+        self.phi_0 = 0 
 
     def shoot(self, t):
-        # Berechne Schritt zur Sonne
-        r = (self.X[t-1]**2 + self.Y[t-1]**2)**0.5 # Abstand zur Sonne
-        ut = (r * 2 * np.pi) / ((self.Vx[t-1]**2 + self.Vy[t-1]**2)**0.5) # Umdrehungszeit um Sonne bei gegebener totalen Geschw.
-        s1 = (-self.G * M_SUN)/(2 * r**2) # totaler Schritt zur Sonne
-        s1_x = (-self.G * M_SUN)/(2 * (self.X[t-1]**2 + self.Y[t-1]**2)) * np.cos(2 * np.pi * t / ut)
-        s1_y = (-self.G * M_SUN)/(2 * (self.X[t-1]**2 + self.Y[t-1]**2)) * np.sin(2 * np.pi * t / ut)
+        sonnenwinkel = np.arccos(self.X[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5)
+        sonnenwinkel = np.arcsin(self.Y[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5)
+        print("time: " + str(t) + " | winkel: " + str(math.degrees(sonnenwinkel))+ " | Y: " + str(self.Y[t-1]))
+        s1_x = ((-self.G) * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * np.cos(sonnenwinkel)
+        s1_y = ((-self.G) * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * np.sin(sonnenwinkel)
+        print(s1_x)
         # Berechne Schritt aus Eigengeschwindigkeitsvektor
         s2_x = self.Vx[t-1]
         s2_y = self.Vy[t-1]
         # Berechne Gesamtschritt
-        s_x = s1_x + s2_x; s_y = s1_y + s2_y
+        s_x = s1_x + s2_x
+        s_y = s1_y + s2_y
         # Füge neue Position der Sammlung der Datenpunkte hinzu
         self.X.append(self.X[t-1] + s_x)
         self.Y.append(self.Y[t-1] + s_y)
-        # # Füge die neuen Geschwindigkeiten den Datenpunkten hinzu
+        # Füge die neuen Geschwindigkeiten den Datenpunkten hinzu
         self.Vx.append(self.X[t] - self.X[t-1])
         self.Vy.append(self.Y[t] - self.Y[t-1])
-
 
 # Erstelle Raketenobjekt        
 rocket = Rakete()
 
-
 # Sammle die Positionen der Objekte im Zeitverlauf
-TIME = 125#730 #UT_EARTH * UT_MARS #for perfect looping
+TIME = 730#730 #UT_EARTH * UT_MARS #for perfect looping
 for t in range(TIME):
     # Sonne
     #sun.X.append(sun.planet_orbit(t)[0])
@@ -119,11 +121,6 @@ for t in range(TIME):
     mars.Y.append(mars.planet_orbit(t)[1])  
     # Rakete
     rocket.shoot(t+1)
-
-print("X: " + str(rocket.X))
-print("Y: " + str(rocket.Y))
-print("vel_X: " + str(rocket.Vx))
-print("vel_Y: " + str(rocket.Vy))
 
 #----------------------------------------------------------------------------- 
 # Plotdesign
@@ -158,8 +155,8 @@ earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf", markersize=m
 plt.plot(mars.X, mars.Y) # Bahn
 mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c", markersize=marker_scale(R_MARS))
 # Rakete 
-rocket_line, = ax.plot(rocket.X[:0], rocket.Y[:0])
-rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "X", color=(0,0,0,1), markersize=10)
+rocket_line, = ax.plot(rocket.X[:0], rocket.Y[:0], "--")
+rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "x", color=(0,0,0,1), markersize=10)
 
 #-----------------------------------------------------------------------------
 # Animiere die Planeten

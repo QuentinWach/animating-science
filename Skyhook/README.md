@@ -11,6 +11,7 @@
 ### Referenzen
 + https://www.youtube.com/watch?v=aoMOSa9kXPw 
 + https://sites.google.com/view/quellenskyhook/
++ https://en.wikipedia.org/wiki/Skyhook_%28structure%29
 + https://www.youtube.com/watch?v=qPQQwqGWktE
 
 ### Setup

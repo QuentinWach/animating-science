@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 import math
 
 # Gravitatioskonstante [m³/(kg * s²)]
-G = 6.67430 /1.33 * 10
+G = 6.67430 * 10
 # Massen der Körper [kg]
 M_SUN = 1.98 * (10**30)
 M_EARTH = 0
@@ -57,9 +57,9 @@ sun = Planet(M_SUN, UT_SUN, D_SUN, R_SUN)
 earth = Planet(M_EARTH, UT_EARTH, D_EARTH, R_EARTH)
 mars = Planet(M_MARS, UT_MARS, D_MARS, R_MARS)
 
-
+# Startbedingung des Raumschiffs
 vx_Erde = 0
-vy_Erde = 0* 1.25 * (D_EARTH * 2 * np.pi) / 365
+vy_Erde = 1.45 * (D_EARTH * 2 * np.pi) / 365
 
 class Rakete:
     def __init__(self):
@@ -69,11 +69,9 @@ class Rakete:
         # Sammlung der Geschwindigkeiten
         self.Vx = []
         self.Vy = []
-
         # Angepasste Gravitationskonstante
         self.G = G
         # Initialisiere die Startbedingungen (t=0)
-        # Geschossgeschwindigkeit = 2 * Erdgeschwindigkeit
         self.vx_start = vx_Erde
         self.vy_start = vy_Erde
         self.x_start = D_EARTH
@@ -82,15 +80,12 @@ class Rakete:
         self.Y.append(self.y_start)
         self.Vx.append(self.vx_start)
         self.Vy.append(self.vy_start)
-        self.phi_0 = 0 
 
     def shoot(self, t):
-        sonnenwinkel = np.arccos(self.X[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5)
-        sonnenwinkel = np.arcsin(self.Y[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5)
-        print("time: " + str(t) + " | winkel: " + str(math.degrees(sonnenwinkel))+ " | Y: " + str(self.Y[t-1]))
-        s1_x = ((-self.G) * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * np.cos(sonnenwinkel)
-        s1_y = ((-self.G) * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * np.sin(sonnenwinkel)
-        print(s1_x)
+        sonnenwinkel_x = np.arccos(self.X[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5)
+        sonnenwinkel_y = np.arcsin(self.Y[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5)
+        s1_x = -((self.G) * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * np.cos(sonnenwinkel_x)
+        s1_y = (-(self.G) * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * np.sin(sonnenwinkel_y)
         # Berechne Schritt aus Eigengeschwindigkeitsvektor
         s2_x = self.Vx[t-1]
         s2_y = self.Vy[t-1]
@@ -134,8 +129,8 @@ plt.xticks([])
 plt.yticks([])
 
 # Zeige die momentane Zeit
-time_template = 'Tag %1.f'
-time_text = ax.text(1, 1, '', transform=ax.transAxes, bbox=dict(facecolor='white', alpha=0.5))
+#time_template = 'Tag %1.f'
+#time_text = ax.text(1, 1, '', transform=ax.transAxes, bbox=dict(facecolor='white', alpha=0.5))
 
 # Planetenskalierung
 trueScale = False
@@ -147,16 +142,16 @@ def marker_scale(R):
         return 10
 
 # Sonne
-plt.plot(0,0, "o", color="#ffbd5b", markersize=marker_scale(R_SUN))
+plt.plot(0,0, "o", color="#ffbd5b", markersize=20) #marker_scale(R_SUN)
 # Erde
 plt.plot(earth.X, earth.Y) # Bahn
 earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf", markersize=marker_scale(R_EARTH))
 # Mars
 plt.plot(mars.X, mars.Y) # Bahn
-mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c", markersize=marker_scale(R_MARS))
-# Rakete 
-rocket_line, = ax.plot(rocket.X[:0], rocket.Y[:0], "--")
-rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "x", color=(0,0,0,1), markersize=10)
+mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c", markersize=7) #marker_scale(R_MARS)
+# Raketen
+rocket_line, = ax.plot(rocket.X[:0], rocket.Y[:0], ":")
+rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "p", color=(0,0,0,1), markersize=2)
 
 #-----------------------------------------------------------------------------
 # Animiere die Planeten
@@ -167,18 +162,18 @@ def animate(i):
     rocket_line.set_data(rocket.X[:i], rocket.Y[:i])
     rocket_plot.set_data(rocket.X[i], rocket.Y[i])
     # Zeittextupdate
-    time_text.set_text(time_template % i)
+    #time_text.set_text(time_template % i)
 
-    return earth_plot, mars_plot, #rocket_plot,
+    return earth_plot, mars_plot, rocket_plot,
 
 #-----------------------------------------------------------------------------
 # Starte die Simulation
 if __name__ == '__main__':
     anim = animation.FuncAnimation(fig, animate, 
-        frames=TIME, interval=1)
-    print("Animation done. Saving...")
-    #anim.save('docs/Abb/Grav_fail_1.anim.gif', dpi=60, writer='imagemagick', fps=60)
+        frames=365, interval=1)
+    #print("Animation done. Saving...")
+    #anim.save('docs/Abb/Abb.2.anim.gif', dpi=60, writer='imagemagick', fps=60)
     #print("Saving GIF done.")
-    #anim.save('docs/Abb/DoneWithGrav2.anim.mp4', writer='ffmpeg', fps=60, bitrate=1800)
+    #anim.save('docs/Abb/Abb.2.anim.mp4', writer='ffmpeg', fps=60, bitrate=1800)
     #print("Saving MP4 done. Showing plot...")
     plt.show()

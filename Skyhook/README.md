@@ -40,9 +40,9 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     + geg.: Zeitpunkt bzw. Planetenkonstellation + Abschusszus. (Achtung! Nicht zu hoch! Ausprobieren)
     + Geschwindigkeit soll Fluchtgeschwindigkeit + Abschusszus. entsprechen
     1)  [X] Gravitative Anziehung (lineare Näherung) pro Zeitrschritt durch Sonne aus Rakete
-    2)  [X] Bewegungsupd durch a. Grav + b. Eigensgeschw. pro Zeiteinheit
-    +   [ ] !!!BUG: Bei senkrechter Pos zur Sonne keine Grav mehr?! --> keine Ellipse! oder nicht spiegelsymmetrisch?
-3)  [ ] Tennis mit Raumschiff zwischen Mars und Erde (Nur BEtrachtung der Flugbahnen)
+    2)  [X] Bewegungsupd durch a. Grav + b. Eigensgeschw. pro Zeiteinheit --> stabile Elliptische Bahnen
+    3)  [ ] Einheiten an die Natur anpassen
+3)  [ ] Tennis mit Raumschiff zwischen Mars und Erde (Nur Betrachtung der Flugbahnen)
 3)  [ ] Orbit Raumschiff im Grav der Erde2
 4)  [ ] Raumschiff --> rotierender Skyhook
 5)  [ ] Raumschiff Orbit um Erde mit Skyhook

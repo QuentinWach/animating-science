@@ -142,13 +142,13 @@ def marker_scale(R):
         return 10
 
 # Sonne
-plt.plot(0,0, "o", color="#ffbd5b", markersize=20) #marker_scale(R_SUN)
+plt.plot(0,0, "o", color="#ffbd5b", markersize=15) #marker_scale(R_SUN)
 # Erde
 plt.plot(earth.X, earth.Y) # Bahn
-earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf", markersize=marker_scale(R_EARTH))
+earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf", markersize=10)#marker_scale(R_EARTH)
 # Mars
 plt.plot(mars.X, mars.Y) # Bahn
-mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c", markersize=7) #marker_scale(R_MARS)
+mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c", markersize=8) #marker_scale(R_MARS)
 # Raketen
 rocket_line, = ax.plot(rocket.X[:0], rocket.Y[:0], ":")
 rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "p", color=(0,0,0,1), markersize=2)
@@ -159,18 +159,18 @@ def animate(i):
     # Datenupdate
     earth_plot.set_data(earth.X[i], earth.Y[i])
     mars_plot.set_data(mars.X[i], mars.Y[i])
-    rocket_line.set_data(rocket.X[:i], rocket.Y[:i])
-    rocket_plot.set_data(rocket.X[i], rocket.Y[i])
+    #rocket_line.set_data(rocket.X[:i], rocket.Y[:i])
+    #rocket_plot.set_data(rocket.X[i], rocket.Y[i])
     # Zeittextupdate
     #time_text.set_text(time_template % i)
 
-    return earth_plot, mars_plot, rocket_plot,
+    return earth_plot, mars_plot, #rocket_plot,
 
 #-----------------------------------------------------------------------------
 # Starte die Simulation
 if __name__ == '__main__':
     anim = animation.FuncAnimation(fig, animate, 
-        frames=365, interval=1)
+        frames=730, interval=1)
     #print("Animation done. Saving...")
     #anim.save('docs/Abb/Abb.2.anim.gif', dpi=60, writer='imagemagick', fps=60)
     #print("Saving GIF done.")

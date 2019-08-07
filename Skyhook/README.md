@@ -1,10 +1,10 @@
 <div align="center">
-<img src="docs/Abb/Abb.1.anim.gif" alt="logo" width="300px" height="300px"></img>
+<img src="docs/Abb/Abb_1_anim.gif" alt="logo" width="300px" height="300px"></img>
 </div>
 
 # Skyhook
     
-"Traditionelle Raumfahrt ist teuer, gefährlich und unfassbar Ressourcen-intensiv. Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook oder Spacetether,  ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt." (siehe Video) Wir simulieren eine Skyhook Infrastruktur im Sonnensystem.
+Traditionelle Raumfahrt ist teuer und äußerst Ressourcen-intensiv. Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook, ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt. Wir simulieren eine solche Infrastruktur im Sonnensystem (zunächst zwischen Erde und Mars), wobei grundlegende Fragen der Astrodynmaik beantwortet werden.
 
 ---
 
@@ -36,17 +36,19 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     5)  [X] Funktion: An/Aus wahre/konstante Skalierung der Radien
     6)  [ ] Plotte Skalen [km] und Zeitleiste [Tage]
 2)  [ ] Einfacher Flug Raumschiff RS im Gravitationsfeld der Sonne von Erde zu Mars
-    + Flugdauer soll möglichst klein sein
-    + geg.: Zeitpunkt bzw. Planetenkonstellation + Abschusszus. (Achtung! Nicht zu hoch! Ausprobieren)
-    + Geschwindigkeit soll Fluchtgeschwindigkeit + Abschusszus. entsprechen
-    1)  [X] Gravitative Anziehung (lineare Näherung) pro Zeitrschritt durch Sonne aus Rakete
-    2)  [X] Bewegungsupd durch a. Grav + b. Eigensgeschw. pro Zeiteinheit --> stabile Elliptische Bahnen
-    3)  [ ] Einheiten an die Natur anpassen
+    1)  [X] Gravitative Anziehung (lineare Näherung) pro Zeitrschritt durch Sonne auf Rakete
+    2)  [X] Bewegungsupdate durch a. Grav + b. Eigensgeschw. pro Zeiteinheit. Stabile Elliptische Bahnen
+    3)  [ ] Einheiten an die Natur anpassen. Naturgetreuere Modellierung
+    4)  [ ] Tatsächliche Positionen und Bahnen der Planeten + exaktes Datum
+    5)  [ ] Funktion: Suche die Abschussgeschw. und Schussdatum
+    6)  [ ] Funktion (Planeten): Ermittlung der gravit. Einflusssphäre
+        + https://de.wikipedia.org/wiki/Einflusssph%C3%A4re_(Astronomie)
 3)  [ ] Tennis mit Raumschiff zwischen Mars und Erde (Nur Betrachtung der Flugbahnen)
-3)  [ ] Orbit Raumschiff im Grav der Erde2
-4)  [ ] Raumschiff --> rotierender Skyhook
-5)  [ ] Raumschiff Orbit um Erde mit Skyhook
-6)  [ ] Raumschiff von einem Planeten zum nächsten schießen
+4)  [ ] Orbit Raumschiff im Grav der Erde2
+    1)  [ ] Planeten Gravitation verleihen (Feste Bahnen sollen mit den Gravbahnen übereinstimmen!)
+5)  [ ] Raumschiff --> rotierender Skyhook
+6)  [ ] Raumschiff Orbit um Erde mit Skyhook
+7)  [ ] Raumschiff von einem Planeten zum nächsten schießen
     + Zielgeschwindigkeit des RS = Geschwindigkeit des Planeten
-7)  [ ] Raumschiff mit Skyhook senden und auffangen zwischen Erde und Mars
-8)  [ ] Periodischer aumtomatischer Austausch von Raumschiffen zwischen Skyhooks auf versch. Planeten
+8)  [ ] Raumschiff mit Skyhook senden und auffangen zwischen Erde und Mars
+9)  [ ] Periodischer aumtomatischer Austausch von Raumschiffen zwischen Skyhooks auf versch. Planeten

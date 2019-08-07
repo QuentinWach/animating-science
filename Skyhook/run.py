@@ -57,10 +57,6 @@ sun = Planet(M_SUN, UT_SUN, D_SUN, R_SUN)
 earth = Planet(M_EARTH, UT_EARTH, D_EARTH, R_EARTH)
 mars = Planet(M_MARS, UT_MARS, D_MARS, R_MARS)
 
-# Startbedingung des Raumschiffs
-vx_Erde = 0
-vy_Erde = 1.45 * (D_EARTH * 2 * np.pi) / 365
-
 class Rakete:
     def __init__(self):
         # Sammlung der Positionen
@@ -69,11 +65,11 @@ class Rakete:
         # Sammlung der Geschwindigkeiten
         self.Vx = []
         self.Vy = []
-        # Angepasste Gravitationskonstante
-        self.G = G
         # Initialisiere die Startbedingungen (t=0)
-        self.vx_start = vx_Erde
-        self.vy_start = vy_Erde
+        self.vx_start = 0
+        # 1.093 : Hofmann zum Mars
+        # 0.8
+        self.vy_start = 0.35 * (1.355 *D_EARTH * 2 * np.pi) / 365
         self.x_start = D_EARTH
         self.y_start = 0
         self.X.append(self.x_start)
@@ -82,10 +78,10 @@ class Rakete:
         self.Vy.append(self.vy_start)
 
     def shoot(self, t):
-        sonnenwinkel_x = np.arccos(self.X[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5)
-        sonnenwinkel_y = np.arcsin(self.Y[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5)
-        s1_x = -((self.G) * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * np.cos(sonnenwinkel_x)
-        s1_y = (-(self.G) * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * np.sin(sonnenwinkel_y)
+        sonnenwinkel_x = self.X[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5
+        sonnenwinkel_y = self.Y[t-1]/((self.X[t-1]**2 + self.Y[t-1]**2))**0.5
+        s1_x = -(G * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * sonnenwinkel_x
+        s1_y = -(G * M_SUN)/(2*(self.X[t-1]**2 + self.Y[t-1]**2)) * sonnenwinkel_y
         # Berechne Schritt aus Eigengeschwindigkeitsvektor
         s2_x = self.Vx[t-1]
         s2_y = self.Vy[t-1]
@@ -114,6 +110,7 @@ for t in range(TIME):
     # Mars
     mars.X.append(mars.planet_orbit(t)[0])
     mars.Y.append(mars.planet_orbit(t)[1])  
+for t in range(668):
     # Rakete
     rocket.shoot(t+1)
 
@@ -122,7 +119,7 @@ for t in range(TIME):
 plt.style.use("default")
 plt.style.use("seaborn-dark")
 plt.style.use("grayscale")
-fig, ax = plt.subplots(figsize=(7,7), dpi=120)
+fig, ax = plt.subplots(figsize=(5,7),dpi=120) #figsize=(7,7)
 fig.patch.set_facecolor('white')
 fig.canvas.set_window_title('Skyhook')
 plt.xticks([])
@@ -150,7 +147,7 @@ earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf", markersize=1
 plt.plot(mars.X, mars.Y) # Bahn
 mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c", markersize=8) #marker_scale(R_MARS)
 # Raketen
-rocket_line, = ax.plot(rocket.X[:0], rocket.Y[:0], ":")
+rocket_line = plt.plot(rocket.X, rocket.Y, ":")
 rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "p", color=(0,0,0,1), markersize=2)
 
 #-----------------------------------------------------------------------------
@@ -160,20 +157,20 @@ def animate(i):
     earth_plot.set_data(earth.X[i], earth.Y[i])
     mars_plot.set_data(mars.X[i], mars.Y[i])
     #rocket_line.set_data(rocket.X[:i], rocket.Y[:i])
-    #rocket_plot.set_data(rocket.X[i], rocket.Y[i])
+    rocket_plot.set_data(rocket.X[i], rocket.Y[i])
     # Zeittextupdate
     #time_text.set_text(time_template % i)
 
-    return earth_plot, mars_plot, #rocket_plot,
+    return earth_plot, mars_plot, rocket_plot,
 
 #-----------------------------------------------------------------------------
 # Starte die Simulation
 if __name__ == '__main__':
     anim = animation.FuncAnimation(fig, animate, 
-        frames=730, interval=1)
-    #print("Animation done. Saving...")
-    #anim.save('docs/Abb/Abb.2.anim.gif', dpi=60, writer='imagemagick', fps=60)
+        frames=TIME, interval=1)
+    print("Animation done.")
+    #anim.save('docs/Abb/Abb_4.anim.gif', dpi=60, writer='imagemagick', fps=60)
     #print("Saving GIF done.")
-    #anim.save('docs/Abb/Abb.2.anim.mp4', writer='ffmpeg', fps=60, bitrate=1800)
+    #anim.save('docs/Abb/Abb_4_anim.mp4', writer='ffmpeg', fps=60, bitrate=1800)
     #print("Saving MP4 done. Showing plot...")
     plt.show()

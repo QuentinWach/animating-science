@@ -47,15 +47,15 @@ Um von einem Planeten zum nächsten zu gelangen muss die Rakete zunächst die Er
 Da die Massen der Planeten im Vergleich zur Sonnenmasse äußerst gering sind, werden deren gravitativen Einflüsse zunächst ignoriert. Die Bahn des Geschosses wird numerisch genähert. Dabei wird davon ausgegangen, dass sich die Intervalle linear annähern lassen, also $\Delta v = \frac{\Delta s}{\Delta t}$. Mit jedem Zeitschritt (in Tagen) wird der Schritt durch die Gravitation $\Delta s_G$ und der Schritt durch die eigene Geschwindigkeit $\Delta s_v$ seperat ermittelt und dann summiert:
 
 \begin{align*}
-\Delta \vec{s_G} = -\frac{G \cdot M}{(x^2 +y^2)^{1,5}} \cdot \begin{pmatrix}x \\ y\end{pmatrix} \qquad \text{und} \qquad
+\Delta \vec{s_G} = -\frac{G \cdot M_{\odot}}{2(x^2 +y^2)^{1,5}} \cdot \begin{pmatrix}x \\ y\end{pmatrix} \qquad \text{und} \qquad
 \Delta \vec{s_v} = \vec{v} = \begin{pmatrix} \Delta x \\ \Delta y \end{pmatrix}
 \end{align*}
 Also
 \begin{align*}
 \Delta \vec{s} = \Delta \vec{s_G} + \Delta \vec{s_v}.
 \end{align*}
-Dabei ist $G = 6,67430(15) \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}$ die Gravitationskonstante, und $M = (1,98892 \pm 0,00025) \cdot 10^{30} \text{kg}$ die Masse der Sonne. Das Zeitelement fällt hier weg, da es gleich Eins ist. Wir betrachten die zurückgelegte Strecken in $\frac{\text{km}}{\text{Tag}}$.
- 
+Dabei ist $G = 6,67430(15) \cdot 10^{-11} \frac{\text{m}^3}{\text{kg} \cdot \text{s}^2}$ die Gravitationskonstante, und $M_{\odot} = (1,98892 \pm 0,00025) \cdot 10^{30} \text{kg}$ die Masse der Sonne. Das Zeitelement fällt hier weg, da es gleich Eins ist. Wir betrachten die zurückgelegte Strecken in $\frac{\text{km}}{\text{Tag}}$.
+
 \section{Diskussion}
 
 

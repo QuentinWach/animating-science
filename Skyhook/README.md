@@ -54,5 +54,5 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
 9)  [ ] Periodischer aumtomatischer Austausch von Raumschiffen zwischen Skyhooks auf versch. Planeten
 
 *Optional*:
-[ ] Betrachtung relativistischer Effekte
-[ ] Visualisierung des Gravitationsfeldes
++   [ ] Betrachtung relativistischer Effekte
++   [ ] Visualisierung des Gravitationsfeldes

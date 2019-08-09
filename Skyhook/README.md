@@ -4,7 +4,7 @@
 
 # Skyhook
     
-Traditionelle Raumfahrt ist teuer und äußerst Ressourcen-intensiv. Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook, ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt. Wir simulieren eine solche Infrastruktur im Sonnensystem (zunächst zwischen Erde und Mars), wobei grundlegende Fragen der Astrodynmaik beantwortet werden.
+Traditionelle Raumfahrt ist teuer und äußerst Ressourcen-intensiv. Ein einfacherer Weg  ins All zu kommen ist ein sogenannter Skyhook, ein ständig rotierendes Seil, das Raumschiffe wie ein Katapult aus dem Orbit ins All schießt. Wir simulieren eine solche Infrastruktur im Sonnensystem (zunächst zwischen Erde und Mars), wobei grundlegende Fragen der Astrodynamik beantwortet werden.
 
 ---
 
@@ -12,7 +12,6 @@ Traditionelle Raumfahrt ist teuer und äußerst Ressourcen-intensiv. Ein einfach
 + https://www.youtube.com/watch?v=aoMOSa9kXPw 
 + https://sites.google.com/view/quellenskyhook/
 + https://en.wikipedia.org/wiki/Skyhook_%28structure%29
-+ https://www.youtube.com/watch?v=qPQQwqGWktE
 
 ### Setup
 Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt` und lassen sich über `pip install` in einer virtuellen Umgebung installieren. (Achtung: Derzeit viele überflüssige Module.)
@@ -43,6 +42,7 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     5)  [ ] Funktion: Suche die Abschussgeschw. und Schussdatum
     6)  [ ] Funktion (Planeten): Ermittlung der gravit. Einflusssphäre
         + https://de.wikipedia.org/wiki/Einflusssph%C3%A4re_(Astronomie)
+    + Stärkere Verwendung analytischer Methoden vor der numerischen Näherung der Lösung dieser
 3)  [ ] Tennis mit Raumschiff zwischen Mars und Erde (Nur Betrachtung der Flugbahnen)
 4)  [ ] Orbit Raumschiff im Grav der Erde2
     1)  [ ] Planeten Gravitation verleihen (Feste Bahnen sollen mit den Gravbahnen übereinstimmen!)
@@ -52,3 +52,7 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     + Zielgeschwindigkeit des RS = Geschwindigkeit des Planeten
 8)  [ ] Raumschiff mit Skyhook senden und auffangen zwischen Erde und Mars
 9)  [ ] Periodischer aumtomatischer Austausch von Raumschiffen zwischen Skyhooks auf versch. Planeten
+
+*Optional*:
+[ ] Betrachtung relativistischer Effekte
+[ ] Visualisierung des Gravitationsfeldes

@@ -1,7 +1,7 @@
 # Selbstähnliche raue Oberflächen
 <div align="center">
 ![Abb.2 - Kochkurve](./Abb_2.png)
-<div>
+</div>
 ---
 
 *Warum?*
@@ -9,6 +9,6 @@ Ich habe viel die Schule geschwänzt und stattdessen Zeit in der Stadtbibliothek
 
 <div align="center">
 ![Abb.1 - Trigg](./Abb_1.png)
-<div>
+</div>
 
 Dies ist ein tiefes Feld. Hier zunächst eine Koch Kurve.

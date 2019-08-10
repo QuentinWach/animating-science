@@ -34,13 +34,12 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     4)  [X] Animation der Planetenbewegungen
     5)  [X] Funktion: An/Aus wahre/konstante Skalierung der Radien
     6)  [ ] Plotte Skalen [km] und Zeitleiste [Tage]
+    7)  [ ] Finde das nötige Format der Abbildung
 2)  [ ] Einfacher Flug Raumschiff RS im Gravitationsfeld der Sonne von Erde zu Mars
     1)  [X] Gravitative Anziehung (lineare Näherung) pro Zeitrschritt durch Sonne auf Rakete
     2)  [X] Bewegungsupdate durch a. Grav + b. Eigensgeschw. pro Zeiteinheit. Stabile Elliptische Bahnen
-    3)  [ ] Einheiten an die Natur anpassen. Naturgetreuere Modellierung
-    4)  [ ] Tatsächliche Positionen und Bahnen der Planeten + exaktes Datum
-    5)  [ ] Funktion: Suche die Abschussgeschw. und Schussdatum
-    6)  [ ] Funktion (Planeten): Ermittlung der gravit. Einflusssphäre
+    3)  [ ] Funktion: Suche die Abschussgeschw. und Schussdatum
+    4)  [ ] Funktion (Planeten): Ermittlung der gravit. Einflusssphäre
         + https://de.wikipedia.org/wiki/Einflusssph%C3%A4re_(Astronomie)
     + Stärkere Verwendung analytischer Methoden vor der numerischen Näherung der Lösung dieser
 3)  [ ] Tennis mit Raumschiff zwischen Mars und Erde (Nur Betrachtung der Flugbahnen)
@@ -54,5 +53,6 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
 9)  [ ] Periodischer aumtomatischer Austausch von Raumschiffen zwischen Skyhooks auf versch. Planeten
 
 *Optional*:
++   [ ] Tatsächliche Positionen und Bahnen der Planeten + exaktes Datum
 +   [ ] Betrachtung relativistischer Effekte
 +   [ ] Visualisierung des Gravitationsfeldes

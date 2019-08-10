@@ -5,7 +5,7 @@ import matplotlib.animation as animation
 import math
 
 # Gravitatioskonstante [m³/(kg * s²)]
-G = 6.67430 * 10**(-9)
+G = 6.67430 * 10**(-10)
 # Massen der Körper [kg]
 M_SUN = 1.98 * (10**30)
 M_EARTH = 0
@@ -49,31 +49,20 @@ R_6 = 142870/2
 R_7 = 120670/2
 R_8 = 51000/2
 R_9 = 49200/2
-
 R_ROC = 0.05
 
 #-----------------------------------------------------------------------------
 class Planet:
     def __init__(self, M, UT, D, R):
-        """
-        Masse: m
-        Umlaufzeit: ut
-        Entfernung zur Sonne: d
-        Radius des Körpers: r
-        """
-        self.m = M
-        self.ut = UT
-        self.d = D
-        self.r = R
+        self.m = M # Masse
+        self.ut = UT # Umlaufzeit
+        self.d = D # Entfernung zur Sonne
+        self.r = R # Radius des Körpers
         # Sammlung der Datenpunkte
         self.X = []
         self.Y = []
-
-    # Planetenbahn
+    # Planetenbahn (t: spez. Zeitpunk)
     def planet_orbit(self, t):
-        """
-        t:  spez. Zeitpunkt
-        """
         self.pt = 2 * np.pi * t / self.ut
         x = self.d * np.cos(self.pt)
         y = self.d * np.sin(self.pt)
@@ -89,8 +78,15 @@ jupiter = Planet(M_6, UT_6, D_6, R_6)
 saturn = Planet(M_7, UT_7, D_7, R_7)
 uranus = Planet(M_8, UT_8, D_8, R_8)
 neptun = Planet(M_9, UT_9, D_9, R_9)
-# Planetenliste (ohne Sonne)
+# Planetenliste (nur zu plottene Planeten
 planets = [merkur, venus, earth,mars]
+# Sammle die Positionen der Objekte im Zeitverlauf (TIME: betrachter Zeitraum)
+TIME = 1200
+for t in range(TIME):
+    for planet in planets:
+        planet.X.append(planet.planet_orbit(t)[0])
+        planet.Y.append(planet.planet_orbit(t)[1])
+#-----------------------------------------------------------------------------
 
 class Rakete:
     def __init__(self):
@@ -104,7 +100,7 @@ class Rakete:
         self.vx_start = 0
         # 1.093 : Hofmann zum Mars
         # 0.8
-        self.vy_start = 1 *  (D_EARTH * 2 * np.pi) / UT_EARTH
+        self.vy_start =  1.0976 * (0.813 * D_EARTH * 2 * np.pi) / UT_EARTH
         self.x_start = D_EARTH
         self.y_start = 0
         self.X.append(self.x_start)
@@ -132,29 +128,12 @@ class Rakete:
 
 # Erstelle Raketenobjekt        
 rocket = Rakete()
-
-# Sammle die Positionen der Objekte im Zeitverlauf
-TIME = 730#730 #UT_EARTH * UT_MARS #for perfect looping
+# Sammle die Positionen der Rakete
 for t in range(TIME):
-    # Sonne
-    #sun.X.append(sun.planet_orbit(t)[0])
-    #sun.Y.append(sun.planet_orbit(t)[1])
-    # Erde
-    #earth.X.append(earth.planet_orbit(t)[0])
-    #earth.Y.append(earth.planet_orbit(t)[1])    
-    # Mars
-    #mars.X.append(mars.planet_orbit(t)[0])
-    #mars.Y.append(mars.planet_orbit(t)[1])
-    for planet in planets:
-        planet.X.append(planet.planet_orbit(t)[0])
-        planet.Y.append(planet.planet_orbit(t)[1])
-
-for t in range(668):
-    # Rakete
     rocket.shoot(t+1)
 
 #----------------------------------------------------------------------------- 
-# Plotdesign
+# Plotte die Bahnen und initialisiere die Animation (Plotdesign)
 plt.style.use("default")
 plt.style.use("seaborn-dark")
 plt.style.use("grayscale")
@@ -178,17 +157,16 @@ def marker_scale(R):
         return 10
 
 # Sonne
-plt.plot(0,0, "o", color="#ffbd5b") #marker_scale(R_SUN)
+plt.plot(0,0, "o", color="#ffbd5b")
 # Planetenbahnen
 for planet in planets:
-    plt.plot(planet.X, planet.Y, color="#bababa", lw=1) # Bahn
-# Planetenbewegungen
+    plt.plot(planet.X, planet.Y, color="#bababa", lw=1)
+# Planetenpositionen
 merkur_plot, = ax.plot(merkur.X[0], merkur.Y[0], "o", color="#e2a973")
 venus_plot, = ax.plot(venus.X[0], venus.Y[0], "o", color="#e5bc5b")
-earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf")#marker_scale(R_EARTH)
-mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c") #marker_scale(R_MARS)
-
-# Raketen
+earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf")
+mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c")
+# Raketenbahn und Positionen
 rocket_line = plt.plot(rocket.X, rocket.Y, ":", lw=1)
 rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "p", color=(0,0,0,1), markersize=4)
 
@@ -209,7 +187,7 @@ def animate(i):
 # Starte die Simulation
 if __name__ == '__main__':
     anim = animation.FuncAnimation(fig, animate, 
-        frames=730, interval=1)
+        frames=TIME, interval=1)
     print("Animation done.")
     #anim.save('docs/Abb/Abb_4.anim.gif', dpi=60, writer='imagemagick', fps=60)
     #print("Saving GIF done.")

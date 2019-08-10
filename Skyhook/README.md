@@ -1,5 +1,5 @@
 <div align="center">
-<img src="docs/Abb/Abb_1_anim.gif" alt="logo" width="300px" height="300px"></img>
+<img src="docs/Abb/Abb_5.png"></img>
 </div>
 
 # Skyhook

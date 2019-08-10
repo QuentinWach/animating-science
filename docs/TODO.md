@@ -8,6 +8,7 @@
 	+ korrekte Farben in E-Feld
 	+ Potentialtopf ohne Legende
 	+ unpublish Kochkurve 
+	+ Game of Life: Änderung der Variablennamen und mehr Kommentare
 3) [ ] Koch Kurve mit Matplotlib und nicht Turtle
 4) [ ] Projekt: Raue fraktale Oberfläche
 5) [ ] Rework: Feldlinien aus ODE 

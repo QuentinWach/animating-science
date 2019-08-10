@@ -1,7 +1,7 @@
 ## TODO
 
 + [X] Header auf Deutsch
-+ [X] GRundlegende README Ausführung
++ [X] Grundlegende README Ausführung
 + [ ] Rerender und Cleanup der einzelnen Projekte
 	+ [ ] Rerender Bahnkurve
 	+ [ ] Rerender Pendel
@@ -17,6 +17,8 @@
 + [ ] Projekt: Vergleichsplot zu Zufallsverteilungen
 + [ ] Projekt: Random-Number-Generator
 + [ ] Projekt: 3D-Vis eines Attraktors (Chaos)
++ [X] Projekt: Einfache Splineinterpolation
++ [ ] Projekt: Bewegungsgerichtete Splineinterpolation
 + [ ] Projekt: 3D-Splineinterpolation eines kurzen Random-Walks
 
-Für 2020: Implementierungen zur Optimierung einzelner Probleme mit C anstatt Python!
+Für 2020: Implementierungen zur Optimierung einzelner Probleme mit `C` anstatt `Python`!

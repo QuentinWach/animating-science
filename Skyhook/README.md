@@ -41,6 +41,7 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
     3)  [ ] Funktion: Suche die Abschussgeschw. und Schussdatum
     4)  [ ] Funktion (Planeten): Ermittlung der gravit. Einflusssphäre
         + https://de.wikipedia.org/wiki/Einflusssph%C3%A4re_(Astronomie)
+    5)  [ ] Spline-Interpolation
     + Stärkere Verwendung analytischer Methoden vor der numerischen Näherung der Lösung dieser
 3)  [ ] Tennis mit Raumschiff zwischen Mars und Erde (Nur Betrachtung der Flugbahnen)
 4)  [ ] Orbit Raumschiff im Grav der Erde2

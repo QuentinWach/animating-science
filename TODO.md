@@ -1,17 +1,22 @@
 ## TODO
 
-1) [X] Header auf Deutsch
-2) [ ] Rerender und Cleanup der einzelnen Projekte
++ [X] Header auf Deutsch
++ [X] GRundlegende README Ausführung
++ [ ] Rerender und Cleanup der einzelnen Projekte
 	+ [ ] Rerender Bahnkurve
 	+ [ ] Rerender Pendel
-	+ [ ] E-Feld mit weißer Umradung um Ladungen
+	+ [ ] E-Feld mit weißer Umrandung um Ladungen
 	+ [ ] korrekte Farben in E-Feld
 	+ [ ] Potentialtopf ohne Legende
 	+ [ ] unpublish Kochkurve 
 	+ [ ] Game of Life: Änderung der Variablennamen und mehr Kommentare
-3) [ ] Koch Kurve mit Matplotlib und nicht Turtle
-4) [ ] Projekt: Raue fraktale Oberfläche
-5) [ ] Rework: Feldlinien aus ODE
++ [ ] Koch Kurve mit Matplotlib und nicht Turtle
++ [ ] Projekt: Raue fraktale Oberfläche (siehe Tirggs "Mathematical Tools for Physicsts")
++ [ ] Rework: Feldlinien aus ODE
++ [ ] Projekt: Stochastische Integration
++ [ ] Projekt: Vergleichsplot zu Zufallsverteilungen
++ [ ] Projekt: Random-Number-Generator
++ [ ] Projekt: 3D-Vis eines Attraktors (Chaos)
++ [ ] Projekt: 3D-Splineinterpolation eines kurzen Random-Walks
 
-
-
+Für 2020: Implementierungen zur Optimierung einzelner Probleme mit C anstatt Python!

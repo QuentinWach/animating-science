@@ -90,7 +90,7 @@ saturn = Planet(M_7, UT_7, D_7, R_7)
 uranus = Planet(M_8, UT_8, D_8, R_8)
 neptun = Planet(M_9, UT_9, D_9, R_9)
 # Planetenliste (ohne Sonne)
-planets = [earth,mars]
+planets = [merkur, venus, earth,mars]
 
 class Rakete:
     def __init__(self):
@@ -181,23 +181,23 @@ def marker_scale(R):
 plt.plot(0,0, "o", color="#ffbd5b") #marker_scale(R_SUN)
 # Planetenbahnen
 for planet in planets:
-    plt.plot(planet.X, planet.Y, color="#bababa") # Bahn
+    plt.plot(planet.X, planet.Y, color="#bababa", lw=1) # Bahn
 # Planetenbewegungen
-#merkur_plot, = ax.plot(merkur.X[0], merkur.Y[0], "o", color="#e2a973")
-#venus_plot, = ax.plot(venus.X[0], venus.Y[0], "o", color="#e5bc5b")
+merkur_plot, = ax.plot(merkur.X[0], merkur.Y[0], "o", color="#e2a973")
+venus_plot, = ax.plot(venus.X[0], venus.Y[0], "o", color="#e5bc5b")
 earth_plot, = ax.plot(earth.X[0], earth.Y[0], "o", color="#618abf")#marker_scale(R_EARTH)
 mars_plot, = ax.plot(mars.X[0], mars.Y[0], "o", color="#f2663c") #marker_scale(R_MARS)
 
 # Raketen
-rocket_line = plt.plot(rocket.X, rocket.Y, ":")
-rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "p", color=(0,0,0,1), markersize=2)
+rocket_line = plt.plot(rocket.X, rocket.Y, ":", lw=1)
+rocket_plot, = ax.plot(rocket.X[0], rocket.Y[0], "p", color=(0,0,0,1), markersize=4)
 
 #-----------------------------------------------------------------------------
 # Animiere die Planeten
 def animate(i):
     # Datenupdate
-    #merkur_plot.set_data(merkur.X[i], merkur.Y[i])
-    #venus_plot.set_data(venus.X[i], venus.Y[i])
+    merkur_plot.set_data(merkur.X[i], merkur.Y[i])
+    venus_plot.set_data(venus.X[i], venus.Y[i])
     earth_plot.set_data(earth.X[i], earth.Y[i])
     mars_plot.set_data(mars.X[i], mars.Y[i])
     #rocket_line.set_data(rocket.X[:i], rocket.Y[:i])

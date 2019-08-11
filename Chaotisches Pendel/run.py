@@ -9,12 +9,9 @@ import matplotlib.pyplot as plt
 import scipy.integrate as integrate
 import matplotlib.animation as animation
 
-# Plotdesign
-plt.style.use('seaborn')
-
 # Parameter
 dt = 0.03 # Zeitauflösung (bzw. t_res)
-t = np.arange(0.0, 180, dt) # Zeitintervall [s]
+t = np.arange(0.0, 50, dt) # Zeitintervall [s]
 G = 9.8   # Erdbeschleunigung [m/s^2]
 L1 = 1.0  # Länge des Pendel 1 [m]
 L2 = 1.0  # Länge des Pendel 2 [m]
@@ -60,32 +57,39 @@ x2 = L2*sin(y[:, 2]) + x1
 y2 = -L2*cos(y[:, 2]) + y1
 
 # Plotte die Figur
-fig = plt.figure(num=None, figsize=(6, 6), dpi=90, facecolor='w', edgecolor='k')
+# Plotdesign
+plt.style.use("default")
+plt.style.use("seaborn-dark")
+plt.style.use("grayscale")
+fig = plt.figure(num=None, figsize=(3, 3), dpi=200, facecolor='w', edgecolor='k')
 fig = plt.gcf()
 fig.canvas.set_window_title('Chaotisches Doppelpendel')
+fig.patch.set_facecolor('white')
 ax = fig.add_subplot(111, autoscale_on=False, xlim=(-2.1, 2.1), ylim=(-2.1, 2.1))
 ax.grid()
+plt.xticks([])
+plt.yticks([])
 
 # Achsenbeschriftungen
-plt.xlabel("x-Achse / m")
-plt.ylabel("y-Achse / m")
+#plt.xlabel("x-Achse / m")
+#plt.ylabel("y-Achse / m")
 
 # Zeige die moementane Ausrichtung des Pendels
-line, = ax.plot([], [], 'o-', color=(0,0,0,1), lw=2, zorder = 5)
+line, = ax.plot([], [], 'o-', color=(0,0,0,1), lw=1, zorder = 5)
 
 # Zeige die vergangenen Punkte
-pastx = []
-pasty = []
-dots, = ax.plot(pastx, pasty, ".-", color=(0,0,0,0.25), lw=2, zorder = 3)
+#pastx = []
+#pasty = []
+#dots, = ax.plot(pastx, pasty, ".-", color=(0,0,0,0.25), lw=2, zorder = 3)
 
 # Zeige die momentane Zeit
-time_template = 'Zeit = %.1fs'
-time_text = ax.text(0.80, .95, '', bbox=dict(facecolor='white', alpha=0.8), transform=ax.transAxes)
+#time_template = 'Zeit = %.1fs'
+#time_text = ax.text(0.80, .95, '', bbox=dict(facecolor='white', alpha=0.8), transform=ax.transAxes)
 
 def init():
     line.set_data([], [])
-    dots.set_data([], [])
-    time_text.set_text('')
+    #dots.set_data([], [])
+    #time_text.set_text('')
     return line, dots, time_text
 
 def animate(i):
@@ -96,24 +100,25 @@ def animate(i):
     # Drucke die Koordinaten im Terminal
     print("x(" + str(i) + ") = " + str(thisx))
     print("y(" + str(i) + ") = " + str(thisy))
-
+    """
     # Merke vergangene Koordinaten
     if i <= 1000:
       pastx.append(thisx[2]); pasty.append(thisy[2])
     else:
       pastx.pop(0); pasty.pop(0)
       pastx.append(thisx[2]); pasty.append(thisy[2])
-
+    """
     # Datenupdate
     line.set_data(thisx, thisy)
-    dots.set_data(pastx, pasty)
+    #dots.set_data(pastx, pasty)
 
     # Zeittextupdate
-    time_text.set_text(time_template % (i*dt))
+    #time_text.set_text(time_template % (i*dt))
 
-    return line, dots, time_text
+    return line, #dots, time_text
 
 anim = animation.FuncAnimation(fig, animate, frames=np.arange(0, len(y), 1), interval=15)
 #anim.save('pendel.gif', dpi=80, writer='imagemagick') # Zum speichern der Animation als .gif
+anim.save('pendel.mp4', writer='ffmpeg', fps=60, bitrate=1800)
 
 plt.show()

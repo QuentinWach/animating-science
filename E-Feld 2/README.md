@@ -1,1 +1,1 @@
-![png](Abb.1.png)
+![png](Abb_1.png)

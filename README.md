@@ -1,7 +1,4 @@
-<div align="center">
-<img src="./docs/Header.png"></img>
-</div>
-
+![png](./docs/Header.png)
 ---
 ## Computerphysik
 
@@ -36,7 +33,7 @@ Bereits im Grundstudium der Physik finden sich wieder und wieder Probleme, die s
 
 Derzeit komplett in `Python` geschrieben. Um die Skripte lesen und ausführen zu können werden aber außerdem benötigt:
 + `Matplotlib` - Abbildungen
-+ `Numpy` - Schnelle Numerik und Array-Operationen
++ `Numpy` - Numerische Algebra
 + `Sympy` - Symbolische Algebra
 + `Scipy` - Allgemeine Library für wissenschaftliche Programmierung
 + `Jupyter Notebook` - Interaktives Programmieren 

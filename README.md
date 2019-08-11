@@ -40,4 +40,4 @@ Derzeit komplett in `Python` geschrieben. Um die Skripte lesen und ausführen zu
 
 ### Autor
 
-Quentin Wach (https://www.quentinwach.com)
+Quentin Wach (https://www.quentinwach.com) bla bla bla

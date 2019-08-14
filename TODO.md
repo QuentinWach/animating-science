@@ -10,9 +10,9 @@ Ziel: ***Abdeckung der grundlegenden Methoden auf eine breite Auswahl von Bereic
 	+ [X] E-Feld mit weißer Umrandung um Ladungen
 	+ [X] korrekte Farben in E-Feld
 	+ [ ] Potentialtopf ohne Legende
-	+ [ ] unpublish Kochkurve 
+	+ [X] unpublish Kochkurve 
 	+ [ ] Game of Life: Änderung der Variablennamen und mehr Kommentare
-+ [ ] Koch Kurve mit Matplotlib und nicht Turtle
++ [X] Koch Kurve mit Matplotlib und nicht Turtle
 + [ ] Projekt: Raue fraktale Oberfläche (siehe Tirggs "Mathematical Tools for Physicsts")
 + [ ] Projekt: Stochastische Integration
 + [ ] Projekt: Vergleichsplot zu Zufallsverteilungen
@@ -24,6 +24,9 @@ https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971
 + [ ] Projekt: 3D-Bahnsplineinterpolation eines kurzen Random-Walks (Trace Interpolation)
 + [ ] Projekt: Univariate Splineinterpolation
 + [ ] Projekt: Gridsplitinterpolation
-+ [ ] Projekt: 3D-Plot Atomorbitale
++ [ ] Projekt: 3D-Plot Atomorbiale
++ [ ] Projekt: Magnetpendel
++ [ ] Projekt: Julia-Menge
++ [ ] Projekt: 2D-Poisson-Gleichung mit Jacobi-Iteration
 
 Für 2020: Implementierungen zur Optimierung einzelner Probleme mit `C` anstatt `Python`!

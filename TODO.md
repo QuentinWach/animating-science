@@ -14,7 +14,7 @@ Ziel: ***Abdeckung der grundlegenden Methoden auf eine breite Auswahl von Bereic
 	+ [ ] Game of Life: Änderung der Variablennamen und mehr Kommentare
 + [X] Koch Kurve mit Matplotlib und nicht Turtle
 + [ ] Projekt: Raue fraktale Oberfläche (siehe Tirggs "Mathematical Tools for Physicsts")
-+ [ ] Projekt: Stochastische Integration
++ [X] Projekt: Monte-Carlo Integration Kreisfläche
 + [ ] Projekt: Vergleichsplot zu Zufallsverteilungen
 + [ ] Projekt: Random-Number-Generator
 + [ ] Projekt: 3D-Vis eines Attraktors (Chaos)

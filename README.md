@@ -20,7 +20,7 @@ Bereits im Grundstudium der Physik finden sich wieder und wieder Probleme, die s
     + Verteilungen (bald)
     + Generatoren (bald)
     + Random Walk
-    + Monte-Carlo-Integration (bald)
+    + Monte-Carlo-Integration
 + **Nichtlineare Dynamik**
     + Chaos
     + Fraktale

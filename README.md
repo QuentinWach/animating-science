@@ -13,7 +13,7 @@ Bereits im Grundstudium der Physik finden sich wieder und wieder Probleme, die s
     + Näherungen von Ableitungen
     + Splineinterpolation
 + **Numerik gewöhnlicher Differenzialgleichungen**
-    + Euler-Verfahren (bald)
+    + Euler-Verfahren
     + Mehrschrittverfahren (bald)
     + Runge-Kutta Verfahren (bald)
 + **Zufall und stochastische Methoden**

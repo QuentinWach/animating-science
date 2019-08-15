@@ -29,5 +29,6 @@ https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971
 + [ ] Projekt: Magnetpendel
 + [ ] Projekt: Julia-Menge
 + [ ] Projekt: 2D-Poisson-Gleichung mit Jacobi-Iteration
++ [X] Projekt: Euler-Verfahren Beispiel
 
 Für 2020: Implementierungen zur Optimierung einzelner Probleme mit `C` anstatt `Python`!

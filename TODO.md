@@ -17,6 +17,7 @@ Ziel: ***Abdeckung der grundlegenden Methoden auf eine breite Auswahl von Bereic
 + [X] Projekt: Monte-Carlo Integration Kreisfläche
 + [ ] Projekt: Vergleichsplot zu Zufallsverteilungen
 + [ ] Projekt: Random-Number-Generator
++ [X] Projekt: 3D-Bahnkurve
 + [ ] Projekt: 3D-Vis eines Attraktors (Chaos)
 + [X] Projekt: Einfache Splineinterpolation
 https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971081089764103109971051084699111109/Python-SciPy-Interpolation.php

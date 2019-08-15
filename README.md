@@ -7,7 +7,7 @@ Bereits im Grundstudium der Physik finden sich wieder und wieder Probleme, die s
     + Daten und Funktionen
     + Vektoren
     + Vektorfelder
-    + 3D-Darstellungen (bald)
+    + 3D-Darstellungen
     + Animationen
 + **Numerische Standardverfahren**
     + Näherungen von Ableitungen

@@ -14,7 +14,7 @@ Bereits im Grundstudium der Physik finden sich wieder und wieder Probleme, die s
     + Splineinterpolation
 + **Numerik gewöhnlicher Differenzialgleichungen**
     + Euler-Verfahren
-    + Mehrschrittverfahren (bald)
+    + Mehrschrittverfahren
     + Runge-Kutta Verfahren (bald)
 + **Zufall und stochastische Methoden**
     + Verteilungen (bald)

@@ -31,6 +31,6 @@ https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971
 + [ ] Projekt: 2D-Poisson-Gleichung mit Jacobi-Iteration
 + [X] Projekt: Euler-Verfahren Beispiel
 + [ ] Projekt: Brachistrom Problem
-+ [ ] Projekt: Goldener Winkel Animation Samenposition
++ [X] Projekt: Goldener Winkel Animation Samenposition
 
 Für 2020: Implementierungen zur Optimierung einzelner Probleme mit `C` anstatt `Python`!

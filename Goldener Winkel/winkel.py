@@ -17,7 +17,7 @@ phi = m.radians(137.508)
 
 X = []
 Y = []
-points = 100
+points = 420
 def gen(winkel):
     for p in range(points):
         X.append(m.sqrt(p) * np.cos(p * winkel))
@@ -39,7 +39,7 @@ def animate(i):
     print(str(i) + " ---- " + str(m.degrees(winkel)))
 
 # Animation des Bereichs um Phi
-anim = animation.FuncAnimation(fig, animate, frames=180, interval=50)
-#anim.save('gold.gif', dpi=80, writer='imagemagick') # Zum speichern der Animation als .gif
-#anim.save('gold.mp4', writer='ffmpeg', fps=50, bitrate=1800)
+anim = animation.FuncAnimation(fig, animate, frames=130, interval=50)
+anim.save('gold2.gif', dpi=80, writer='imagemagick') # Zum speichern der Animation als .gif
+anim.save('gold2.mp4', writer='ffmpeg', fps=50, bitrate=1800)
 plt.show()

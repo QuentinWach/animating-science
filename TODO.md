@@ -32,10 +32,18 @@ https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971
 + [X] Projekt: Euler-Verfahren Beispiel
 + [ ] Projekt: Brachistrom Problem
 + [X] Projekt: Goldener Winkel Animation Samenposition
++ [ ] Projekt: Metall im Plattenkondensator (Feld und Gegenfeld) - Messen der Permittivität abhängig von Material etc.
++ [ ] Projekt: Ausbreitung elektr. magn. Wellen in Schwelle Dielektrikum mit Maxwell --> Snellius'sches Brechungsgesetz
++ [ ] Projekt: Numverical Qudrature Rule, Numerical Integration: https://en.wikipedia.org/wiki/Numerical_integration
+https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/monte-carlo-methods-in-practice/monte-carlo-integration
++ [ ] Projekt: Sound im Oszilloskop - Konvertierung von Stereosound zu Oszilloskop-Animation
+
 
 -----
 Neues Hauptthema:
 + Fortgeschrittene Numerik
 + Numerik partieller Differentialgleichungen
 
-Für 2020: Implementierungen zur Optimierung einzelner Probleme mit `C` anstatt `Python`!
+Für 2020: 
++ Implementierungen zur Optimierung einzelner Probleme mit `C` anstatt `Python`!
++ Realistischere Visualisierungen mit `Python` in `Blender 2.8`.

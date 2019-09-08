@@ -37,6 +37,7 @@ https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971
 + [ ] Projekt: Numverical Qudrature Rule, Numerical Integration: https://en.wikipedia.org/wiki/Numerical_integration
 https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/monte-carlo-methods-in-practice/monte-carlo-integration
 + [ ] Projekt: Sound im Oszilloskop - Konvertierung von Stereosound zu Oszilloskop-Animation
++ [ ] Projekt: Kontinuirliche Ponteitalstufen anstatt Block. Lösung der Schrödingergleichung
 
 
 -----

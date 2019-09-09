@@ -5,7 +5,7 @@ Ziel: ***Abdeckung der grundlegenden Methoden auf eine breite Auswahl von Bereic
 + [X] Header auf Deutsch
 + [X] Grundlegende README Ausführung
 + [ ] Rerender und Cleanup der einzelnen Projekte
-	+ [-] Rerender Bahnkurve
+	+ [X] Rerender Bahnkurve
 	+ [X] Rerender Pendel
 	+ [X] E-Feld mit weißer Umrandung um Ladungen
 	+ [X] korrekte Farben in E-Feld
@@ -13,14 +13,16 @@ Ziel: ***Abdeckung der grundlegenden Methoden auf eine breite Auswahl von Bereic
 	+ [X] unpublish Kochkurve 
 	+ [ ] Game of Life: Änderung der Variablennamen und mehr Kommentare
 + [X] Koch Kurve mit Matplotlib und nicht Turtle
-+ [ ] Projekt: Raue fraktale Oberfläche (siehe Tirggs "Mathematical Tools for Physicsts")
 + [X] Projekt: Monte-Carlo Integration Kreisfläche
++ [X] Projekt: 3D-Bahnkurve
++ [X] Projekt: Einfache Splineinterpolation
++ [X] Projekt: Euler-Verfahren Beispiel
+https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971081089764103109971051084699111109/Python-SciPy-Interpolation.php
++ [X] Projekt: Goldener Winkel Animation Samenposition
++ [ ] Projekt: Raue fraktale Oberfläche (siehe Tirggs "Mathematical Tools for Physicsts")
 + [ ] Projekt: Vergleichsplot zu Zufallsverteilungen
 + [ ] Projekt: Random-Number-Generator
-+ [X] Projekt: 3D-Bahnkurve
 + [ ] Projekt: 3D-Vis eines Attraktors (Chaos)
-+ [X] Projekt: Einfache Splineinterpolation
-https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971081089764103109971051084699111109/Python-SciPy-Interpolation.php
 + [ ] Projekt: Bewegungsgerichtete Splineinterpolation
 + [ ] Projekt: 3D-Bahnsplineinterpolation eines kurzen Random-Walks (Trace Interpolation)
 + [ ] Projekt: Univariate Splineinterpolation
@@ -29,16 +31,15 @@ https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971
 + [ ] Projekt: Magnetpendel
 + [ ] Projekt: Julia-Menge
 + [ ] Projekt: 2D-Poisson-Gleichung mit Jacobi-Iteration
-+ [X] Projekt: Euler-Verfahren Beispiel
 + [ ] Projekt: Brachistrom Problem
-+ [X] Projekt: Goldener Winkel Animation Samenposition
 + [ ] Projekt: Metall im Plattenkondensator (Feld und Gegenfeld) - Messen der Permittivität abhängig von Material etc.
 + [ ] Projekt: Ausbreitung elektr. magn. Wellen in Schwelle Dielektrikum mit Maxwell --> Snellius'sches Brechungsgesetz
 + [ ] Projekt: Numverical Qudrature Rule, Numerical Integration: https://en.wikipedia.org/wiki/Numerical_integration
 https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/monte-carlo-methods-in-practice/monte-carlo-integration
 + [ ] Projekt: Sound im Oszilloskop - Konvertierung von Stereosound zu Oszilloskop-Animation
-+ [ ] Projekt: Kontinuirliche Ponteitalstufen anstatt Block. Lösung der Schrödingergleichung
-
++ [ ] Projekt: Kontinuirliche Potentialstufen anstatt Block. Lösung der Schrödingergleichung
++ [ ] Projekt: Gravitationssimlulation von hunderten Partikeln
++ [ ] Projekt: Stabile Periodische Gravsim (Analytisch?)
 
 -----
 Neues Hauptthema:

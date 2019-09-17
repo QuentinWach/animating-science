@@ -42,6 +42,7 @@ https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/
 + [ ] Projekt: Stabile Periodische Gravsim (Analytisch?)
 
 -----
+
 Neues Hauptthema:
 + Fortgeschrittene Numerik
 + Numerik partieller Differentialgleichungen

@@ -50,3 +50,10 @@ Neues Hauptthema:
 Für 2020: 
 + Implementierungen zur Optimierung einzelner Probleme mit `C` anstatt `Python`!
 + Realistischere Visualisierungen mit `Python` in `Blender 2.8`.
++ Physikprobleme / Challenges
+    + https://webhome.phy.duke.edu/~hsg/physics-challenges/challenges.html
+    + https://webhome.phy.duke.edu/~hsg/physics-challenges/other-references.html
++ Wie lässt sich dieses Wissen angewandt in der Forschung nutzen?: Wir suchen uns Paper raus und reproduzieren diese.
+
+** + Website mit ausführlichen Erklärungen und Animationen zur Computerphysik. Wie online e-Book **
+

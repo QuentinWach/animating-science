@@ -8,8 +8,6 @@ plt.style.use("grayscale")
 fig, ax = plt.subplots(figsize=(8,8),dpi=120)
 fig.patch.set_facecolor('white')
 fig.canvas.set_window_title('Diffusion')
-plt.xticks([-20,20])
-plt.yticks([-20,20])
 
 # draw circles with a lot of dots
 dots = 3000

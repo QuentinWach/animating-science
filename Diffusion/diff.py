@@ -1,4 +1,10 @@
 # Diffusion
+"""
+This isn't really 'diffusion' as much as simple randomization 
+because the particles in this animation can overlap each other!
+Sooo... considering particle interactions is left to the reader 
+as an exercise.
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation

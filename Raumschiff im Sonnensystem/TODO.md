@@ -47,3 +47,4 @@ Geschrieben in `Python3.5`. Die nötigen Module finden sich in `requirements.txt
 +   [ ] Tatsächliche Positionen und Bahnen der Planeten + exaktes Datum
 +   [ ] Betrachtung relativistischer Effekte
 +   [ ] Visualisierung des Gravitationsfeldes
++   [ ] KI gesteuerte Triebwerke, https://www.reddit.com/r/dataisbeautiful/comments/dbapxb/oc_visualizing_a_neural_network_controlling_an/?utm_medium=android_app&utm_source=share

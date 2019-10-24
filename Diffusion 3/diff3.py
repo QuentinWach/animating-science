@@ -89,7 +89,6 @@ fig.add_axes(ax)
 plt.xticks([])
 plt.yticks([])
 
-
 TIME = 400
 ax.imshow(image)
 plt.savefig("img_" + str(0) + '.png')

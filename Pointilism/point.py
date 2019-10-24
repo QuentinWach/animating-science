@@ -9,19 +9,19 @@ TODO:
 4) produce/print the artworks
 """
 #====================
-res = 15
+res = 10
 mk = 5
 #====================
 
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-from skimage.transform import rescale, resize, downscale_local_mean
 import matplotlib.animation as animation
 
 # load image (prepare for turning it bw) 
 image = np.asarray(mpimg.imread("Vorlage.jpg"))
 image = image[:, :, 0]
+
 
 # cut image so that it can be scaled down by the resolution res
 while image.shape[0]%res!=0:
@@ -93,4 +93,4 @@ points()
 #plt.imshow(new_image, cmap="gray")
 
 print("yeah!")
-plt.savefig("Ergebnis.png")
+plt.savefig("Ergebnis_3_1.png")

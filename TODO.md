@@ -43,6 +43,10 @@ https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/
 + [ ] Projekt: Stabile Periodische Gravsim (Analytisch?)
 + [ ] Projekt: 2D-Plot radialer Wellenfunktionen Orbitale (Radial Distribution)
 
+============
++ [ ] Projekt: Ehrenfest Paradoxon, Animation und Twitter Thread!!!
+============
+
 -----
 
 Neues Hauptthema:

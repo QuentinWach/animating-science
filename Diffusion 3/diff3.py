@@ -22,15 +22,10 @@ def diff(image):
         for y in range(ymax):
             p = np.random.choice(8) + 1
             # TODO: check if mixing up is even possible 
+            # TODO: assign each pixel gets a velocity vector and mix depending on it
             if p==1:
                 # check boundary condition (dont diffuse opposing sides)
                 if (x != 0) and (y != 0): 
-                    """                    
-                    # check if diff is even possible
-                    if image[x][y] == image[x-1][y-1]:
-                        print("diff not possible!")
-                        passed += 1
-                    """
                     try:
                         image_copy[x][y] = image[x-1][y-1]
                         image[x-1][y-1] = image[x][y]

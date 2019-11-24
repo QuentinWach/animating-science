@@ -45,6 +45,7 @@ https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/
 
 ============
 + [ ] Projekt: Ehrenfest Paradoxon, Animation und Twitter Thread!!!
++ [ ] Projekt: chaotic n-Pendulum (dangling string) finding eqm and using lagrage dichte + animation Twitter Thread!!!
 + [ ] PUBLISH A BLOGPOST ON MATPLOTLIB BLOG!
 ============
 

@@ -1,6 +1,6 @@
-# Magnetfeld eines Kreisplattenkondensators (Veranschaulichung)
+# Magnetfeld eines Kreisplattenkondensators
 
 <div align="center">
-<img src="./Eq.svg"></img>
 <img src="./Abb_1.png"></img>
+<img src="./Eq.svg"></img>
 </div>

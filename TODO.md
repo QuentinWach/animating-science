@@ -42,6 +42,8 @@ https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/
 + [ ] Projekt: Gravitationssimlulation von hunderten Partikeln
 + [ ] Projekt: Stabile Periodische Gravsim (Analytisch?)
 + [ ] Projekt: 2D-Plot radialer Wellenfunktionen Orbitale (Radial Distribution) 
++ [ ] Projekt: Schwingende Seite, 1D-Wellenfunktion!
++ [ ] Projekt: Taylor-Entwicklung einer komplizierten Funktion mit Sympy
 
 ============
 + [ ] Projekt: Ehrenfest Paradoxon, Animation und Twitter Thread!!!

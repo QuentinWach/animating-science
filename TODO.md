@@ -49,6 +49,7 @@ https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/
 + [ ] Projekt: Ehrenfest Paradoxon, Animation und Twitter Thread!!!
 + [ ] Projekt: chaotic n-Pendulum (dangling string) finding eqm and using lagrage dichte + animation Twitter Thread!!!
 + [ ] PUBLISH A BLOGPOST ON MATPLOTLIB BLOG!
++ [ ] WEBSITE on GitHub
 ============
 
 -----
@@ -66,4 +67,3 @@ Für 2020:
 + Wie lässt sich dieses Wissen angewandt in der Forschung nutzen?: Wir suchen uns Paper raus und reproduzieren diese.
 
 ** + Website mit ausführlichen Erklärungen und Animationen zur Computerphysik. Wie online e-Book **
-

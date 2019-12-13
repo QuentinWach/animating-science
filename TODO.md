@@ -20,6 +20,7 @@ Ziel: ***Abdeckung der grundlegenden Methoden auf eine breite Auswahl von Bereic
 https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971081089764103109971051084699111109/Python-SciPy-Interpolation.php
 + [X] Projekt: Goldener Winkel Animation Samenposition
 + [X] Projekt: Diffusion von Pixeln
++ [X] Projekt: Taylor-Entwicklung einer komplizierten Funktion mit Sympy
 + [ ] Projekt: Raue fraktale Oberfläche (siehe Tirggs "Mathematical Tools for Physicsts")
 + [ ] Projekt: Vergleichsplot zu Zufallsverteilungen
 + [ ] Projekt: Random-Number-Generator
@@ -28,7 +29,11 @@ https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971
 + [ ] Projekt: 3D-Bahnsplineinterpolation eines kurzen Random-Walks (Trace Interpolation)
 + [ ] Projekt: Univariate Splineinterpolation
 + [ ] Projekt: Gridsplitinterpolation
+==================================================================================
++ [X] Projekt: 2D-Plot radialer Wellenfunktionen Orbitale (Radial Distribution) 
 + [ ] Projekt: 3D-Plot Atomorbiale
++ [ ] Projekt: Wasserstoffatom Plakat
+==================================================================================
 + [ ] Projekt: Magnetpendel
 + [ ] Projekt: Julia-Menge
 + [ ] Projekt: 2D-Poisson-Gleichung mit Jacobi-Iteration
@@ -41,9 +46,10 @@ https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/
 + [ ] Projekt: Kontinuirliche Potentialstufen anstatt Block. Lösung der Schrödingergleichung
 + [ ] Projekt: Gravitationssimlulation von hunderten Partikeln
 + [ ] Projekt: Stabile Periodische Gravsim (Analytisch?)
-+ [ ] Projekt: 2D-Plot radialer Wellenfunktionen Orbitale (Radial Distribution) 
 + [ ] Projekt: Schwingende Seite, 1D-Wellenfunktion!
-+ [ ] Projekt: Taylor-Entwicklung einer komplizierten Funktion mit Sympy
+
++ [ ] Projekt: Quantenmechanik einer Solarzelle
++ [ ] Projekt: Numerische Lösungsmethoden der Schrödingergleichung
 
 ============
 + [ ] Projekt: Ehrenfest Paradoxon, Animation und Twitter Thread!!!

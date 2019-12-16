@@ -47,7 +47,7 @@ https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/
 + [ ] Projekt: Gravitationssimlulation von hunderten Partikeln
 + [ ] Projekt: Stabile Periodische Gravsim (Analytisch?)
 + [ ] Projekt: Schwingende Seite, 1D-Wellenfunktion!
-
++ [ ] Projekt: Galaxien mit Barnes-Hut Algorithmus 
 + [ ] Projekt: Quantenmechanik einer Solarzelle
 + [ ] Projekt: Numerische Lösungsmethoden der Schrödingergleichung
 

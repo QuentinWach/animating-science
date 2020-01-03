@@ -48,9 +48,19 @@ https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/
 + [ ] Projekt: Stabile Periodische Gravsim (Analytisch?)
 + [ ] Projekt: Schwingende Seite, 1D-Wellenfunktion!
 + [ ] Projekt: Galaxien mit Barnes-Hut Algorithmus 
+    + https://kpully.github.io/Quadtrees/
 + [ ] Projekt: Quantenmechanik einer Solarzelle
 + [ ] Projekt: Numerische Lösungsmethoden der Schrödingergleichung
-
++ [ ] Projekt: Planetenbahnfiguren mit ERDE als Zentrum: https://johncarlosbaez.wordpress.com/2014/01/04/the-pentagram-of-venus/
++ [ ] Projekt: Primefaktoren als rekursive Kreise 
+    + https://twitter.com/FogleBird/status/1204968281351868416/photo/1
+    + https://twitter.com/FogleBird/status/1204498031732776961/photo/1
+    + https://twitter.com/FogleBird/status/1204253487703478274
++ [ ] Projekt: Schwabl, Quantenmechanik S.134, Bestimmen Sie die Quantenzahl n_0 , die der Bewegung der Erde um die
+Sonne entspricht.
++ [ ] Projekt: 3-Body Neural Net Solver Comparison to normal solvers --> Extension to n-Body
+    + https://www.technologyreview.com/s/614597/a-neural-net-solves-the-three-body-problem-100-million-times-faster/
+    + https://arxiv.org/pdf/1910.07291.pdf
 ============
 + [ ] Projekt: Ehrenfest Paradoxon, Animation und Twitter Thread!!!
 + [ ] Projekt: chaotic n-Pendulum (dangling string) finding eqm and using lagrage dichte + animation Twitter Thread!!!

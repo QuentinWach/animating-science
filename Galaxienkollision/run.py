@@ -12,7 +12,7 @@ import math as m
 import time
 
 # TODO: LET BODIES MERGE WHEN THE YMOVE CLOSE TO EACH OTHER SO THAT
-# THEY DONT ALWAYS FLY SO FAST AWAY THAT IT SEEMS THEY POPPED OUT OF EXISTENCE.
+#       THEY DONT ALWAYS FLY SO FAST AWAY THAT IT SEEMS THEY POPPED OUT OF EXISTENCE.
 
 class BlackHole:
     """
@@ -34,10 +34,12 @@ class BlackHole:
 
 BHs = []
 def randomInit(NUMBER):
+    BHs = []
     for n in range(NUMBER):
         BHs.append(BlackHole(1,np.random.rand(), np.random.rand(),0,0,0.2))
 
-def PhiInit(NUMBER):
+def phiInit(NUMBER):
+    BHs = []
     phi = m.radians(137.508)
     for n in range(NUMBER):
         x = m.sqrt(n)*4*np.pi/NUMBER * np.cos(n * phi)
@@ -76,7 +78,6 @@ def sim(TIME,STEPSIZE):
             print("CALCULATING TIMESTEP... " + str(t) + " | " + str(TIME))
             print("ESTIMATED REMAINING TIME: " + str(int(abs(start - stop)*(TIME-t))) + "s")
 
-
 def statplot(TIME):
     for t in range(TIME):
         plt.style.use("default")
@@ -104,12 +105,11 @@ def statplot(TIME):
 TIME = 60             # 60
 STEPSIZE = 0.00001    # 0.000005
 
-# simulate the masses
+# initialize system
 #randomInit(1500)     # 1500
-PhiInit(300)
-
+phiInit(300)
+# simulate the masses
 sim(TIME,STEPSIZE)
 # plot all trajectories
 statplot(TIME)
-
-
+####################################################

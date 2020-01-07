@@ -67,6 +67,18 @@ Sonne entspricht.
 + [ ] PUBLISH A BLOGPOST ON MATPLOTLIB BLOG!
 + [ ] WEBSITE on GitHub
 ============
++ [ ] Projekt: QUICK CHALK ART (Grafitty) --> Ende des Semesters
+    1) Dissolve chalk fill it into a spray bottle and see, if you can spray the chalk on a black board.
+    2) Create stencils to create amazing chalk board art all around the university. (Or potentially any place!)
+    3) Use this as guerilla marketing!!!
+
+    Erstmal ohne Farbe. Problematisch zu mischen und zu entfernen!
+    + https://www.wineandglue.com/sidewalk-chalk-spray/
+    + http://www.madehow.com/Volume-1/Chalk.html --> calcium sulfate instead of calciuj carbonate + clay and oils and pigments
+    + https://www.instagram.com/carolinarodesign/
+    + https://www.amazon.com/Abrivo-Sports-WSprayChalk-Chalk-All/dp/B00H3LEI4I/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=2012mayandisa-20&linkId=575d7270d93a802d2ce1298f826bb9cf
+    + https://www.amazon.com/Testors-306006-Spray-Chalk-Color/dp/B06XH3881X/ref=as_li_ss_tl?ie=UTF8&qid=1493691459&sr=8-1&keywords=spray%2Bchalk%2Bset&linkCode=sl1&tag=2012mayandisa-20&linkId=b2ff47e0e8b2f69279adedee37e5e8ce&th=1
+    --> CHALK STENCIL (STEMPELKISSEN UND STEMPEL FÜR KREIDE)
 
 -----
 

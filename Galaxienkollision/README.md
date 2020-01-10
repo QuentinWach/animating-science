@@ -14,6 +14,6 @@ Die großen Probleme hier sind klar:
 2. Wenn Körper sich zu nahe kommen, werden sie zu stark beschleunigt!
 
 ### TODO:
++ [X] Gravity-Smoothing: Modifikation der Newt.Grav.-Formel
 + [ ] Limitierung der Schrittgröße
-+ [ ] Gravity-Smoothing: Modifikation der Newt.Grav.-Formel
 + [ ] Barnes-Hut

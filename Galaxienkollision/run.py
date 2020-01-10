@@ -55,7 +55,9 @@ def randomInit(NUMBER):
     for n in range(NUMBER):
         x = np.random.rand() * 2 -1
         y = np.random.rand() * 2 -1
-        BHs.append(BlackHole(1,x, y,0,0,0.2))
+        xv = (np.random.rand() * 2 -1) * 0
+        yv = (np.random.rand() * 2 -1) * 0
+        BHs.append(BlackHole(1,x,y,xv,yv,0.2))
 
 def phiInit(NUMBER):
     phi = m.radians(137.508)
@@ -109,13 +111,13 @@ def sim(TIME,STEPSIZE):
                         # calculate position vectors
                         x_dist = BH1.XPOS[t] - BH2.XPOS[t]
                         y_dist = BH1.YPOS[t] - BH2.YPOS[t]
-                        r = np.sqrt(x_dist**2 + y_dist**2)
+                        r = np.sqrt(GRAV_SMOOTHING**2 + x_dist**2 + y_dist**2)
                         # check wether the bodys are so close to another they merge
                         #if r <= BH2.RADIUS:
                         if not r <= 0.03: 
                             # compute grav step
-                            x_g_step = - BH1.MASSE * x_dist / r**3 
-                            y_g_step = - BH1.MASSE * y_dist / r**3 
+                            x_g_step = - BH2.MASSE * x_dist / r**3 
+                            y_g_step = - BH2.MASSE * y_dist / r**3 
                             # compute total step
                             x_step +=  x_g_step
                             y_step +=  y_g_step
@@ -123,8 +125,8 @@ def sim(TIME,STEPSIZE):
                 BH1.XPOS.append(BH1.XPOS[t]+ STEPSIZE*x_step)
                 BH1.YPOS.append(BH1.YPOS[t]+ STEPSIZE*y_step)
                 # update velocity
-                BH1.XVEL = x_step + BH1.XVEL
-                BH1.YVEL = y_step + BH1.YVEL
+                BH1.XVEL = x_step
+                BH1.YVEL = y_step
 
             stop = time.time()
             print("=======================================================================")
@@ -140,8 +142,8 @@ def statplot(TIME):
         ## plotting
         c = 0
         for B in BHs:
-            if c % 10 == 0:
-                plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.2, color="c")
+            #if c % 10 == 0:
+            #    plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.2, color="c")
             plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.2)
             c += 1
 
@@ -161,16 +163,17 @@ def statplot(TIME):
         plt.close()
 
 ####################################################
-TIME = 60            # 60
-STEPSIZE = 0.00001 #* 100   # 0.000005
+TIME = 100            # 60
+STEPSIZE = 0.00001 * 4   # 0.000005
+GRAV_SMOOTHING = 0.05
 
 # initialize system
-#randomInit(1500)     # 1500
+randomInit(300)     # 1500
 #phiInit(300)
 # simulate the masses
-#sim(TIME,STEPSIZE)
+sim(TIME,STEPSIZE)
 # plot all trajectories
-#statplot(TIME)
+statplot(TIME)
 ####################################################
 
-GalaxieInit(2,2)
+#GalaxieInit(2,2)

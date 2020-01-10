@@ -16,7 +16,25 @@ import time
 
 class BlackHole:
     """
-    # Schwarzes Loch
+    # Schwarzes Loch. Interargiert nur mit schwarzen Löchern
+    Es besitzt eine 
+        + Masse
+        + Position
+        + Geschwindigkeitsvektor
+    """
+    # init den Körper an einem bestimmeten Punkt,
+    # mit gegebener Masse und Geschwindigkeit
+    def __init__(self,mass, xpos, ypos, xvel, yvel, radius):
+        self.MASSE = mass
+        self.XPOS = [xpos]
+        self.YPOS = [ypos]
+        self.XVEL = xvel
+        self.YVEL = yvel
+        self.RADIUS = radius
+
+class Star:
+    """
+    # Stern. Interagiert nur mit Sternen
     Es besitzt eine 
         + Masse
         + Position
@@ -34,17 +52,51 @@ class BlackHole:
 
 BHs = []
 def randomInit(NUMBER):
-    BHs = []
     for n in range(NUMBER):
-        BHs.append(BlackHole(1,np.random.rand(), np.random.rand(),0,0,0.2))
+        x = np.random.rand() * 2 -1
+        y = np.random.rand() * 2 -1
+        BHs.append(BlackHole(1,x, y,0,0,0.2))
 
 def phiInit(NUMBER):
-    BHs = []
     phi = m.radians(137.508)
     for n in range(NUMBER):
         x = m.sqrt(n)*4*np.pi/NUMBER * np.cos(n * phi)
         y = m.sqrt(n)*4*np.pi/NUMBER * np.sin(n * phi)
         BHs.append(BlackHole(1,x,y,0,0,0.2))
+
+def GalaxieInit(BH_NUMBER, ST_NUMBER):
+    # initilaize a number of black holes each with a certain number of 
+    # rotating stars around them
+    n=1000
+    a=0.5
+    b=0.6
+    th=np.random.randn(n)
+    x=a*np.exp(b*th)*np.cos(th)
+    y=a*np.exp(b*th)*np.sin(th)
+    x1=a*np.exp(b*(th))*np.cos(th+np.pi)
+    y1=a*np.exp(b*(th))*np.sin(th+np.pi)
+
+    sx=np.random.normal(0, a*0.25, n)
+    sy=np.random.normal(0, a*0.25, n)
+
+    plt.style.use("default")
+    fig, ax = plt.subplots(1, dpi=300)
+
+    plt.plot(x+sy,y+sx,".", markersize=0.3, color="white")
+    plt.plot(x1+sx, y1+sy,".", markersize=0.3, color="white")
+
+    plt.xticks([])
+    plt.yticks([])
+    #plt.axis([-1.,1.,-1.,1.])
+    ax.set_facecolor('black')
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+
+    plt.savefig("./AbbG" + ".png", bbox_inches="tight", facecolor='black')
+    print("SAVED IMG")
+    plt.close()
 
 def sim(TIME,STEPSIZE):
     for t in range(TIME):
@@ -60,7 +112,7 @@ def sim(TIME,STEPSIZE):
                         r = np.sqrt(x_dist**2 + y_dist**2)
                         # check wether the bodys are so close to another they merge
                         #if r <= BH2.RADIUS:
-                        if not r <= 0.05: 
+                        if not r <= 0.03: 
                             # compute grav step
                             x_g_step = - BH1.MASSE * x_dist / r**3 
                             y_g_step = - BH1.MASSE * y_dist / r**3 
@@ -73,6 +125,7 @@ def sim(TIME,STEPSIZE):
                 # update velocity
                 BH1.XVEL = x_step + BH1.XVEL
                 BH1.YVEL = y_step + BH1.YVEL
+
             stop = time.time()
             print("=======================================================================")
             print("CALCULATING TIMESTEP... " + str(t) + " | " + str(TIME))
@@ -81,35 +134,43 @@ def sim(TIME,STEPSIZE):
 def statplot(TIME):
     for t in range(TIME):
         plt.style.use("default")
-        fig = plt.figure(figsize=(3,3), dpi=150)
+        #fig = plt.figure(figsize=(3,3), dpi=150)
+        fig, ax = plt.subplots(1, figsize=(3,3), dpi=300)
 
-        ax = plt.gca()
-        fig.add_axes(ax)
-        ax.set_autoscale_on(False)
-        ax.set_axis_off()
-        ax.grid()
+        ## plotting
+        c = 0
+        for B in BHs:
+            if c % 10 == 0:
+                plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.2, color="c")
+            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.2)
+            c += 1
 
         plt.xticks([])
         plt.yticks([])
-        plt.axis([-1,1,-1,1])
-        # plotting
-        for B in BHs:
-            #plt.plot(B.XPOS[:t],B.YPOS[:t], "--", linewidth=0.125, color="grey")
-            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="black", markersize=0.3)
+        plt.axis([-1.,1.,-1.,1.])
+        ax.set_facecolor('black')
+        #ax.grid(False)
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+        ax.spines['bottom'].set_visible(False)
+        ax.spines['left'].set_visible(False)
 
-        plt.savefig("./Abb_" + str(t) + ".png", bbox_inches="tight")
+
+        plt.savefig("./Abb_" + str(t) + ".png", bbox_inches="tight", facecolor='black')
         print("SAVED IMG " + str(t))
         plt.close()
 
 ####################################################
-TIME = 60             # 60
-STEPSIZE = 0.00001    # 0.000005
+TIME = 60            # 60
+STEPSIZE = 0.00001 #* 100   # 0.000005
 
 # initialize system
 #randomInit(1500)     # 1500
-phiInit(300)
+#phiInit(300)
 # simulate the masses
-sim(TIME,STEPSIZE)
+#sim(TIME,STEPSIZE)
 # plot all trajectories
-statplot(TIME)
+#statplot(TIME)
 ####################################################
+
+GalaxieInit(2,2)

@@ -10,6 +10,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math as m
 import time
+import movie
 
 # TODO: LET BODIES MERGE WHEN THE YMOVE CLOSE TO EACH OTHER SO THAT
 #       THEY DONT ALWAYS FLY SO FAST AWAY THAT IT SEEMS THEY POPPED OUT OF EXISTENCE.
@@ -61,10 +62,11 @@ def randomInit(NUMBER):
 
 def phiInit(NUMBER):
     phi = m.radians(137.508)
-    for n in range(NUMBER):
-        x = m.sqrt(n)*4*np.pi/NUMBER * np.cos(n * phi)
-        y = m.sqrt(n)*4*np.pi/NUMBER * np.sin(n * phi)
-        BHs.append(BlackHole(1,x,y,0,0,0.2))
+    for n in range(NUMBER*2):
+        if np.random.rand() >= 0.5:
+            x = m.sqrt(n)*4*np.pi/NUMBER * np.cos(n * phi)
+            y = m.sqrt(n)*4*np.pi/NUMBER * np.sin(n * phi)
+            BHs.append(BlackHole(1,x,y,0,0,0.2))
 
 def GalaxieInit(BH_NUMBER, ST_NUMBER):
     # initilaize a number of black holes each with a certain number of 
@@ -103,24 +105,26 @@ def GalaxieInit(BH_NUMBER, ST_NUMBER):
 def sim(TIME,STEPSIZE):
     for t in range(TIME):
             start = time.time()
+            calc_num = len(BHs) * (len(BHs) - 1)
+            actual_calc_num = 0
             for BH1 in BHs:
                 x_step = 0
-                y_step = 0 
+                y_step = 0
                 for BH2 in BHs: 
                     if BH1 != BH2:
                         # calculate position vectors
                         x_dist = BH1.XPOS[t] - BH2.XPOS[t]
                         y_dist = BH1.YPOS[t] - BH2.YPOS[t]
                         r = np.sqrt(GRAV_SMOOTHING**2 + x_dist**2 + y_dist**2)
-                        # check wether the bodys are so close to another they merge
-                        #if r <= BH2.RADIUS:
-                        if not r <= 0.03: 
+                        if r <= 0.25:
                             # compute grav step
                             x_g_step = - BH2.MASSE * x_dist / r**3 
                             y_g_step = - BH2.MASSE * y_dist / r**3 
                             # compute total step
                             x_step +=  x_g_step
                             y_step +=  y_g_step
+
+                            actual_calc_num += 1
                 # append the new position
                 BH1.XPOS.append(BH1.XPOS[t]+ STEPSIZE*x_step)
                 BH1.YPOS.append(BH1.YPOS[t]+ STEPSIZE*y_step)
@@ -132,6 +136,20 @@ def sim(TIME,STEPSIZE):
             print("=======================================================================")
             print("CALCULATING TIMESTEP... " + str(t) + " | " + str(TIME))
             print("ESTIMATED REMAINING TIME: " + str(int(abs(start - stop)*(TIME-t))) + "s")
+            print(calc_num)
+            print(actual_calc_num)
+
+def speedColor(POScurrent, POSbefore):
+    """
+    Returns a color on a spectrum given the velocity of the particle.
+    """
+    pass
+
+def densityColor():
+    """
+    Returns a color for a given particle estimated by density of surrounding particles.
+    """
+    pass
 
 def statplot(TIME):
     for t in range(TIME):
@@ -142,8 +160,8 @@ def statplot(TIME):
         ## plotting
         c = 0
         for B in BHs:
-            #if c % 10 == 0:
-            #    plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.2, color="c")
+            if c % 10 == 0:
+                plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.2, color="c")
             plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.2)
             c += 1
 
@@ -163,9 +181,10 @@ def statplot(TIME):
         plt.close()
 
 ####################################################
+np.random.seed(42)
 TIME = 100            # 60
 STEPSIZE = 0.00001 * 4   # 0.000005
-GRAV_SMOOTHING = 0.05
+GRAV_SMOOTHING = 0.1
 
 # initialize system
 randomInit(300)     # 1500
@@ -174,6 +193,6 @@ randomInit(300)     # 1500
 sim(TIME,STEPSIZE)
 # plot all trajectories
 statplot(TIME)
+# create movie file
+movie.createVideo("norand_2")
 ####################################################
-
-#GalaxieInit(2,2)

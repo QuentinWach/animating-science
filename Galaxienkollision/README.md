@@ -5,8 +5,8 @@ Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation
 <div align="center">
 <img src="./animation.gif" align="left"></img>
 <img src="./animation2.gif" align="right"></img>
-<img src="./animation3.gif"align="left"></img>
-<img src="./animation4.gif" align="right"></img>
+<img src="./animation3.gif"></img>
+<img src="./animation4.gif"></img>
 </div>
 
 ---

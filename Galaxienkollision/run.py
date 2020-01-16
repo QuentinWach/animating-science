@@ -56,8 +56,8 @@ def randomInit(NUMBER):
     for n in range(NUMBER):
         x = np.random.rand() * 2 -1
         y = np.random.rand() * 2 -1
-        xv = (np.random.rand() * 2 -1) * 1
-        yv = (np.random.rand() * 2 -1) * 1
+        xv = (np.random.rand() * 2 -1) * 0 #10
+        yv = (np.random.rand() * 2 -1) * 0 #10
         BHs.append(BlackHole(1,x,y,xv,yv,0.2))
 
 def phiInit(NUMBER):
@@ -91,7 +91,6 @@ def GalaxieInit(BH_NUMBER, ST_NUMBER):
 
     plt.xticks([])
     plt.yticks([])
-    #plt.axis([-1.,1.,-1.,1.])
     ax.set_facecolor('black')
     ax.spines['top'].set_visible(False)
     ax.spines['right'].set_visible(False)
@@ -158,12 +157,13 @@ def statplot(TIME):
         for B in BHs:
             if c % 10 == 0:
                 plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.15, color="c")
-            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.5)
+            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.33)
             c += 1
 
         plt.xticks([])
         plt.yticks([])
-        plt.axis([-1.,1.,-1.,1.])
+        #plt.axis([-1.,1.,-1.,1.])
+        plt.axis([-2.,2.,-2.,2.])
         ax.set_facecolor('black')
         #ax.grid(False)
         ax.spines['top'].set_visible(False)
@@ -177,18 +177,18 @@ def statplot(TIME):
         plt.close()
 
 ####################################################
-#np.random.seed(42)
-TIME = 100            # 60
-STEPSIZE = 0.0001 * 4   # 0.000005
+np.random.seed(42)
+TIME = 30           # 60
+STEPSIZE = 0.000001 * 4   # 0.000005
 GRAV_SMOOTHING = 0.1
 
 # initialize system
-randomInit(100)     # 1500
+randomInit(300)     # 1500
 #phiInit(300)
 # simulate the masses
 sim(TIME,STEPSIZE)
 # plot all trajectories
 statplot(TIME)
 # create movie file
-movie.createVideo("test")
+movie.createVideo("test_vel_off10")
 ####################################################

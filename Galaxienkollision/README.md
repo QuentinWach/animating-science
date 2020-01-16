@@ -5,7 +5,8 @@ Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation
 <div align="center">
 <img src="./animation.gif" align="left"></img>
 <img src="./animation2.gif" align="right"></img>
-<img src="./animation3.gif"></img>
+<img src="./animation3.gif"align="left"></img>
+<img src="./animation4.gif" align="right"></img>
 </div>
 
 ---
@@ -25,5 +26,5 @@ Die großen Probleme hier sind klar:
 
 ---
 #### Emperical Computational Methods
-+ [ ] Empirical simulation methods. Predicting the future from experience.
-    + [ ] Create a neural network to learn to predict any gravity sim with given parameters and positions
+Predicting the future from experience.
++ [ ] Create a neural network to learn to predict any gravity sim with given parameters and positions

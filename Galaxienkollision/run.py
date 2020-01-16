@@ -56,8 +56,8 @@ def randomInit(NUMBER):
     for n in range(NUMBER):
         x = np.random.rand() * 2 -1
         y = np.random.rand() * 2 -1
-        xv = (np.random.rand() * 2 -1) * 0
-        yv = (np.random.rand() * 2 -1) * 0
+        xv = (np.random.rand() * 2 -1) * 1
+        yv = (np.random.rand() * 2 -1) * 1
         BHs.append(BlackHole(1,x,y,xv,yv,0.2))
 
 def phiInit(NUMBER):
@@ -105,8 +105,6 @@ def GalaxieInit(BH_NUMBER, ST_NUMBER):
 def sim(TIME,STEPSIZE):
     for t in range(TIME):
             start = time.time()
-            calc_num = len(BHs) * (len(BHs) - 1)
-            actual_calc_num = 0
             for BH1 in BHs:
                 x_step = 0
                 y_step = 0
@@ -116,16 +114,16 @@ def sim(TIME,STEPSIZE):
                         x_dist = BH1.XPOS[t] - BH2.XPOS[t]
                         y_dist = BH1.YPOS[t] - BH2.YPOS[t]
                         r = np.sqrt(GRAV_SMOOTHING**2 + x_dist**2 + y_dist**2)
-                        if r <= 0.25:
-                            # compute grav step
-                            x_g_step = - BH2.MASSE * x_dist / r**3 
-                            y_g_step = - BH2.MASSE * y_dist / r**3 
-                            # compute total step
-                            x_step +=  x_g_step
-                            y_step +=  y_g_step
 
-                            actual_calc_num += 1
-                # append the new position
+                        # compute grav step
+                        x_g_step = - BH2.MASSE * x_dist / r**3 
+                        y_g_step = - BH2.MASSE * y_dist / r**3 
+                        # compute total step
+                        x_step +=  x_g_step 
+                        y_step +=  y_g_step 
+                x_step += BH1.XVEL
+                y_step += BH1.YVEL
+                # append the new position with added own velocity
                 BH1.XPOS.append(BH1.XPOS[t]+ STEPSIZE*x_step)
                 BH1.YPOS.append(BH1.YPOS[t]+ STEPSIZE*y_step)
                 # update velocity
@@ -136,8 +134,6 @@ def sim(TIME,STEPSIZE):
             print("=======================================================================")
             print("CALCULATING TIMESTEP... " + str(t) + " | " + str(TIME))
             print("ESTIMATED REMAINING TIME: " + str(int(abs(start - stop)*(TIME-t))) + "s")
-            print(calc_num)
-            print(actual_calc_num)
 
 def speedColor(POScurrent, POSbefore):
     """
@@ -161,8 +157,8 @@ def statplot(TIME):
         c = 0
         for B in BHs:
             if c % 10 == 0:
-                plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.2, color="c")
-            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.2)
+                plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.15, color="c")
+            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.5)
             c += 1
 
         plt.xticks([])
@@ -176,23 +172,23 @@ def statplot(TIME):
         ax.spines['left'].set_visible(False)
 
 
-        plt.savefig("./Abb_" + str(t) + ".png", bbox_inches="tight", facecolor='black')
+        plt.savefig("./images/Abb_" + str(t) + ".png", bbox_inches="tight", facecolor='black')
         print("SAVED IMG " + str(t))
         plt.close()
 
 ####################################################
-np.random.seed(42)
+#np.random.seed(42)
 TIME = 100            # 60
-STEPSIZE = 0.00001 * 4   # 0.000005
+STEPSIZE = 0.0001 * 4   # 0.000005
 GRAV_SMOOTHING = 0.1
 
 # initialize system
-randomInit(300)     # 1500
+randomInit(100)     # 1500
 #phiInit(300)
 # simulate the masses
 sim(TIME,STEPSIZE)
 # plot all trajectories
 statplot(TIME)
 # create movie file
-movie.createVideo("norand_2")
+movie.createVideo("test")
 ####################################################

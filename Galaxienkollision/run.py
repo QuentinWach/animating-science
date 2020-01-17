@@ -1,19 +1,9 @@
 # GALAXIENKOLLISION, 13. Dezember 2019
-"""
-[X] 2D - Brute Force mit einfacher linearer Näherung der Newtonschen Grav pro Zeitschritt
-[ ] 2D - Barnes-Hut Algorithmus
-[ ] 3D 
-Es wird angenommen, dass die Sterne im Vergleich zum Massezentrum des Clusters
-eine derart kleine Masse haben, dass sie keinen gravitativen Einfluss ausüben.
-"""
 import matplotlib.pyplot as plt
 import numpy as np
 import math as m
 import time
 import movie
-
-# TODO: LET BODIES MERGE WHEN THE YMOVE CLOSE TO EACH OTHER SO THAT
-#       THEY DONT ALWAYS FLY SO FAST AWAY THAT IT SEEMS THEY POPPED OUT OF EXISTENCE.
 
 class BlackHole:
     """
@@ -51,6 +41,7 @@ class Star:
         self.YVEL = yvel
         self.RADIUS = radius
 
+STs = []
 BHs = []
 def randomInit(NUMBER):
     for n in range(NUMBER):

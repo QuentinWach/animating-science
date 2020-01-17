@@ -6,20 +6,14 @@ Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation
 
 
 <div align="center">
-<img src="./animation9.gif"></img>
+<img src="./abb/animation9.gif"></img>
 </div>
 
 <div align="center">
-<img src="./animation.gif" align="left"></img>
-<img src="./animation2.gif" align="right"></img>
-</div>
-
-<div align="center">
-<img src="./animation5.gif"></img>
-<img src="./animation6.gif"></img>
-<img src="./animation8.gif"></img>
-<img src="./spiral_5.gif"></img>
+<img src="./abb/animation.gif" align="left"></img>
+<img src="./abb/animation2.gif" align="right"></img>
 </div>
 
 
+---
 Hinweis: Hierbei wurden zeitweise unterschiedliche Parameter, Teilchen und Algorithmen getestet.

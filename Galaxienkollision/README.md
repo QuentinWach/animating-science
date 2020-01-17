@@ -18,7 +18,6 @@ Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation
 <img src="./animation5.gif"></img>
 <img src="./animation6.gif"></img>
 <img src="./animation8.gif"></img>
-<img src="./spiral_4.gif"></img>
 <img src="./spiral_5.gif"></img>
 </div>
 

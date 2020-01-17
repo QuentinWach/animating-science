@@ -14,6 +14,4 @@ Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation
 <img src="./abb/animation2.gif" align="right"></img>
 </div>
 
-
----
-Hinweis: Hierbei wurden zeitweise unterschiedliche Parameter, Teilchen und Algorithmen getestet.
+[Hinweis: Hierbei wurden zeitweise unterschiedliche Parameter, Teilchen und Algorithmen getestet.]

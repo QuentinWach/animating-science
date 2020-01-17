@@ -66,9 +66,12 @@ def phiInit(NUMBER):
     weight = (NUMBER / 300)**2
     for n in range(NUMBER*2):
         if np.random.rand() >= 0.5:
-            x = m.sqrt(n)*4*np.pi/NUMBER * np.cos(n * phi)
-            y = m.sqrt(n)*4*np.pi/NUMBER * np.sin(n * phi)
-            BHs.append(BlackHole(weight,x,y,0,0,0.2))
+            x = m.sqrt(n)*11*np.pi/NUMBER * np.cos(n * phi)
+            y = m.sqrt(n)*11*np.pi/NUMBER * np.sin(n * phi)
+            r = m.sqrt(x**2 + y**2)
+            vx = x/(r+0.1) * 0
+            vy = y/(r+0.1) * 0
+            BHs.append(BlackHole(weight,x,y,vx,vy,0.2))
 
 def GalaxieInit(NUMBER):
     # initilaize a number of black holes each with a certain number of 
@@ -94,24 +97,6 @@ def GalaxieInit(NUMBER):
         # Schaffe die schweren Körper
         BHs.append(BlackHole(weight,x[e]+sy[e],y[e]+sx[e],0,0,0.2))
         BHs.append(BlackHole(weight,x1[e]+sx[e],y1[e]+sy[e],0,0,0.2))
-    """
-    plt.style.use("default")
-    fig, ax = plt.subplots(1, dpi=300)
-    plt.plot(x+sy,y+sx,".", markersize=0.3, color="white")
-    plt.plot(x1+sx, y1+sy,".", markersize=0.3, color="white")
-
-    plt.xticks([])
-    plt.yticks([])
-    ax.set_facecolor('black')
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    ax.spines['bottom'].set_visible(False)
-    ax.spines['left'].set_visible(False)
-
-    plt.savefig("./AbbG" + ".png", bbox_inches="tight", facecolor='black')
-    print("SAVED IMG")
-    plt.close()
-    """
 
 def simOpen(TIME,STEPSIZE):
     for t in range(TIME):
@@ -189,19 +174,19 @@ def statplot(TIME):
 
 ####################################################
 np.random.seed(42)
-PARTICLES = 300
-TIME = 300          # 60
+PARTICLES = 1500
+TIME = 25          # 60
 STEPSIZE = 0.000001 * 1200 / PARTICLES   # 4
 GRAV_SMOOTHING = 0.1
 
 # initialize system
 #randomInit(PARTICLES)     # 1500
-#phiInit(PARTICLES)
-GalaxieInit(PARTICLES)
+phiInit(PARTICLES)
+#GalaxieInit(PARTICLES)
 # simulate the masses
 simOpen(TIME,STEPSIZE)
 # plot all trajectories
 statplot(TIME)
 # create movie file
-movie.createVideo("spiral_novel2")
+movie.createVideo("phi2")
 ####################################################

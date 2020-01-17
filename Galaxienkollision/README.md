@@ -8,6 +8,7 @@ Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation
 <img src="./animation5.gif"></img>
 <img src="./animation6.gif"></img>
 <img src="./animation8.gif"></img>
+<img src="./animation9.gif"></img>
 </div>
 
 Hinweis: Hierbei wurden zeitweise unterschiedliche Parameter, Teilchen und Algorithmen getestet.

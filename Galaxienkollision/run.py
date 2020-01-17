@@ -93,10 +93,15 @@ def GalaxieInit(NUMBER):
         # Abstände zum Zentrum
         r1 = np.sqrt((x[e]+sy[e])**2 + (y[e]+sx[e])**2)
         r2 = np.sqrt((x1[e]+sx[e])**2 + (y1[e]+sy[e])**2)
-        # Geschwindigkeiten
+        # Geschwindigkeiten (Beweung im Uhrzeigersinn)
+        v_max = 10000 * 0.1
+        vx1 = -(v_max / (1+r1)) * np.cos(y[e]+sx[e])
+        vy1 = -(v_max / (1+r1)) * np.sin(x[e]+sy[e])
+        vx2 = (v_max / (1+r2)) * np.sin(y1[e]+sx[e])
+        vy2 = (v_max / (1 + r2)) * np.cos(x1[e]+sy[e])
         # Schaffe die schweren Körper
-        BHs.append(BlackHole(weight,x[e]+sy[e],y[e]+sx[e],0,0,0.2))
-        BHs.append(BlackHole(weight,x1[e]+sx[e],y1[e]+sy[e],0,0,0.2))
+        BHs.append(BlackHole(weight,x[e]+sy[e],y[e]+sx[e],vx1,vy1,0.2))
+        BHs.append(BlackHole(weight,x1[e]+sx[e],y1[e]+sy[e],vx2,vy2,0.2))
 
 def simOpen(TIME,STEPSIZE):
     for t in range(TIME):
@@ -152,9 +157,9 @@ def statplot(TIME):
         ## plotting
         c = 0
         for B in BHs:
-            if c % 10 == 0:
+            if c % 5 == 0:
                 plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.15, color="c")
-            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.33)
+            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.23)
             c += 1
 
         plt.xticks([])
@@ -174,19 +179,19 @@ def statplot(TIME):
 
 ####################################################
 np.random.seed(42)
-PARTICLES = 1500
-TIME = 25          # 60
+PARTICLES = 240
+TIME = 500          # 60
 STEPSIZE = 0.000001 * 1200 / PARTICLES   # 4
-GRAV_SMOOTHING = 0.1
+GRAV_SMOOTHING = 0.62
 
 # initialize system
 #randomInit(PARTICLES)     # 1500
-phiInit(PARTICLES)
-#GalaxieInit(PARTICLES)
+#phiInit(PARTICLES)
+GalaxieInit(PARTICLES)
 # simulate the masses
 simOpen(TIME,STEPSIZE)
 # plot all trajectories
 statplot(TIME)
 # create movie file
-movie.createVideo("phi2")
+movie.createVideo("spiral_5")
 ####################################################

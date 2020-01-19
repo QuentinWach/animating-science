@@ -29,11 +29,11 @@ https://cppsecrets.com/users/203121971151041199711011610410311710010510397109971
 + [ ] Projekt: 3D-Bahnsplineinterpolation eines kurzen Random-Walks (Trace Interpolation)
 + [ ] Projekt: Univariate Splineinterpolation
 + [ ] Projekt: Gridsplitinterpolation
-==================================================================================
+
 + [X] Projekt: 2D-Plot radialer Wellenfunktionen Orbitale (Radial Distribution) 
 + [ ] Projekt: 3D-Plot Atomorbiale
 + [ ] Projekt: Wasserstoffatom Plakat
-==================================================================================
+
 + [ ] Projekt: Magnetpendel
 + [ ] Projekt: Julia-Menge
 + [ ] Projekt: 2D-Poisson-Gleichung mit Jacobi-Iteration
@@ -61,12 +61,12 @@ Sonne entspricht.
 + [ ] Projekt: 3-Body Neural Net Solver Comparison to normal solvers --> Extension to n-Body
     + https://www.technologyreview.com/s/614597/a-neural-net-solves-the-three-body-problem-100-million-times-faster/
     + https://arxiv.org/pdf/1910.07291.pdf
-============
+
 + [ ] Projekt: Ehrenfest Paradoxon, Animation und Twitter Thread!!!
 + [ ] Projekt: chaotic n-Pendulum (dangling string) finding eqm and using lagrage dichte + animation Twitter Thread!!!
 + [ ] PUBLISH A BLOGPOST ON MATPLOTLIB BLOG!
 + [ ] WEBSITE on GitHub
-============
+
 + [ ] Projekt: QUICK CHALK ART (Grafitty) --> Ende des Semesters
     1) Dissolve chalk fill it into a spray bottle and see, if you can spray the chalk on a black board.
     2) Create stencils to create amazing chalk board art all around the university. (Or potentially any place!)
@@ -79,7 +79,7 @@ Sonne entspricht.
     + https://www.amazon.com/Abrivo-Sports-WSprayChalk-Chalk-All/dp/B00H3LEI4I/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=2012mayandisa-20&linkId=575d7270d93a802d2ce1298f826bb9cf
     + https://www.amazon.com/Testors-306006-Spray-Chalk-Color/dp/B06XH3881X/ref=as_li_ss_tl?ie=UTF8&qid=1493691459&sr=8-1&keywords=spray%2Bchalk%2Bset&linkCode=sl1&tag=2012mayandisa-20&linkId=b2ff47e0e8b2f69279adedee37e5e8ce&th=1
     --> CHALK STENCIL (STEMPELKISSEN UND STEMPEL FÜR KREIDE)
-============
+
 + [ ] Project: Tree Growth Simulation
 
 -----
@@ -95,5 +95,6 @@ Für 2020:
     + https://webhome.phy.duke.edu/~hsg/physics-challenges/challenges.html
     + https://webhome.phy.duke.edu/~hsg/physics-challenges/other-references.html
 + Wie lässt sich dieses Wissen angewandt in der Forschung nutzen?: Wir suchen uns Paper raus und reproduzieren diese.
++ [Creative Coding with Blender!](https://medium.com/@behreajj/creative-coding-in-blender-a-primer-53e79ff71e)
 
 ** + Website mit ausführlichen Erklärungen und Animationen zur Computerphysik. Wie online e-Book **

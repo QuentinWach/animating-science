@@ -4,6 +4,9 @@
 
 Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation der Kollision zweier Galaxien. Hier aber zunächst einfach ein paar erste Tests:
 
+<div align="center">
+<img src="./abb/happy2.gif"></img>
+</div>
 
 <div align="center">
 <img src="./abb/animation9.gif"></img>
@@ -14,6 +17,3 @@ Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation
 <img src="./abb/animation2.gif" align="right"></img>
 </div>
 
-<div align="center">
-<img src="./abb/bhnebula.gif"></img>
-</div>

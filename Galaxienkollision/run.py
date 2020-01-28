@@ -70,21 +70,23 @@ def phiInit(NUMBER, TYPE="BHs"):
             if TYPE == "STs":
                 STs.append(Star(weight,x,y,vx,vy,0.2))
 
-def NebulaInit(NUMBER):
+def NebulaInit(NUMBER, X, Y, XV, YV):
     # initilaize a number of black holes each with a certain number of 
     # rotating stars around them
     n=NUMBER
-    weight = (NUMBER / 300)**2
-    a=0.5
-    b=0.6
+    weight = (NUMBER / 300)**2 * 0.3
+    a=0.5 * 0.5
+    b=0.6 * 0.5
     th=np.random.randn(n)
-    x=a*np.exp(b*th)*np.cos(th)
-    y=a*np.exp(b*th)*np.sin(th)
-    x1=a*np.exp(b*(th))*np.cos(th+np.pi)
-    y1=a*np.exp(b*(th))*np.sin(th+np.pi)
+    x=a*np.exp(b*th)*np.cos(th) + X
+    y=a*np.exp(b*th)*np.sin(th) + Y
+    x1=a*np.exp(b*(th))*np.cos(th+np.pi) + X
+    y1=a*np.exp(b*(th))*np.sin(th+np.pi) + Y
 
     sx=np.random.normal(0, a*0.25, n)
     sy=np.random.normal(0, a*0.25, n)
+
+    BHs.append(BlackHole(0.002, X, Y, XV, YV, 0.2))
 
     for e in range(NUMBER):
         # Abstände zum Zentrum
@@ -92,13 +94,13 @@ def NebulaInit(NUMBER):
         r2 = np.sqrt((x1[e]+sx[e])**2 + (y1[e]+sy[e])**2)
         # Geschwindigkeiten (Beweung im Uhrzeigersinn)
         v_max = 10000 * 0.1   #0.1
-        vx1 = -(v_max / (1+r1)) * np.cos(y[e]+sx[e])
-        vy1 = -(v_max / (1+r1)) * np.sin(x[e]+sy[e])
-        vx2 = (v_max / (1+r2)) * np.sin(y1[e]+sx[e])
-        vy2 = (v_max / (1 + r2)) * np.cos(x1[e]+sy[e])
+        vx1 = -(v_max / (1+r1)) * np.cos(y[e]+sx[e]) - XV
+        vy1 = -(v_max / (1+r1)) * np.sin(x[e]+sy[e]) - YV
+        vx2 = (v_max / (1+r2)) * np.sin(y1[e]+sx[e]) + XV
+        vy2 = (v_max / (1 + r2)) * np.cos(x1[e]+sy[e]) + YV
         # Schaffe die schweren Körper
-        BHs.append(BlackHole(weight,x[e]+sy[e],y[e]+sx[e],vx1,vy1,0.2))
-        BHs.append(BlackHole(weight,x1[e]+sx[e],y1[e]+sy[e],vx2,vy2,0.2))
+        STs.append(Star(weight,x[e]+sy[e],y[e]+sx[e],vx1,vy1,0.2))
+        STs.append(Star(weight,x1[e]+sx[e],y1[e]+sy[e],vx2,vy2,0.2))
 
 def simOpen(TIME,STEPSIZE):
     for t in range(TIME):
@@ -205,7 +207,7 @@ def hexplot(TIME):
         for S in STs:
             x.append(S.XPOS[t])
             y.append(S.YPOS[t])
-        plt.hexbin(x, y, gridsize=175, linewidths=0.1, cmap='inferno', vmin=0, vmax=10, extent=(-2,2,-2,2))
+        plt.hexbin(x, y, gridsize=175, linewidths=0.1, bins="log", cmap='inferno', vmin=1, vmax=60, extent=(-1.2,1.2,-1.2,1.2))
         
         for B in BHs:
             plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.3, color="white")
@@ -214,7 +216,7 @@ def hexplot(TIME):
 
         plt.xticks([])
         plt.yticks([])
-        plt.axis([-2.,2.,-2.,2.])
+        plt.axis([-1.15,1.15,-1.15,1.15])
         ax.set_facecolor('black')
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
@@ -235,26 +237,23 @@ def hexplot(TIME):
 ####################################################
 np.random.seed(42)
 BLACK_HOLES = 2
-STARS = 5000 #5000
-TIME = 24 * 10          # 60
-STEPSIZE = 0.000001 * 1200 / BLACK_HOLES   # 4
+STARS = 10000 #5000
+TIME = 24 * 6         # 60
+STEPSIZE = 0.000001 * 1200 / BLACK_HOLES * 0.1  # 4
 GRAV_SMOOTHING = 0.2
 
-
+"""
 # initialize system
-randomInit(BLACK_HOLES, TYPE="BHs")
-randomInit(STARS, TYPE="STs")     # 1500
-
-print(BHs)
-print(STs)
-
+#randomInit(BLACK_HOLES, TYPE="BHs"); randomInit(STARS, TYPE="STs")     # 1500
 #phiInit(PARTICLES)
-#NebulaInit(PARTICLES)
+NebulaInit(STARS, -0.75, 0, 0, 605)
+NebulaInit(STARS, 0.75, 0, 0, -605)
 # simulate the masses
 simOpen(TIME,STEPSIZE)
 # plot all trajectories
 #statplot(TIME)
 hexplot(TIME)
+"""
 # create movie file
-movie.createVideo("spiral_14")
+movie.createVideo("nebulaY3")
 ####################################################

@@ -16,3 +16,13 @@ Die großen Probleme hier sind klar:
 #### Emperical Computational Methods
 Predicting the future from experience.
 + [ ] Create a neural network to learn to predict any gravity sim with given parameters and positions
+
+---
+# Log
+#### 22.Jan
+So wie in der Festkörperphysik das Zusammenspiel der Teilchen zu Phäno-
+menen führen, wie Schwingungen, Brechung des Lichts oder Leitung elektrischen Stroms, so scheint mir zeigt sich auch ähnliche Emergenz
+in der Wechselwirkung von Teilchen, welche äußerst weit von einander entfernt sind. Homogen verteilte Massen im Raum ziehen sich durch ihre Gravitation so an, dass sich zunächst Nebel, das Fäden aus Sternen, dann Cluster, dann kreisende Galaxien bilden. Und im Fall der Körper zum gemeinsamen Schwerpunkt lassen sich Muster entdecken, derartig einfach, dass ich mich frage, warum diese übergeordneten Strukturen nicht beschrieben werden, anstatt die zugrundeliegende Kraft. 
+In Galaxien häufen sich einzelne Sterne in kontinuirlich erscheinenden Wellen an, welche Arme bilden. Warum die Bahnkurven von millionen von Sternen berechnen, wenn doch sicher eine einfache Beschreibung dieser übergeordneten Strukturen möglich ist.
+**Lässt sich ein Sternenhaufen als ein einzelner Körper modellieren?**
+In 2D wirkt es oftmals, als betrachte man das wilde Falten eines Tuchs, nicht die Bewegungen von Sternen.

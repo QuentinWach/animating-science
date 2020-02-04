@@ -5,7 +5,7 @@
 Ziel dieses kleinen Projektes ist letztendlich eine sehr rudimentäre Simulation der Kollision zweier Galaxien. Hier aber zunächst einfach ein paar erste Tests:
 
 <div align="center">
-<img src="./abb/happy3.gif"  align="right"></img>
+<img src="./abb/happy3.gif"></img>
 </div>
 
 <div align="center">

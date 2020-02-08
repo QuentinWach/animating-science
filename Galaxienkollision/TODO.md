@@ -12,13 +12,12 @@ Die großen Probleme hier sind klar:
 + [ ] Limitierung der Schrittgröße
 + [ ] Barnes-Hut
 
----
 #### Emperical Computational Methods
 Predicting the future from experience.
 + [ ] Create a neural network to learn to predict any gravity sim with given parameters and positions
 
----
-# Log
+# LOG
+
 #### 22.Jan
 So wie in der Festkörperphysik das Zusammenspiel der Teilchen zu Phäno-
 menen führen, wie Schwingungen, Brechung des Lichts oder Leitung elektrischen Stroms, so scheint mir zeigt sich auch ähnliche Emergenz

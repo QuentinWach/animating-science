@@ -268,7 +268,7 @@ def BHCenterHexplot(TIME):
             c += 1
             x.append(S.XPOS[t])
             y.append(S.YPOS[t])
-        plt.hexbin(x, y, gridsize=380, linewidths=0.01, bins="log", cmap='inferno', vmin=1, vmax=15, extent=(-2.,2.,-2.,2.))
+        plt.hexbin(x, y, gridsize=380, linewidths=0.01, bins="log", cmap='cividis', vmin=1, vmax=16, extent=(-2.,2.,-2.,2.)) # inferno
 
         for B in BHs:
             plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.3, color="white")
@@ -357,10 +357,10 @@ def GeneralHexplot(TIME):
 #---------------------------------------------------
 np.random.seed(42)
 BLACK_HOLES = 1
-STARS = 80000#60000
-TIME = 75#500
-STEPSIZE = 0.000001 * 1200 * 0.04 # 4
-GRAV_SMOOTHING = 0.1 #.2**0.5
+STARS = 50000#60000
+TIME = 10#500
+STEPSIZE = 0.000001 * 1200 * 0.1 # 4
+GRAV_SMOOTHING = 0.2 #.2**0.5
 
 
 # initialize system
@@ -374,7 +374,7 @@ BHCenterOpenSim(TIME,STEPSIZE)
 BHCenterHexplot(TIME)
 
 # create movie file
-movie.createVideo("GalaxSINGLE_TEST_3.2")
+movie.createVideo("FUN")
 
 
 # TODO
@@ -400,4 +400,20 @@ movie.createVideo("GalaxSINGLE_TEST_3.2")
 + [ ] Moving Mesh, Volker Springer
 ---
 + [ ] consider particle interactions
+"""
+
+"""
+# possible colormaps
+copper
+gist_heat
+afmhot
+pink
+bone gray
+
+plasma
+inferno
+magma
+
+cividis
+
 """

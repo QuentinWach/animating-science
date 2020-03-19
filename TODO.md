@@ -97,5 +97,6 @@ Für 2020:
     + https://webhome.phy.duke.edu/~hsg/physics-challenges/other-references.html
 + Wie lässt sich dieses Wissen angewandt in der Forschung nutzen?: Wir suchen uns Paper raus und reproduzieren diese.
 + [Creative Coding with Blender!](https://medium.com/@behreajj/creative-coding-in-blender-a-primer-53e79ff71e)
++ [Mathematica!](https://mathematica.stackexchange.com/questions/32378/is-there-something-like-densityplot3d-to-visualize-atomic-orbitals)
 
 ** + Website mit ausführlichen Erklärungen und Animationen zur Computerphysik. Wie online e-Book **

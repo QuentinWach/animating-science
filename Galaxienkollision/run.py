@@ -17,7 +17,7 @@ class BlackHole:
     # init den Körper an einem bestimmeten Punkt,
     # mit gegebener Masse und Geschwindigkeit
     def __init__(self,mass, xpos, ypos, xvel, yvel, radius):
-        self.MASSE = mass * 100000
+        self.MASSE = mass * 10
         self.XPOS = [xpos]
         self.YPOS = [ypos]
         self.XVEL = xvel
@@ -47,11 +47,11 @@ BHs = []
 #---------------------------------------------------
 def randomInit(NUMBER, TYPE="BHs"):
     for n in range(NUMBER):
-        weight = (NUMBER / 300)**2
+        weight = 1#(NUMBER / 300)**2
         x = np.random.rand() * 2 -1
         y = np.random.rand() * 2 -1
-        xv = (np.random.rand() * 2 -1) * 10
-        yv = (np.random.rand() * 2 -1) * 10
+        xv = (np.random.rand() * 2 -1) * 600
+        yv = (np.random.rand() * 2 -1) * 600
         if TYPE == "BHs":
             BHs.append(BlackHole(weight,x,y,xv,yv,0.2))
         if TYPE == "STs":
@@ -72,56 +72,23 @@ def phiInit(NUMBER, TYPE="BHs"):
             if TYPE == "STs":
                 STs.append(Star(weight,x,y,vx,vy,0.2))
 
-def NebulaInit(NUMBER, X, Y, XV, YV):
-    # initilaize a number of black holes each with a certain number of 
-    # rotating stars around them
-    n=NUMBER
-    weight = (NUMBER / 300)**2 * 0.05 #0.3
-    a=0.5 * 0.5
-    b=0.6 * 0.5
-    th=np.random.randn(n)
-    x=a*np.exp(b*th)*np.cos(th) + X
-    y=a*np.exp(b*th)*np.sin(th) + Y
-    x1=a*np.exp(b*(th))*np.cos(th+np.pi) + X
-    y1=a*np.exp(b*(th))*np.sin(th+np.pi) + Y
-
-    sx=np.random.normal(0, a*0.25, n)
-    sy=np.random.normal(0, a*0.25, n)
-
-    BHs.append(BlackHole(0.002, X, Y, XV, YV, 0.2))
-
-    for e in range(NUMBER):
-        # Abstände zum Zentrum
-        r1 = np.sqrt((x[e]+sy[e])**2 + (y[e]+sx[e])**2)
-        r2 = np.sqrt((x1[e]+sx[e])**2 + (y1[e]+sy[e])**2)
-        # Geschwindigkeiten (Beweung im Uhrzeigersinn)
-        v_max = 10000 * 0.1   #0.1
-        vx1 = -(v_max / (1+r1)) * np.cos(y[e]+sx[e]) - XV
-        vy1 = -(v_max / (1+r1)) * np.sin(x[e]+sy[e]) - YV
-        vx2 = (v_max / (1+r2)) * np.sin(y1[e]+sx[e]) + XV
-        vy2 = (v_max / (1 + r2)) * np.cos(x1[e]+sy[e]) + YV
-        # Schaffe die schweren Körper
-        STs.append(Star(weight,x[e]+sy[e],y[e]+sx[e],vx1,vy1,0.2))
-        STs.append(Star(weight,x1[e]+sx[e],y1[e]+sy[e],vx2,vy2,0.2))
-
 def GalaxInit(NUMBER, X, Y, XV, YV):
     PHI  = m.radians(137.508)
-
-    BHs.append(BlackHole(0.002, X, Y, XV, YV, 0.2))
-    vel  = 20
+    G = 4.75 # 4.75 <  < 5
+    BHs.append(BlackHole(1, X, Y, XV, YV, 0.2))
     weight = (NUMBER / 300)**2 * 0.05
     for p in range(NUMBER):
         # füge x und y Koordinaten den Listen hinzu
-        gauss = 1/(m.sqrt(2*np.pi))*m.exp(-5)
+        gauss = 1/(m.sqrt(2*np.pi))*m.exp(-4) # 5
         x =  gauss * m.sqrt(p) * np.cos(p * PHI) + (np.random.rand() * 2 - 1)*0.15  + X 
         y =  gauss * m.sqrt(p) * np.sin(p * PHI) + (np.random.rand() * 2 - 1)*0.15 + Y
         r = ((X-x)**2 + (Y-y)**2)**0.5
         # je größer der Abstand, desto schneller das Teilchen
-        v =  vel / r 
-        vx = v * np.cos(p * PHI) - v**2 * np.sin(p * PHI) + XV
-        vy = v * np.sin(p * PHI) + v**2 * np.cos(p * PHI) + YV
+        v = - m.sqrt(G*10**2 // r)
+        vx = XV + v * np.cos((p) * PHI) - v**2 * np.sin((p) * PHI)
+        vy = YV + v * np.sin((p) * PHI) + v**2 * np.cos((p) * PHI)
         # Schaffe die schweren Körper
-        if r > 0.1:
+        if r > 0.3:
             STs.append(Star(weight,x,y,vx,vy,0.2))
 #---------------------------------------------------
 def BHCenterOpenSim(TIME,STEPSIZE):
@@ -255,7 +222,6 @@ def BHCenterStatplot(TIME):
 
 def BHCenterHexplot(TIME):
     for t in progressbar.progressbar(range(TIME)):
-        #start = time.time()
         plt.style.use("default")
         fig, ax = plt.subplots(1, figsize=(3,3), dpi=300)
 
@@ -263,12 +229,18 @@ def BHCenterHexplot(TIME):
         y = []
         c = 0
         for S in STs:
-            #if c % 1000 == 0:
-            #    plt.plot(S.XPOS[:t+1],S.YPOS[:t+1], "--", linewidth=0.25, color="white")
+            if c % 100 == 0:
+                if t > 6:
+                    plt.plot(S.XPOS[t-6:t+1],S.YPOS[t-6:t+1], "--", linewidth=0.12, color="white")
+                else:
+                    plt.plot(S.XPOS[:t+1],S.YPOS[:t+1], "--", linewidth=0.12, color="white")
             c += 1
             x.append(S.XPOS[t])
             y.append(S.YPOS[t])
-        plt.hexbin(x, y, gridsize=380, linewidths=0.01, bins="log", cmap='cividis', vmin=1, vmax=16, extent=(-2.,2.,-2.,2.)) # inferno
+        plt.hexbin(x, y, gridsize=380, linewidths=0.01, bins="log", cmap='bone', vmin=1, vmax=16, extent=(-2.,2.,-2.,2.)) # inferno
+
+        # inferno: Für Massendichte
+        # gist_heat: Für Infrarot Strahlung
 
         for B in BHs:
             plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.3, color="white")
@@ -285,12 +257,8 @@ def BHCenterHexplot(TIME):
         ax.spines['left'].set_visible(False)
 
         plt.savefig("./images/Abb_" + str(t) + ".png", bbox_inches="tight", facecolor='black')
-        stop = time.time()
-        #print("=======================================================================")
-        #print("CALCULATING TIMESTEP... " + str(t) + " | " + str(TIME))
-        #print("ESTIMATED REMAINING TIME: " + str(int(abs(start - stop)*(TIME-t))) + "s")        
-        #print("SAVED IMG " + str(t),t)
         plt.close()
+
 
 def GeneralStatplot(TIME):
     BODYs = STs + BHs
@@ -301,9 +269,9 @@ def GeneralStatplot(TIME):
 
         c = 0
         for B in BODYs:
-            if c % 5 == 0:
-                plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.1, color="white")
-            plt.plot(B.XPOS[t],B.YPOS[t], "o", color="white", markersize=0.1)
+            #if c % 5 == 0:
+            plt.plot(B.XPOS[:t+1],B.YPOS[:t+1], "--", linewidth=0.2, color="white")
+            plt.plot(B.XPOS[t],B.YPOS[t], "o", markersize=1.5)
             c += 1
 
         plt.xticks([])
@@ -335,7 +303,7 @@ def GeneralHexplot(TIME):
         for B in BODYs:
             x.append(B.XPOS[t])
             y.append(B.YPOS[t])
-        plt.hexbin(x, y, gridsize=175, linewidths=0.01, bins="log", cmap='inferno', vmin=1, vmax=15, extent=(-1.2,1.2,-1.2,1.2))
+        plt.hexbin(x, y, gridsize=175, linewidths=0.01, bins="log", cmap='inferno', vmin=0, vmax=15, extent=(-1.2,1.2,-1.2,1.2))
 
         plt.xticks([])
         plt.yticks([])
@@ -357,65 +325,22 @@ def GeneralHexplot(TIME):
 #---------------------------------------------------
 np.random.seed(42)
 BLACK_HOLES = 1
-STARS = 50000#60000
-TIME = 10#500
-STEPSIZE = 0.000001 * 1200 * 0.1 # 4
-GRAV_SMOOTHING = 0.2 #.2**0.5
+STARS = 25000
+TIME = 25 * 6
+STEPSIZE = 0.00002 
+GRAV_SMOOTHING = 0.1
 
 
 # initialize system
-#NebulaInit(STARS, -0.75, 0, 0, 617); NebulaInit(STARS, 0.75, 0, 0, -617)
-GalaxInit(STARS, -0.75, 0, 0, 600); GalaxInit(STARS, 0.75, 0, 0, -600);
+#GalaxInit(STARS,-2.75, 0, 450, -50); GalaxInit(STARS, 0.75, 0, -150, 100)
 #GalaxInit(STARS, 0, 0, 0, 0);
+randomInit(6, "BHs")
+
 # simulate
-BHCenterOpenSim(TIME,STEPSIZE)
-#GeneralOpenSim(TIME, STEPSIZE)
+#BHCenterOpenSim(TIME,STEPSIZE)
+GeneralOpenSim(TIME, STEPSIZE)
 # plot positions and trajectories
-BHCenterHexplot(TIME)
-
+#BHCenterHexplot(TIME)
+GeneralStatplot(TIME)
 # create movie file
-movie.createVideo("FUN")
-
-
-# TODO
-
-# 760 x 764 Pixel
-"""
-+ [ ] plot stats on frame
-+ [ ] simplify code make it production ready + documentation 
-    1. Initialize System
-    2. Define Simulation Type
-    3. Define Rendering Options
-+ [ ] add timemeasurement and loading bars
-+ [ ] enable saving and loading of simulations to test, stop, 
-      and continue experimentation!
-+ [ ] 3D
-+ [ ] OpenGL
-+ [ ] nicht linear, sondern Eulerverfahren zur Interpolation mit vergangenen Schritten!
-+ [ ] Barnes-Hut (BH)
-+ [ ] Fast multipole method (FMM)
-+ [ ] BH + FMM
-+ [ ] Paticle-Mesh-Method: https://observablehq.com/@rreusser/2d-n-body-gravity-with-poissons-equation,
-+ [ ] P^3 M-Method: https://en.m.wikipedia.org/wiki/P3M
-+ [ ] Moving Mesh, Volker Springer
----
-+ [ ] consider particle interactions
----
-+ [ ] GITHUB PROJECT PAGE
-"""
-
-"""
-# possible colormaps
-copper
-gist_heat
-afmhot
-pink
-bone gray
-
-plasma
-inferno
-magma
-
-cividis
-
-"""
+movie.createVideo("FUN3")

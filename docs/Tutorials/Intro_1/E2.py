@@ -25,6 +25,7 @@ for x in X:
 
 # create the figure and subplots
 fig, axs = plt.subplots(1,2,figsize=(8,3), dpi=200)
+axs[0] = plt.subplot2grid((1, 3), (0, 0), colspan=2)
 # color of figure border
 fig.patch.set_facecolor('white')
 

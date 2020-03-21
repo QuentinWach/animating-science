@@ -166,6 +166,7 @@ ul {
   left: 0;
   background-color: darkgray;
   overflow-x: hidden;
+  padding-top:10px;
 }
 
 /* Style the content */

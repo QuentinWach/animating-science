@@ -27,7 +27,7 @@ h1 {
   margin-bottom: 10px;
 }
 h2 {
-  font-family: "Barlow";
+  font-family: "Open Sans";
   color: black;
   font-size: 38px;
   text-align: center;
@@ -130,6 +130,14 @@ ul {
   margin-top: 1.5px;
   width: 400px;
 }
+.post:hover {
+  background-color: #DC143C;
+  box-shadow: 0px 1px 5px black ;
+  transform: translateY(-1px);
+}
+.post:active {
+  background-color: #a30f2d;
+}
 .postN:hover {
   background-color: #DC143C;
   box-shadow: 0px 1px 5px black ;
@@ -171,6 +179,7 @@ ul {
 /* Style the content */
 .content {
   position: relative;
+  padding-top:10px;
   margin-left: 420px;
   padding-left: 55px;
   width: 1000px;

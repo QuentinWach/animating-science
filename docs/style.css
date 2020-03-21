@@ -1,5 +1,5 @@
 /* Neucha, Anton, Barlow*/ 
-body {
+body {  
   background-color: white;
   min-width: 650px;
   max-width: 1000px;
@@ -10,34 +10,34 @@ body {
   padding-bottom: 200px;
 }
 hr {
-  width: 85%;
+  width: 90%;
   margin-top: 35px;
   margin-bottom: 35px;
 }
 h1 {
   font-family: "Open Sans";
   color: black;
-  font-size: 40px;
+  font-size: 55px;
   text-align: center;
-  margin: 0px;
+  margin: 50px;
   margin-top: 15px;
   margin-bottom: 10px;
 }
 h2 {
   font-family: "Barlow";
   color: black;
-  font-size: 27px;
+  font-size: 38px;
   text-align: center;
   margin: 50px;
-  margin-bottom: 35px;
+  margin-bottom: 32.5px;
   margin-top: 26.5px;
 }
 p {
   font-family: "Barlow";
-  text-align: center;
+  text-align: left;
   color: black;
-  font-size: 18px;
-  line-height: 23px;
+  font-size: 20px;
+  line-height: 28px;
   margin: 50px;
   margin-top: 15px;
   margin-bottom: 2.5px;
@@ -49,8 +49,6 @@ a {
   border: 2px solid;
   border-color: whitesmoke;
   border-radius: 5px;
-  font-size: 18px;
-  line-height: 23px;
   margin: 50px;
   margin-top: 15px;
   margin-bottom: 2.5px;
@@ -86,6 +84,16 @@ img {
   margin-right:auto; 
   text-align: center;
   padding-top: 20px;"
+}
+ul {
+  font-family: "Barlow";
+  text-align: left;
+  color: black;
+  font-size: 20px;
+  line-height: 28px; /*23*/
+  margin: 50px;
+  margin-top: 15px;
+  margin-bottom: 2.5px;  
 }
 .box {
   text-align: center;
@@ -132,4 +140,30 @@ img {
   padding: 70px;
   padding-top:25px;
   padding-bottom:25px;
-} 
+}
+.thanks {
+  margin-top: 35px;
+  background-color: whitesmoke;
+  padding: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 12px;
+  color: gray;
+}
+
+/*------------------------------------------*/
+.page {
+  display: grid;
+  grid-template-columns: 250px auto;
+}
+.majorBox {
+  background-color: black;
+  height: 100%;
+  position: fixed;
+}
+.contentBox {
+  background-color: #a0c99f;
+  height: 100%;
+  margin-left: 250px;
+  padding-left: 20px;
+}

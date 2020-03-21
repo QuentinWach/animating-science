@@ -117,7 +117,7 @@ ul {
 
   transition-duration: 0.05s;
 }
-.postUnfinished {
+.postN {
   display: inline-block;
   background-color: #b3b3b3;
   border: none;
@@ -125,18 +125,17 @@ ul {
   color: white;
   padding: 7px 12px;
   text-align: center;
-  text-decoration: line-through;
   display: inline-block;
   font-size: 18px;
   margin-top: 1.5px;
   width: 400px;
 }
-.post:hover {
+.postN:hover {
   background-color: #DC143C;
   box-shadow: 0px 1px 5px black ;
   transform: translateY(-1px);
 }
-.post:active {
+.postN:active {
   background-color: #a30f2d;
 }
 .quote {

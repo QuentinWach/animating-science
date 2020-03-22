@@ -78,9 +78,9 @@ plt.yticks([])
 line, = ax.plot([], [], 'o-', color=(0,0,0,1), lw=1, zorder = 5)
 
 # Zeige die vergangenen Punkte
-#pastx = []
-#pasty = []
-#dots, = ax.plot(pastx, pasty, ".-", color=(0,0,0,0.25), lw=2, zorder = 3)
+pastx = []
+pasty = []
+dots, = ax.plot(pastx, pasty, "-", color="green", alpha=0.25 ,lw=1.35, zorder = 3)
 
 # Zeige die momentane Zeit
 #time_template = 'Zeit = %.1fs'
@@ -100,25 +100,25 @@ def animate(i):
     # Drucke die Koordinaten im Terminal
     print("x(" + str(i) + ") = " + str(thisx))
     print("y(" + str(i) + ") = " + str(thisy))
-    """
+
     # Merke vergangene Koordinaten
-    if i <= 1000:
+    if i <= 250:
       pastx.append(thisx[2]); pasty.append(thisy[2])
     else:
       pastx.pop(0); pasty.pop(0)
       pastx.append(thisx[2]); pasty.append(thisy[2])
-    """
+
     # Datenupdate
     line.set_data(thisx, thisy)
-    #dots.set_data(pastx, pasty)
+    dots.set_data(pastx, pasty)
 
     # Zeittextupdate
     #time_text.set_text(time_template % (i*dt))
 
-    return line, #dots, time_text
+    return line, dots, #time_text
 
-anim = animation.FuncAnimation(fig, animate, frames=np.arange(0, len(y), 1), interval=15)
-#anim.save('pendel.gif', dpi=80, writer='imagemagick') # Zum speichern der Animation als .gif
-anim.save('pendel.mp4', writer='ffmpeg', fps=60, bitrate=1800)
+anim = animation.FuncAnimation(fig, animate, frames=np.arange(0, len(y), 1), interval=25)
+#anim.save('pendelT.gif', dpi=80, writer='imagemagick') # Zum speichern der Animation als .gif
+anim.save('pendelT.mp4', writer='ffmpeg', fps=55, bitrate=3000)
 
-plt.show()
+#plt.show()

@@ -22,6 +22,7 @@ h1 {
   color: black;
   font-size: 55px;
   text-align: center;
+  line-height: 54px;
   margin: 50px;
   margin-top: 15px;
   margin-bottom: 10px;
@@ -160,7 +161,12 @@ ul {
   padding-bottom: 12px;
   color: gray;
 }
-
+.showcase {
+  width: 750px;
+  margin: 13px;
+  padding: 5px;
+  box-shadow: 0px 5px 10px black;
+}
 
 /*-------------------------------------------------*/
 
@@ -184,4 +190,38 @@ ul {
   margin-left: 420px;
   padding-left: 55px;
   width: 1000px;
+}
+
+/*---------------------------------------------------*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }

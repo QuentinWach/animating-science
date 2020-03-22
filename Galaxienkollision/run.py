@@ -1,5 +1,9 @@
 # GALAXIENKOLLISION, 13. Dezember 2019
 import matplotlib.pyplot as plt
+# for LaTeX font
+from matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('text', usetex=True)
 import numpy as np
 import math as m
 import time
@@ -264,7 +268,7 @@ def GeneralStatplot(TIME):
     BODYs = STs + BHs
     for t in range(TIME):
         start = time.time()
-        plt.style.use("default")
+        #plt.style.use("default")
         fig, ax = plt.subplots(1, figsize=(3,3), dpi=300)
 
         c = 0
@@ -283,6 +287,9 @@ def GeneralStatplot(TIME):
         ax.spines['bottom'].set_visible(False)
         ax.spines['left'].set_visible(False)
 
+        plt.text(-0.6,1.7,"SMOOTH GRAVITY IN A PLANE", color="white", size=7)
+        plt.text(0.19,1.3,r"$\vec{F} = -G \cdot \frac{M_1 \cdot M_2}{r^2} \frac{\vec{r}}{r}$", color="white", size=8)
+        plt.text(-1.03,-1.6,r"with $r=\sqrt{x^2 + y^2 + 0,1}$", color="white", size=8)
         plt.savefig("./images/Abb_" + str(t) + ".png", bbox_inches="tight", facecolor='black')
         stop = time.time()
         print("=======================================================================")
@@ -326,7 +333,7 @@ def GeneralHexplot(TIME):
 np.random.seed(42)
 BLACK_HOLES = 1
 STARS = 25000
-TIME = 25 * 6
+TIME = 25 * 5
 STEPSIZE = 0.00002 
 GRAV_SMOOTHING = 0.1
 
@@ -334,13 +341,13 @@ GRAV_SMOOTHING = 0.1
 # initialize system
 #GalaxInit(STARS,-2.75, 0, 450, -50); GalaxInit(STARS, 0.75, 0, -150, 100)
 #GalaxInit(STARS, 0, 0, 0, 0);
-randomInit(6, "BHs")
+#randomInit(6, "BHs")
 
 # simulate
 #BHCenterOpenSim(TIME,STEPSIZE)
-GeneralOpenSim(TIME, STEPSIZE)
+#GeneralOpenSim(TIME, STEPSIZE)
 # plot positions and trajectories
 #BHCenterHexplot(TIME)
-GeneralStatplot(TIME)
+#GeneralStatplot(TIME)
 # create movie file
 movie.createVideo("FUN3")

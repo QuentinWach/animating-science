@@ -194,7 +194,7 @@ def BHCenterStatplot(TIME):
     for t in range(TIME):
         start = time.time()
         plt.style.use("default")
-        fig, ax = plt.subplots(1, figsize=(3,3), dpi=300)
+        fig, ax = plt.subplots(1, figsize=(3,2), dpi=300)
 
         c = 0
         for S in STs:
@@ -333,7 +333,7 @@ def GeneralHexplot(TIME):
 np.random.seed(42)
 BLACK_HOLES = 1
 STARS = 25000
-TIME = 25 * 5
+TIME = 2 #25 * 5
 STEPSIZE = 0.00002 
 GRAV_SMOOTHING = 0.1
 
@@ -341,13 +341,13 @@ GRAV_SMOOTHING = 0.1
 # initialize system
 #GalaxInit(STARS,-2.75, 0, 450, -50); GalaxInit(STARS, 0.75, 0, -150, 100)
 #GalaxInit(STARS, 0, 0, 0, 0);
-#randomInit(6, "BHs")
+randomInit(6, "BHs")
 
 # simulate
 #BHCenterOpenSim(TIME,STEPSIZE)
-#GeneralOpenSim(TIME, STEPSIZE)
+GeneralOpenSim(TIME, STEPSIZE)
 # plot positions and trajectories
 #BHCenterHexplot(TIME)
-#GeneralStatplot(TIME)
+GeneralStatplot(TIME)
 # create movie file
-movie.createVideo("FUN3")
+#movie.createVideo("FUN3")

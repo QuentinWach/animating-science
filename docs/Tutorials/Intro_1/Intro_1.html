@@ -27,8 +27,8 @@
 <body>
 
 <div class="sidenav">
-  <a href="https://quentinwach.github.io/Animating-Science/"><h1>ANIMATING SCIENCE</h1></a>
-  <p style="color: black; text-align: center;"><b>Advanced Science Visualizations with Python</b> </p>
+  <a href="https://quentinwach.github.io/Animating-Science/" class="ASTit"><h1>ANIMATING SCIENCE</h1></a>
+  <p style="color: black; text-align: center;"><b>Advanced Visualizations with Python</b> </p>
   <p style="color: white; text-align: center; font-size: 16px;">Introduction</p>
   <div class="box">
     <a href="Intro_1.html" class="post">
@@ -76,16 +76,19 @@
 
     <p>
     In this series you will learn how to create animations with <a href="https://www.python.org/">Python</a> starting with an 
-    overview about plotting in general.</p>
+    overview about plotting in general. If you take only one idea out of this tutorial, let it be this:</p>
+
+    <p class="quote">DO NOT TRUST THE DEFAULT! - CUSTOMIZE EVERYTHING!</p>
     <p>
-    Yet this tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experince coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, this is the guide you have been searching for. If not, let me convince you otherwise real quick:
+
+    This tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experince coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, this is the guide you have been searching for. If not, let me convince you otherwise real quick:
     </p>
     <img src="python.png" alt="Python" width=10% style="filter: grayscale(100%);">
     <p><b>Why choose Python?</b>
-    - There are many great and easy programming languages and tools to create interactive visulatizations and animations for science most notably <a href="https://www.wolfram.com/mathematica/">Mathematica</a>. Yet Python is currently the most used programming language in STEM research mostly because it's very high level and therfore very easy to use. It offers a wide range of modules that can be imported to extent it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Anylze big data? Python is the way to go. - Even though the code might be intimidating for newcomers, you have complete control over every little aspect of your visualization and in contrast to Mathematica, it is also completely free!
+    - There are many great and easy programming languages and tools to create interactive visualizations and animations for science most notably <a href="https://www.wolfram.com/mathematica/">Mathematica</a>. Python on the other hand is currently the most used programming language in STEM research mostly because it's very high level and therfore very easy to use. It offers a wide range of modules that can be imported to extent it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Analyze big data? Python is the way to go. - Even though the code might be intimidating for newcomers, you have complete control over every little aspect of your visualization and in contrast to Mathematica, it is also completely free!
     </p>
     <img src="matplot.png" alt="Matplot" width=10% style="filter: grayscale(100%);">
-    <p><b>What else do I need?</b> - Patience. Like anything else worth pursuing, learning to create nice science animations will take time. The main reason for me to write about this is, because I myself want to push myself forward. - You will have to install <a href="https://matplotlib.org/">Matplotlib</a> for the basics. We will add more libraries as we move on. 
+    <p><b>What else do I need?</b> - Patience. Like anything else worth pursuing, learning to create nice science animations will take time. The main reason for me to write about this is because I myself want to push myself forward. - You will have to install <a href="https://matplotlib.org/">Matplotlib</a> for the basics. We will add more libraries as we move on. 
     </p>
 
 
@@ -111,7 +114,7 @@
     # extension for scientific computing
     import numpy as np
 
-    # x tics
+    # X samples
     X = np.arange(-2,4,0.003)
 
     # line
@@ -169,10 +172,10 @@
     rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
     rc('text', usetex=True)
 
-    # linear algebra extension
+    # extension for scientific computing
     import numpy as np
 
-    # x tics
+    # X samples
     X = np.arange(-2,4,0.003)
 
     # line

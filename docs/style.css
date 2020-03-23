@@ -13,7 +13,7 @@ body {
   padding-bottom: 200px;
 }
 hr {
-  width: 90%;
+  width: 92.2%;
   margin-top: 35px;
   margin-bottom: 35px;
 }
@@ -163,8 +163,8 @@ ul {
 }
 .showcase {
   display: box;
-  width: 250px;
-  height: 250px;
+  width: 280px;
+  height: 280px;
   padding: 5px;
   margin-top:13px;
   box-shadow: 0px 5px 5px black;
@@ -175,7 +175,7 @@ ul {
 }
 
 .column {
-  flex: 33.33%;
+  flex: 25%;
   padding-right: 10px;
 }
 
@@ -200,5 +200,5 @@ ul {
   padding-top:10px;
   margin-left: 420px;
   padding-left: 55px;
-  width: 1000px;
+  width: 1375px;
 }

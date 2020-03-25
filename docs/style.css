@@ -1,8 +1,20 @@
 * {
   box-sizing: border-box;
 }
+/*
+@media (max-width: 767px) {                  
+    .sidenav {
+      display: none;
+   }
+   .content {
+      padding-top:10px;
+      margin-left: 10px;
+      padding-left: 10px;
+      width: 100%;
+  }
+}
+*/
 
-/* Neucha, Anton, Barlow*/ 
 
 body {  
   background-color: white;
@@ -202,6 +214,16 @@ button.star {
 .column {
   flex: 25%;
   padding-right: 10px;
+}
+.tweet {
+  color: #1DA1F2;
+  box-shadow: 0px 5px 5px black;
+  
+  transition-duration: 0.15s;
+}
+.tweet:hover {
+  color: #1DA1F2;
+  box-shadow: 0px 5px 15px black; 
 }
 
 /*-------------------------------------------------*/

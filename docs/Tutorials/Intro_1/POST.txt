@@ -1,0 +1,82 @@
+PLOT LIKE A PRO
+===============
+Quentin Wach
+
+1.1 (What will we learn & why should I?)
+In this series you will learn how to create animations with Python starting with an overview about plotting in general. If you take only one idea out of this tutorial, let it be this:
+
+DO NOT TRUST THE DEFAULT! - CUSTOMIZE EVERYTHING!
+
+Hence this tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experience coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, and do so properly, this is the guide you have been searching for. If not, let me convince you otherwise real quick:
+
+(BILD VOM PYTHON & MATPLOT LOGO)
+
+1.2
+Why choose Python with Matplotlib?
+----------------------------------
+There are many great and easy programming languages and tools to create interactive visualizations and animations for science most notably Mathematica and Matlab. Many academics in STEM use them, but there is no discussion that if you want to create beautifull, solid and creative visualizations that are to be published, Matplotlib is the way to go.
+
+It offers the precision other tools lack and creates clean plots without aliasing, correct vectorizations and formatting no matter what backend. There is nothing you can't access and thus you can customize anything you desire. 
+
+Of course it is used with Python which is the most popular programming language in STEM research mostly because it's very high level and therfore very easy to use especially for bigger projects. It offers a wide range of other modules besides Matplotlib that can be imported to extend it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Analyze big data? Run with Python.
+
+Both are completely free for everyone.
+
+((precise, reliable, customizable, used with Python, free))
+
+1.3
+How do I work through this?
+---------------------------
+I encourage you to spin up a Jupyter notebook for this particular tutorial so that you can play around with the given codesnippets and exampless, but later on when we start animating it will be best to work with a simple editor and the terminal.
+
+I expect that you have at least some familiarity with Matplotlib.
+
+For the start I will write down the full scripts needed to create the shown plots so that you have something to play around with and get going, but as we explore further I will only name, link or show an code excerpt. - After you have installed Matplotlib you can immediatly start plotting. I recommend to install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.
+
+2.0
+LaTeX, Labels & Basics.
+-----------------------
+We will plot a simple x-y-graph with the dummy function
+
+(MATH (should be less obvious))
+
+(CODE)
+
+(PLOT 1)
+
+As you scale the figure size keep in mind that markers, lines, text and labels won't change with it. So if you increase the figure the function at the center of the figure will seem tinier relative to the rest of the plot and the points might become quite small aswell. 
+
+The formula at the center is written in LaTeX. There are of course a lot more possible addtional changes. We will learn to style and modify our plot extensively like changing any color no matter if lines or the background and much more very soon.
+
+2.1
+Subplots.
+---------
+When you read through the given code for the image you will also note that we didn't just create a single figure but actually layed out the foundation for the addition of many more so called 'subplots' or 'axes' we can design and fill with all kinds of other things. In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper. We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We will need to use subplot2grid to define our overall plot structure and define the individual plots in the second step. - Here is an example of how to do that:
+(CODE)
+
+(PLOT 2)
+
+For the sake of visibility one must create some additional space between the subplots. We must also increase the total figure size for the same reason. To mitigate confusion the y-axis on the second subplot is switched to the right side.
+
+As I already began to explain, to get the ratios between the plots right and have full control over their positions, we create a grid with plot2grid. The first subplot <i> ax1 </i> with the dummy data starts at the upper left grid point and stretches over the full length of the rows and over three columns. Thus the second subplot <i> ax2 </i> with the normal distribution starts at the third and stretches over all remaining grid points.
+
+This is a quite nice functionality which is most importantly very easy to scale, see (LINK).
+
+(PLOT 3)
+
+But it is still limiting and it is generally preferred to use the more general GridSpec which adds control over the spacing between the subplots aswell!
+
+2.2
+Images, Fields & More.
+----------------------
+We just saw that we can't only plot simple functions but also create histograms. In fact, Matplot offers a wide range of other incredibly usefull functionalities I won't even try to get into here. But let me tell you about a couple important ones.
+
+Scatter point plot
+Hexbin density plot
+Image plot
+Field plot
+
+3.0
+Style.
+------
+Now that we are more or less capable of visualizing and annotating any data we may choose, let's start thinking about stylizing. 

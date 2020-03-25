@@ -97,6 +97,20 @@ ul {
   margin-top: 15px;
   margin-bottom: 2.5px;  
 }
+button.tweet {
+  z-index: 20;
+  top: 50px;
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+}
+button.star {
+  z-index: 20;
+  top: 100px;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+}
 .box {
   text-align: center;
 }

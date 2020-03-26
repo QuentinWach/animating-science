@@ -5,7 +5,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- STYLE -->
 <link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">
+<!--<link rel="stylesheet" type="text/css" href="http://localhost:8000/Dokumente/Computerphysik/docs/style.css">-->
+
 <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -23,6 +26,15 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<!-- EVENT BUTTON -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, options);
+});3
+
+var instance = M.FloatingActionButton.getInstance(elem);
+</script>
 </head>
 <body>
 
@@ -72,8 +84,17 @@
   <p style="color: white; text-align: center;font-size: 16px; line-height: 18px; padding: 20px;"><b>Note</b>: This series is evolving over time. I highly encourage you to ask questions and make recommendations for improvement via Twitter <a href="https://twitter.com/QuentinWach" style="color: white; background-color: darkgray; border: none;">@QuentinWach</a>.</p>
 </div>
 
+<!-- BLOG POST -->
 <div class="content" style="width: 1000px;">
-    <!--<p style="text-align: center;"><b>Advanced Science Visualizations with Python</b></p>-->
+    <!-- RETWEET -->
+    <a href="https://twitter.com/intent/retweet?tweet_id=1153018532369555456" style="all: unset;">
+      <img src="https://quentinwach.github.io/Animating-Science/tweet_pic.png" alt="Tweet" class="retweet">    
+    </a>
+
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
     <h2>PLOT LIKE A PRO</h2>
     <p style="text-align: center; margin-bottom: 55px;"><b><a href="https://twitter.com/QuentinWach">Quentin Wach</a></b></p>
 
@@ -84,165 +105,55 @@
     <p class="quote">DO NOT TRUST THE DEFAULT! - CUSTOMIZE EVERYTHING!</p>
     <p>
 
-    This tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experince coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, this is the guide you have been searching for. If not, let me convince you otherwise real quick:
+    Hence this tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experience coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, and do so properly, this is the guide you have been searching for. If not, let me convince you otherwise real quick:
+
     </p>
     <img src="python.png" alt="Python" width=10% style="filter: grayscale(100%);">
-    <p><b>Why choose Python?</b>
-    - There are many great and easy programming languages and tools to create interactive visualizations and animations for science most notably <a href="https://www.wolfram.com/mathematica/">Mathematica</a>. Python on the other hand is currently the most used programming language in STEM research mostly because it's very high level and therfore very easy to use. It offers a wide range of modules that can be imported to extend it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Analyze big data? Python is the way to go. - Even though the code might be intimidating for newcomers, you have complete control over every little aspect of your visualization and in contrast to Mathematica, it is also completely free!
-    </p>
+
+    <p><b>Why choose Python with Matplotlib?</b>
+
+    <p>There are many great and easy tools to create interactive visualizations and animations for science most notably Mathematica and Matlab. Many academics in STEM use them, but there is no discussion that if you want to create beautifull, solid and creative visualizations that are to be published, Matplotlib is the way to go.</p>
+    
+    <p>It offers the precision other tools lack and creates clean plots without aliasing, correct vectorizations and formatting no matter what backend. There is nothing you can't access and thus you can customize anything you desire. Every single plot object like figures and axes or even individual ticks, lines, labels, polygons or points can be changed to fit your needs.</p>
+
+    <p>All of that can be done with Python which is the most popular programming language in STEM research mostly because it's very high level and therfore very easy to use especially for bigger projects. It offers a wide range of other modules besides Matplotlib that can be imported to extend it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Analyze big data? Run with Python.</p>
+    <p>Both are completely free for everyone.
+</p>
+
     <img src="matplot.png" alt="Matplot" width=10% style="filter: grayscale(100%);">
-    <p><b>What else do I need?</b> - Patience. Like anything else worth pursuing, learning to create nice science animations will take time. The main reason for me to write about this is because I myself want to push myself forward. - You will have to install <a href="https://matplotlib.org/">Matplotlib</a> for the basics. We will add more libraries as we move on. 
-    </p>
+    
+    <p><b>How do I work through this?</b></p>
+    <p>I encourage you to spin up a Jupyter notebook for this particular tutorial so that you can play around with the given codesnippets and examples, but later on, when we start animating, it will be best to work with a simple editor and the terminal.</p>
+    <p>Please install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.</p>
+
     <hr>
-    <p><b>LaTeX, Labels & Basics.</b> For the start I will write down the full scripts needed to create the shown plots so that you have something to play around with and get going, but as we explore further I will only name, link or show an code excerpt. - After you have installed Matplotlib you can immediatly start plotting. I recommend to install <a href="https://numpy.org/">Numpy</a> aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing. We will plot a simple x-y-graph with the dummy function</p>
+    <p><b>Figures & Subplots.</b> 
+    I assume you might already have created several plots with Matplotlib in the past. But did you fit multiple plots into a single figure?</p>
 
-    <p>\[\; f(x) = \big[ (x-1)^3 + 1 \big] + n(x)\]</p>
-
-    <p>with \(r(x)\) beeing a random value sampled from the <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal distribution</a>
-    </p>
-    <p>\[\frac{1}{ \sqrt{2\pi\sigma^2}} \cdot e^{\frac{-x^2}{2 \sigma^2}}.\]</p>
     <p>
-    With \(\; \sigma = 2\), \(\; -2 < x < 4 \quad\) and \(\; -20 < y < 20\).
-    </p>
+    You may have previously defined parameters like <a href="">dpi</a> and size of your plot when exporting. But you can do so already when you set up the plot as a figure object. Here is a nice <a href="https://matplotlib.org/matplotblog/posts/an-inquiry-into-matplotlib-figures/">post on figures</a>. Often times we can simply
+    define all <a href="">subplots</a> in such a figure with</p>
+
     <pre><code class="python">
-    import matplotlib.pyplot as plt
-
-    # for LaTeX font
-    from matplotlib import rc
-    rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
-    rc('text', usetex=True)
-
-    # extension for scientific computing
-    import numpy as np
-
-    # X samples
-    X = np.arange(-2,4,0.003)
-
-    # line
-    Y = []
-    for x in X:
-        y = ((x-1)**3 + 1)
-        Y.append(y)
-
-    # random dots around line
-    Y2 = []
-    for x in X:
-        y2 = ((x-1)**3 + 1) + (np.random.normal(0,2))
-        Y2.append(y2)
-
-    # create the figure
-    fig, ax = plt.subplots(1,figsize=(5,3), dpi=200)
-
-    # color of figure border
-    fig.patch.set_facecolor('white')
-
-    # data plotting
-    ax.plot(X,Y2,".", markersize=1)
-    ax.plot(X,Y,"-", color="crimson")
-
-    # y-axis
-    plt.ylabel(r"$y$")
-    plt.ylim(-20, 20)
-    # x-axis
-    plt.xlabel(r"$x$")
-    plt.xlim(-2, 4) 
-
-    # LaTeX function
-    plt.text(0.45,8.5,r"$(x-1)^3 + 1$", color="crimson", size=10)
-
-    # save graphic
-    plt.savefig("E1.svg", bbox_inches="tight")
-
-    # show graphic
-    plt.show()
+    fig, ax = plt.subplots(2, 2, figsize=(16, 8))
     </code></pre>
-    <img src="E1.svg" alt="E1" width=80% style="display: block;margin-left:auto;margin-right:auto; text-align: center; padding-top: 20px; padding-right: 60px;">
-    <p>As you scale the figure size keep in mind that markers, lines, text and labels won't change with it. So if you increase the figure the function at the center of the figure will seem tinier relative to the rest of the plot and the points might become quite small aswell. 
-    </p>
-    <p>The formula at the center is written in <a href="https://www.latex-project.org/">LaTeX</a>. There are of course a lot more possible addtional changes. We will learn to style and modify our plot extensively like changing any color no matter if lines or the background and much more very soon.
-    </p>
-    <hr>
-    <p>
-    <b>Subplots.</b> When you read through the given code for the image you will also note that we didn't just create a single figure but actually layed out the foundation for the addition of many more so called 'subplots' or 'axes' we can design and fill with all kinds of other things. In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper. We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We will need to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py">subplot2grid</a> to define our overall plot structure and define the individual plots in the second step. - Here is an example of how to do that:
-    </p>
+
+    <p>where <a>fig</a> is the figure object and <a>ax</a> a numpy array of subplots/axes that can then be specified like this:</p>
+
     <pre><code class="python">
-    import matplotlib.pyplot as plt
-
-    # for LaTeX font
-    from matplotlib import rc
-    rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
-    rc('text', usetex=True)
-
-    # extension for scientific computing
-    import numpy as np
-
-    # X samples
-    X = np.arange(-2,4,0.003)
-
-    # line
-    Y = []
-    for x in X:
-        y = ((x-1)**3 + 1)
-        Y.append(y)
-
-    # random dots around line
-    Y2 = []
-    for x in X:
-        y2 = ((x-1)**3 + 1) + (np.random.normal(0,2))
-        Y2.append(y2)
-
-    # create the figure and subplots
-    fig = plt.figure(figsize=(8,3), dpi=200)
-    ax1 = plt.subplot2grid((1, 8), (0, 0), colspan=3)
-    ax2 = plt.subplot2grid((1, 8), (0, 3), colspan=5)
-    # color of figure border
-    fig.patch.set_facecolor('white')
-
-    # SUBPLOT 1
-    ax1.set_title(r"Dummy data $f(x)$", size=10)
-    # data plotting
-    ax1.plot(X,Y2,".", markersize=1, color="steelblue")
-    ax1.plot(X,Y,"-", color="crimson")
-    # y-axis
-    ax1.set_ylabel(r"$y$",labelpad=-5)
-    ax1.set_ylim(-20, 20)
-    # x-axis
-    ax1.set_xlabel(r"$x$")
-    ax1.set_xlim(-2, 4)
-    # LaTeX function
-    ax1.text(-0.55,-15,r"$f(x) = \big[ (x-1)^3 + 1 \big] + n(x)$", 
-             color="steelblue", size=10)
-
-    # SUBPLOT 2
-    ax2.set_title(r"Normal distribution $n(x)$", size=10)
-    # data plotting
-    mu, sigma = 0, 2 # mean and standard deviation
-    s = np.random.normal(mu, sigma, int(6//0.003))
-    count, bins, ignored = ax2.hist(s, 300, density=True, histtype='stepfilled',
-                                    alpha=0.5, color="steelblue")
-    ax2.plot(bins, 1/(sigma * np.sqrt(2 * np.pi)) 
-        * np.exp( - (bins - mu)**2 / (2 * sigma**2) ),
-        color="black")
-    # x-axis
-    ax2.set_xlabel(r"$x$")
-    ax2.set_xlim(-4.5, 4.5)
-    # y-axis
-    ax2.yaxis.set_label_position("right")
-    ax2.yaxis.tick_right()
-    ax2.set_ylabel(r"Probability density",labelpad=5)
-    ax2.set_ylim(0, 0.25)
-    ax2.text(-4.,0.21,r"$\mu = 0$", color="black", size=10)
-    ax2.text(-4.,0.192,r"$\sigma = 2$", color="black", size=10)
-
-    # adjust spacing between subplots
-    plt.tight_layout()
-
-    # save graphic
-    plt.savefig("E2.svg", bbox_inches="tight")
-
-    # show graphic
-    plt.show()
+    ax[0, 0].plot(x, y)
+    ax[1, 1].plot(x, y)
+    ax[0, 1].plot(x, y)
+    ax[1, 0].plot(x, y)
     </code></pre>
+    Which - in this case - gives us a nice layout like this one when showed:
+
+
+
+
+    <p>When you read through the given code for the image you will also note that we didn't just create a single figure but actually layed out the foundation for the addition of many more so called 'subplots' or 'axes' we can design and fill with all kinds of other things. In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper. We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We will need to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py">subplot2grid</a> to define our overall plot structure and define the individual plots in the second step. - Here is an example of how to do that:
+    </p>
+
     <img src="E2.svg" alt="E2" width=95% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
     <p>For the sake of visibility one must create some additional space between the subplots. We must also increase the total figure size for the same reason. To mitigate confusion the y-axis on the second subplot is switched to the right side.</p>
     <p>
@@ -251,6 +162,16 @@
     <p>This is a quite nice functionality which is most importantly very easy to scale, see <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py">here</a>:</p>
     <img src="E3.svg" alt="E3" width=95% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
     <p>But it is still limiting and it is generally preferred to use the more general <a href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html#matplotlib.gridspec.GridSpec">GridSpec</a> which adds control over the spacing between the subplots aswell!</p>
+    <hr>
+        <p><b>Text, Math & Annotations</b></p>
+    <p>
+    <pre><code class="python">
+    </code></pre>
+    <img src="E1.svg" alt="E1" width=80% style="display: block;margin-left:auto;margin-right:auto; text-align: center; padding-top: 20px; padding-right: 60px;">
+    <p>As you scale the figure size keep in mind that markers, lines, text and labels won't change with it. So if you increase the figure the function at the center of the figure will seem tinier relative to the rest of the plot and the points might become quite small aswell. 
+    </p>
+    <p>The formula at the center is written in <a href="https://www.latex-project.org/">LaTeX</a>. There are of course a lot more possible addtional changes. We will learn to style and modify our plot extensively like changing any color no matter if lines or the background and much more very soon.
+    </p>
     <hr>
     <p>
     <b>
@@ -271,11 +192,8 @@
     Now that we are more or less capable of visualizing and annotating any data we may choose, let's start thinking about stylizing. 
     </p>
 
-<!--
-<p class="thanks">
-Thank you, <a href="https://twitter.com/InertialObservr">Dillon Berger</a> & <a href="https://twitter.com/quarkygurl">Bri Edwards</a>, for reading this and for pointing out the many errors that have arisen from my own proofreading. <a>Fabian Heisinger</a>'s questions were also extremely helpful.
-</p>-->
 </div>
+
 
 </body>
 </html>

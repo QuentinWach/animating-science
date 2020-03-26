@@ -16,9 +16,10 @@ fig = plt.figure(figsize=(8,4), dpi=200)
 fig.patch.set_facecolor('white')
 color = "silver"
 ax1 = plt.subplot2grid((2, 2), (0, 0), facecolor=color)
+ax4 = plt.subplot2grid((2, 2), (1, 1), facecolor=color)
 ax2 = plt.subplot2grid((2, 2), (1, 0), facecolor=color)
 ax3 = plt.subplot2grid((2, 2), (0, 1), facecolor=color)
-ax4 = plt.subplot2grid((2, 2), (1, 1), facecolor=color)
+
 
 annotate_axes(fig)
 

@@ -46,19 +46,26 @@ h2 {
   margin-bottom: 32.5px;
   margin-top: 26.5px;
 }
+h4 {
+  font-family: "Open Sans";
+  color: white;
+  background-color: black;
+  font-size: 38px;
+  border: 2px solid;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
 h3 {
   font-family: "Open Sans";
   color: white;
   background-color: #DC143C;
   font-size: 24px;
   border: 2px solid;
-  border-color: whitesmoke;
   border-radius: 5px;
   text-align: left;
   padding: 10px;
   padding-left: 50px;
-  /*width: 233px;*/
-
 }
 p {
   font-family: "Barlow";
@@ -104,6 +111,7 @@ a:hover {
 code {
   font-size:17px;
   margin: 45px;
+  margin-top: 15px;
   margin-bottom: 17px;
 }
 img {
@@ -279,13 +287,13 @@ button.star {
   left: 20px;
   top: 2px;
   background-color: white 50%;
-  color: #DC143C;
-  border: 1.5px #DC143C solid;
+  color: white;
+  border: 1.5px silver solid;
   border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 1.5px;
-  box-shadow: 0px 0px 5px #DC143C ;
+  box-shadow: 0px 0px 5px silver ;
   z-index: 10;
 }
 

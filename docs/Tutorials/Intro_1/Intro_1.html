@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Quentin Wach | How To Plot</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quentin Wach | How To Plot</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- STYLE -->
-<!--<link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">-->
-<link rel="stylesheet" type="text/css" href="http://localhost:8000/Dokumente/Computerphysik/docs/style.css">
+  <!-- STYLE -->
+  <!--<link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">-->
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/Dokumente/Computerphysik/docs/style.css">
 
-<link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-<!-- ICON -->
-<!--<link rel="shortcut icon" href="https://quentinwach.github.io/Animating-Science/pagelog.ico">-->
+  <!-- ICON -->
+  <!--<link rel="shortcut icon" href="https://quentinwach.github.io/Animating-Science/pagelog.ico">-->
 
-<!-- CODE -->
-<link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+  <!-- CODE -->
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
-<!-- MATH -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- MATH -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-<!-- EVENT BUTTON -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.fixed-action-btn');
-    var instances = M.FloatingActionButton.init(elems, options);
-});3
+  <!-- EVENT BUTTON -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.fixed-action-btn');
+      var instances = M.FloatingActionButton.init(elems, options);
+  });3
 
-var instance = M.FloatingActionButton.getInstance(elem);
-</script>
+  var instance = M.FloatingActionButton.getInstance(elem);
+  </script>
 </head>
 <body>
-
-<!--<button class="Tweet">TWEET</button>
-<button class="Star">STAR</button>-->
 
 <div class="sidenav">
   <a href="https://quentinwach.github.io/Animating-Science/" class="ASTit"><h1>ANIMATING SCIENCE</h1></a>
@@ -84,21 +81,20 @@ var instance = M.FloatingActionButton.getInstance(elem);
   <p style="color: white; text-align: center;font-size: 16px; line-height: 18px; padding: 20px;"><b>Note</b>: This series is evolving over time. I highly encourage you to ask questions and make recommendations for improvement via Twitter <a href="https://twitter.com/QuentinWach" style="color: white; background-color: darkgray; border: none;">@QuentinWach</a>.</p>
 </div>
 
-<!-- BLOG POST -->
 <div class="content" style="width: 1000px;">
     <!-- RETWEET -->
-    <a href="https://twitter.com/intent/retweet?tweet_id=1153018532369555456" style="all: unset;">
-      <img src="https://quentinwach.github.io/Animating-Science/tweet_pic.png" alt="Tweet" class="retweet">    
+    <!--https://twitter.com/intent/retweet?tweet_id=1153018532369555456-->
+    <a href="https://twitter.com/home"  target="_blank" style="all: unset;" class="retweet">
+      <img src="https://quentinwach.github.io/Animating-Science/tweet_pic.png" alt="Tweet" class="retweet">   
     </a>
-
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     
     <!-- STAR ON GITHUB -->
-    <a href="https://github.com/QuentinWach/Animating-Science" class="GitStar">
+    <a href="https://github.com/QuentinWach/Animating-Science"  target="_blank" class="GitStar">
       <i alt="Star" class="material-icons" style="font-size: 40px; padding-top: 7px;">grade</i>  
     </a>
 
-
+    <!-- BLOG POST -->
     <h2>PLOT LIKE A PRO</h2>
     <p style="text-align: center; margin-bottom: 55px;"><b><a href="https://twitter.com/QuentinWach">Quentin Wach</a></b></p>
 
@@ -109,25 +105,25 @@ var instance = M.FloatingActionButton.getInstance(elem);
     <p class="quote">DO NOT TRUST THE DEFAULT! - CUSTOMIZE EVERYTHING!</p>
     <p>
 
-    Hence this tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experience coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, and do so properly, this is the guide you have been searching for. If not, let me convince you otherwise real quick:
+    Hence this tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experience coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, and do so properly, this is the guide you have been searching for.
 
     </p>
     <img src="python.png" alt="Python" width=10% style="filter: grayscale(100%);">
 
     <p><b>Why choose Python with Matplotlib?</b>
 
-    <p>There are many great and easy tools to create interactive visualizations and animations for science most notably Mathematica and Matlab. Many academics in STEM use them, but there is no discussion that if you want to create beautifull, solid and creative visualizations that are to be published, Matplotlib is the way to go.</p>
+    <p>There are many great tools to create interactive visualizations and animations for science most notably Mathematica and Matlab. Many academics in STEM use them, but there is no discussion that if you want to create beautifull, solid and creative visualizations that are to be published, Matplotlib is the way to go.</p>
     
-    <p>It offers the precision other tools lack and creates clean plots without aliasing, correct vectorizations and formatting no matter what backend. There is nothing you can't access and thus you can customize anything you desire. Every single plot object like figures and axes or even individual ticks, lines, labels, polygons or points can be changed to fit your needs.</p>
+    <p>It offers the precision other tools lack and creates clean plots without aliasing, correct vectorizations and formatting no matter what backend. There is nothing you can't access and thus you can customize anything you desire. Every single plot object like figures and axes or even individual ticks, lines, labels or points can be changed to fit your needs.</p>
 
-    <p>All of that can be done with Python which is the most popular programming language in STEM research mostly because it's very high level and therfore very easy to use especially for bigger projects. It offers a wide range of other modules besides Matplotlib that can be imported to extend it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Analyze big data? Run with Python.</p>
-    <p>Both are completely free for everyone.
-</p>
+    <p>All of that can be done with Python which is the most popular programming language in STEM research mostly because it's very high level and therefore very easy to use especially for bigger projects. It offers a wide range of other modules besides Matplotlib that can be imported to extend it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Analyze big data? Run with Python.</p>
+    
+    <p>Both are completely free for everyone.</p>
 
     <img src="matplot.png" alt="Matplot" width=10% style="filter: grayscale(100%);">
     
     <p><b>How do I work through this?</b></p>
-    <p>I encourage you to spin up a Jupyter notebook for this particular tutorial so that you can play around with the given codesnippets and examples, but later on, when we start animating, it will be best to work with a simple editor and the terminal.</p>
+    <p>I encourage you to create a Jupyter notebook for this particular tutorial so that you can play around with the given codesnippets and examples, but later on, when we start animating, it will be best to work with a simple editor and the terminal.</p>
     <p>Please install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.</p>
 
     <hr>

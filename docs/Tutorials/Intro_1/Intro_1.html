@@ -128,8 +128,8 @@
     <p>Please install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.</p>
 
     <hr>
-    <p><b>Figures & Subplots.</b> 
-    I assume you might already have created several plots with Matplotlib in the past. But did you fit multiple plots into a single figure?</p>
+    <h3>Figures & Subplots </h3>
+    <p>I assume you might already have created several plots with Matplotlib in the past. But did you fit multiple plots into a single figure? In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper.</p>
 
     <p>
     You may have previously defined parameters like <a href="">dpi</a> and size of your plot when exporting. But you can do so already when you set up the plot as a figure object. Here is a nice <a href="https://matplotlib.org/matplotblog/posts/an-inquiry-into-matplotlib-figures/">post on figures</a>. Often times we can simply
@@ -142,29 +142,27 @@
     <p>where <a>fig</a> is the figure object and <a>ax</a> a numpy array of subplots/axes that can then be specified like this:</p>
 
     <pre><code class="python">
-    ax[0, 0].plot(x, y)
-    ax[1, 1].plot(x, y)
-    ax[0, 1].plot(x, y)
-    ax[1, 0].plot(x, y)
+    ax[0, 0].plot(x, y) # ax1
+    ax[1, 1].plot(x, y) # ax2
+    ax[0, 1].plot(x, y) # ax3
+    ax[1, 0].plot(x, y) # ax4
     </code></pre>
-    Which - in this case - gives us a nice layout like this one when showed:
+    <p>Which - in this case - gives us a nice layout like this one when showed:</p>
+    
+    <img src="E4.svg" width=90% style="filter: grayscale(100%);">
 
-
-
-
-    <p>When you read through the given code for the image you will also note that we didn't just create a single figure but actually layed out the foundation for the addition of many more so called 'subplots' or 'axes' we can design and fill with all kinds of other things. In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper. We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We will need to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py">subplot2grid</a> to define our overall plot structure and define the individual plots in the second step. - Here is an example of how to do that:
+    <p>We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We will need to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py">subplot2grid</a> to define our overall plot structure and define the individual plots in the second step.
     </p>
-
-    <img src="E2.svg" alt="E2" width=95% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
-    <p>For the sake of visibility one must create some additional space between the subplots. We must also increase the total figure size for the same reason. To mitigate confusion the y-axis on the second subplot is switched to the right side.</p>
+    <p>For the sake of visibility one must create some additional space between the subplots. We must also increase the total figure size for the same reason.</p>
     <p>
-    As I already began to explain, to get the ratios between the plots right and have full control over their positions, we create a grid with plot2grid. The first subplot <i> ax1 </i> with the dummy data starts at the upper left grid point and stretches over the full length of the rows and over three columns. Thus the second subplot <i> ax2 </i> with the normal distribution starts at the third and stretches over all remaining grid points.
+    To get the ratios between the plots right and have full control over their positions, we create a grid with plot2grid. The first subplot <i> ax1 </i> with the dummy data starts at the upper left grid point and stretches over the full length of the rows and over three columns. Thus the second subplot <i> ax2 </i> with the normal distribution starts at the third and stretches over all remaining grid points.
     </p>
     <p>This is a quite nice functionality which is most importantly very easy to scale, see <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py">here</a>:</p>
     <img src="E3.svg" alt="E3" width=95% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
     <p>But it is still limiting and it is generally preferred to use the more general <a href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html#matplotlib.gridspec.GridSpec">GridSpec</a> which adds control over the spacing between the subplots aswell!</p>
     <hr>
-        <p><b>Text, Math & Annotations</b></p>
+    
+    <h3>Text, Math & Annotations</h3>
     <p>
     <pre><code class="python">
     </code></pre>
@@ -188,9 +186,9 @@
     </ul>
 
     <hr>
-    <p>
-    <b>Style.</b>
-    Now that we are more or less capable of visualizing and annotating any data we may choose, let's start thinking about stylizing. 
+
+    <h3>Style</h3>
+    <p>Now that we are more or less capable of visualizing and annotating any data we may choose, let's start thinking about stylizing. 
     </p>
 
 </div>

@@ -221,9 +221,9 @@ button.star {
   bottom: 75px;
   width: 70px;
   height: 70px;
-  background-color: #1DA1F2;
+  background-color: silver;
   color: white;
-  border: 7px #1DA1F2 solid;
+  border: 7px silver solid;
   border-radius: 50px;
   padding: 0px;
   box-shadow: 0px 1px 2px black ;
@@ -241,9 +241,9 @@ button.star {
   bottom: 150px;
   width: 70px;
   height: 70px;
-  background-color: black;
+  background-color: silver;
   color: white;
-  border: 7px black solid;
+  border: 7px silver solid;
   border-radius: 50px;
   padding: 0px;
   box-shadow: 0px 1px 2px black ;

@@ -233,6 +233,9 @@ button.star {
 }
 .retweet:hover { 
   box-shadow: 0px 3px 10px black ;
+  background-color: #1DA1F2;
+  color: white;
+  border: 7px #1DA1F2 solid;
   transform: translateY(-2px);
 }
 .GitStar {

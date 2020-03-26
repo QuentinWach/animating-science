@@ -140,7 +140,7 @@ button.star {
   margin-top: 1.5px;
   width: 400px;
 
-  transition-duration: 0.05s;
+  transition-duration: 0.1s;
 }
 .postN {
   display: inline-block;
@@ -215,15 +215,25 @@ button.star {
   flex: 25%;
   padding-right: 10px;
 }
-.tweet {
-  color: #1DA1F2;
-  box-shadow: 0px 5px 5px black;
-  
-  transition-duration: 0.15s;
+.retweet {
+  position: absolute;
+  left: 1020px;
+  top: 75px;
+  width: 70px;
+  height: 70px;
+  background-color: #1DA1F2;
+  color: white;
+  border: 7px #1DA1F2 solid;
+  border-radius: 50px;
+  padding: 0px;
+  box-shadow: 0px 2px 5px black ;
+  z-index: 10;
+
+  transition-duration: 0.12s;
 }
-.tweet:hover {
-  color: #1DA1F2;
-  box-shadow: 0px 5px 15px black; 
+.retweet:hover { 
+  box-shadow: 0px 5px 15px black ;
+  transform: translateY(-3px);
 }
 
 /*-------------------------------------------------*/

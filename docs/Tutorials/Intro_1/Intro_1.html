@@ -162,7 +162,18 @@
     similar to how they would be if we had plotted each of the axes seperately. As you scale the figure size keep in mind that markers, lines, text and labels won't change with it. So if you increase the figure the function at the center of the figure will seem tinier relative to the rest of the plot and the points might become quite small aswell. 
     </p></p>
 
-    <p>Now, this is great to get basic subplots done quickly. But we want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We will need to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" target="_blank">subplot2grid</a> to define our overall plot structure and define the individual plots and their positions inside the grid in the second step.</p>
+    <p>As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots. The more basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:</p>
+    <pre><code class="python">
+      fig = plt.figure(figsize=(4.5,4.5), dpi=200)
+      ax1 = plt.Axes(fig=fig, rect=[0.75, 0.75, 0.5, 0.5], facecolor='crimson')
+      ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='steelblue')
+      fig.add_axes(ax2)
+      fig.add_axes(ax1)
+    </code></pre>
+
+    <img src="E5.svg" alt="E5" width=45% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
+
+    <p>Now, using <a>subplots()</a> is great to get basic subplots done quickly. And defining axes seperately and adding them gives us a lot of control, but can become a bit too complicated for more extensive figures. - We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We may want to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" target="_blank">subplot2grid</a> to define our overall plot structure and define the individual plots and their positions inside the grid in the second step.</p>
     <p>We define our figure:</p>
     <pre><code class="python">
       fig = plt.figure(figsize=(8,3), dpi=200)
@@ -191,14 +202,7 @@
 
     <img src="E3.svg" alt="E3" width=90% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
 
-    <p>Since you probably wonder, why we define the grid resolution each time, this is, because we can define many grids which might even overlap each other! Just like here:</p>
-
-    <pre><code class="python">
-      ax1 = plt.Axes(fig=fig, rect=[0.3, 0.3, 0.4, 0.4], facecolor='crimson')
-      ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='steelblue')
-    </code></pre>
-
-    <img src="E5.svg" alt="E5" width=90% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
+    <p>Since you probably wonder, why we define the grid resolution each time, this is... Just like here:</p>
 
 
     <p>But it is still limiting and it is generally preferred to use the more general <a href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html#matplotlib.gridspec.GridSpec" target="_blank">GridSpec</a> which adds control over the spacing between the subplots aswell!</p>

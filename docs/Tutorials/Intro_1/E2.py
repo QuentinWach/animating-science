@@ -1,4 +1,7 @@
+import matplotlib
 import matplotlib.pyplot as plt
+
+#matplotlib.style.use('ggplot') 
 
 # for LaTeX font
 from matplotlib import rc
@@ -43,6 +46,7 @@ ax1.set_xlabel(r"$x$")
 ax1.set_xlim(-2, 4)
 # LaTeX function
 ax1.text(-0.55,-15,r"$f(x) = \big[ (x-1)^3 + 1 \big] + n(x)$", color="steelblue", size=10) # color="crimson"
+ax1.grid(b=False)
 
 # SUBPLOT 2
 ax2.set_title(r"Normal distribution $n(x)$", size=10)
@@ -59,10 +63,11 @@ ax2.set_xlim(-4.5, 4.5)
 # y-axis
 ax2.yaxis.set_label_position("right")
 ax2.yaxis.tick_right()
-ax2.set_ylabel(r"Probability density",labelpad=5)
+ax2.set_ylabel(r"Probability density",labelpad=5, size=10)
 ax2.set_ylim(0, 0.25)
 ax2.text(-4.,0.21,r"$\mu = 0$", color="black", size=10)
 ax2.text(-4.,0.192,r"$\sigma = 2$", color="black", size=10)
+ax2.grid(b=False)
 
 # adjust spacing between subplots
 plt.tight_layout()

@@ -75,8 +75,8 @@ def randomInit(BIRD_COUNT):
         x = np.random.rand() * 2 - 1
         y = np.random.rand() * 2 - 1 
         a = np.random.rand()*360
-        v = VEL #0.02
-        r = RAD #0.06
+        v = VEL
+        r = RAD * np.random.normal(1,0)**2
         alpha = 90
         BIRDS.append(Bird(x,y,a,v,r,alpha))
 
@@ -145,5 +145,5 @@ def main(BIRD_COUNT, STEPS):
 
 
 movie.delImgs()
-#main(BIRD_COUNT, STEPS)
-#movie.createVideo("single")
+main(BIRD_COUNT, STEPS)
+movie.createVideo("single")

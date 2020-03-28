@@ -125,8 +125,24 @@
     
     <p><b>How do I work through this?</b></p>
     <p>I encourage you to create a Jupyter notebook for this particular tutorial so that you can play around with the given codesnippets and examples, but later on, when we start animating, it will be best to work with a simple editor and the terminal.</p>
-    <p>Please install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.</p>
+    <p>Please install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.
+    Do not use Pylab all the much if at all, please.</p>
 
+    <hr>
+    <h3> The Matplotlib API </h3>
+    <p>
+      Most tutorials are very focused on very rudimentary aspects of this library or only show you a very special example. Let's do things differently and get at least some overview so that we can actually form the general understanding we need to truly be able to grow our plotting powers.
+    </p>
+    <p>
+      With Matplotlib you have access to <b>56 submodules</b>.
+    </p>
+    <p>
+      You might find this a bit overwelming at first, but the module is carefully desgined to be very <b>object oriented</b> and the naming conventions are mostly quite intuitive as you will realize soon. In fact, you won't even really have to understand anything at first, because you can simply load <code class="inline">matplotlib.pyplot</code> for a <b>command line approach</b> which makes it very easy to get the basics done quickly. These two aspects, the pyplot and the object oriented approach are the most common ways of using this vast library. 
+    </p>
+    <p>
+      Matplotlib's objects form the core of the library. To understand them is absolutely necessary for the control and customization we desire.
+    </p>
+    
     <hr>
     <h3>Figures & Subplots </h3>
     <p>I assume you might already have created several plots with Matplotlib in the past. But did you fit multiple plots into a single figure? In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper.</p>

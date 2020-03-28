@@ -114,6 +114,10 @@ code {
   margin-top: 15px;
   margin-bottom: 17px;
 }
+code.inline {
+  margin: 0px;
+  background-color: whitesmoke;
+}
 img {
   display: block;
   margin-left:auto;

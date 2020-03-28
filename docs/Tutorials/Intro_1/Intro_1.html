@@ -50,12 +50,12 @@
   </div>
   <div class="box">
     <a class="postN" style="text-decoration: line-through;">
-      <b>Live Animations</b> - Intro 2
+      <b>Visual Principles</b> - Intro 2
     </a>
   </div>
   <div class="box">
     <a class="postN" style="text-decoration: line-through;">
-      <b>Save as mp4 and GIF</b> - Intro 3
+      <b>Animate the Data</b> - Intro 3
     </a>
   </div>
   <p style="color: white; text-align: center;font-size: 16px;">Examples</p>
@@ -122,7 +122,7 @@
     <p>Both are completely free for everyone.</p>
 
     <img src="matplot.png" alt="Matplot" width=10% style="filter: grayscale(100%);">
-    
+
     <p><b>How do I work through this?</b></p>
     <p>I encourage you to create a Jupyter notebook for this particular tutorial so that you can play around with the given codesnippets and examples, but later on, when we start animating, it will be best to work with a simple editor and the terminal.</p>
     <p>Please install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.
@@ -137,7 +137,7 @@
       With Matplotlib you have access to <b>56 submodules</b>.
     </p>
     <p>
-      You might find this a bit overwelming at first, but the module is carefully desgined to be very <b>object oriented</b> and the naming conventions are mostly quite intuitive as you will realize soon. In fact, you won't even really have to understand anything at first, because you can simply load <code class="inline">matplotlib.pyplot</code> for a <b>command line approach</b> which makes it very easy to get the basics done quickly. These two aspects, the pyplot and the object oriented approach are the most common ways of using this vast library. 
+      You might find this a bit overwelming at first, but the module is carefully desgined to be very <b>object oriented</b> and the naming conventions are mostly quite intuitive as you will realize soon. In fact, you won't even really have to understand anything at first, because you can simply load <a href="https://matplotlib.org/3.2.1/api/pyplot_summary.html" target="_blank" class="inline">matplotlib.pyplot</a> for a <b>command line approach</b> which makes it very easy to get the basics done quickly. (Sadly Matplotlib's biggest issue is it's API. This is mostly because it is heavily influenced by Matlab.) These two aspects, the pyplot and the object oriented approach are the most common ways of using this vast library. 
     </p>
     <p>
       Matplotlib's objects form the core of the library. To understand them is absolutely necessary for the control and customization we desire.
@@ -145,7 +145,33 @@
     
     <hr>
     <h3>Figures & Subplots </h3>
-    <p>I assume you might already have created several plots with Matplotlib in the past. But did you fit multiple plots into a single figure? In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper.</p>
+
+    <p>
+      <b>The Figure.</b>
+
+
+    </p>
+    <p>
+      <b>Axes.</b>
+
+    </p>
+    <p>
+      <b>Subplots.</b>
+      As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots. The more basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:
+    </p>
+    <pre><code class="python">
+      fig = plt.figure(figsize=(4.5,4.5), dpi=200)
+      ax1 = plt.Axes(fig=fig, rect=[0.75, 0.75, 0.5, 0.5], facecolor='crimson')
+      ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='steelblue')
+      fig.add_axes(ax2)
+      fig.add_axes(ax1)
+    </code></pre>
+
+    <img src="E5.svg" alt="E5" width=45% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
+
+    <p>
+      Now, I assume you might already have created several plots with Matplotlib in the past. But did you fit multiple plots into a single figure? In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper.
+    </p>
 
     <p>
     You may have previously defined parameters like <a href="">dpi</a> and size of your plot when exporting. But you can do so already when you set up the plot as a figure object. Here is a nice <a href="https://matplotlib.org/matplotblog/posts/an-inquiry-into-matplotlib-figures/" target="_blank">post on figures</a>. Often times we can simply
@@ -177,17 +203,6 @@
     <p>We must also increase the total figure size if we want to have the ratios between labels, tics etc. in each subplot still
     similar to how they would be if we had plotted each of the axes seperately. As you scale the figure size keep in mind that markers, lines, text and labels won't change with it. So if you increase the figure the function at the center of the figure will seem tinier relative to the rest of the plot and the points might become quite small aswell. 
     </p></p>
-
-    <p>As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots. The more basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:</p>
-    <pre><code class="python">
-      fig = plt.figure(figsize=(4.5,4.5), dpi=200)
-      ax1 = plt.Axes(fig=fig, rect=[0.75, 0.75, 0.5, 0.5], facecolor='crimson')
-      ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='steelblue')
-      fig.add_axes(ax2)
-      fig.add_axes(ax1)
-    </code></pre>
-
-    <img src="E5.svg" alt="E5" width=45% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
 
     <p>Now, using <a>subplots()</a> is great to get basic subplots done quickly. And defining axes seperately and adding them gives us a lot of control, but can become a bit too complicated for more extensive figures. - We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We may want to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" target="_blank">subplot2grid</a> to define our overall plot structure and define the individual plots and their positions inside the grid in the second step.</p>
     <p>We define our figure:</p>
@@ -227,13 +242,44 @@
     <h3>Text, Math & Annotations</h3>
     <!-- Header, Subheader, Axis & Labels -->
 
+    <p><b>Title & Subtitle.</b></p>
+    
+    <hr>
+    <p><b>Label.</b></p>
+    
+    <hr>
+    <p><b>Annotations.</b></p>
+    
+    <hr>
+    <p><b>Text.</b></p>
+
+
 
 
     <!-- Textstyles + TExtstyle Cheat sheet -->
+    <hr>
+    <p><b>Fonts.</b>
+      Matplotlib supports any type of font you throw at as long it is installed at your system and also a <a>.ttf</a> or <a>.afm</a> file. Here are a few more
+      or less random examples: 
+    </p>
+
+    <img src="text_sheet.png" alt="text_sheet" width=90% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px; padding-right: 18px;">
+
+    <p> Certain font families can change the personality of a plot drastically. In general, less is more, Comic Sans is a joke and if you can go without text, go without. I'll explain design guidelines like these quite extensively in the second part of the introduction, <a> Visual Principles </a>. 
+
+
+    <p>
+      If a font is not rendered this may have two reasons. Matplotlib might either need to refresh it's font cache:
+    <pre><code class="python">
+      matplotlib.font_manager._rebuild()
+    </code></pre>
+
 
 
     <!-- MATH -->
-    <p>By importing Matplotlib's <a>rc</a> module</p>
+    <hr>
+    <p><b>Math.</b>
+    By importing Matplotlib's <a>rc</a> module</p>
 
     <pre><code class="python">
       # for LaTeX font
@@ -283,6 +329,7 @@
     </ul>
     </p>
 
+    <!--
     <hr>
     <h3> Message Trumps Beauty </h3>
     <p>
@@ -294,7 +341,7 @@
       <li>Use Color Effectively</li>
     </ul>   
     </p>
-
+    -->
     <hr>
     <h3> Other Libraries </h3>
     <p> Forming a solid understanding of Matplotlib is crucial in order to master other plotting libraries since

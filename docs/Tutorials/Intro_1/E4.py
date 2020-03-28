@@ -19,6 +19,10 @@ ax1 = plt.subplot2grid((2, 2), (0, 0), facecolor=color)
 ax4 = plt.subplot2grid((2, 2), (1, 1), facecolor=color)
 ax2 = plt.subplot2grid((2, 2), (1, 0), facecolor=color)
 ax3 = plt.subplot2grid((2, 2), (0, 1), facecolor=color)
+ax1.set_xticks([]); ax1.set_yticks([])
+ax2.set_xticks([]); ax2.set_yticks([])
+ax3.set_xticks([]); ax3.set_yticks([])
+ax4.set_xticks([]); ax4.set_yticks([])
 
 
 annotate_axes(fig)

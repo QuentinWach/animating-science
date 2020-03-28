@@ -2,9 +2,9 @@ TODO
 ====
 
 + [X] content
-    + [ ] Tutorial 1 - PLOT LIKE A PRO
-    + [ ] Tutorial 2 - VISUAL PRINCIPLES (Live Animations)
-    + [ ] Tutorial 3 - ANIMATE THE DATA (Save as mp4 and GIF)
+    + [ ] 40% Tutorial 1 - PLOT LIKE A PRO
+    + [ ]  5% Tutorial 2 - VISUAL PRINCIPLES (Live Animations)
+    + [ ] 15% Tutorial 3 - ANIMATE THE DATA (Save as mp4 and GIF)
     ---
     (Advanced examples with a huge amount of math anc customization presented and explained) 
     (simple examples are given in the Tutorials)

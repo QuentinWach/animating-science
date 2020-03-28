@@ -11,12 +11,14 @@ def annotate_axes(fig):
         ax.tick_params(labelbottom=False, labelleft=False)
 
 
-fig = plt.figure(figsize=(4.5,4.5), dpi=200)
+fig = plt.figure(figsize=(2.5,2.5), dpi=200)
 # color of figure border
 fig.patch.set_facecolor('white')
 
 ax1 = plt.Axes(fig=fig, rect=[0.75, 0.75, 0.5, 0.5], facecolor='crimson')
 ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='steelblue')
+ax1.set_xticks([]); ax1.set_yticks([])
+ax2.set_xticks([]); ax2.set_yticks([])
 fig.add_axes(ax2)
 fig.add_axes(ax1)
 

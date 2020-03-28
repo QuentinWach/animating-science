@@ -160,7 +160,7 @@
       As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots. The more basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:
     </p>
     <pre><code class="python">
-      fig = plt.figure(dpi=200)
+      fig = plt.figure(figsize=(2.5,2.5),(dpi=200))
       ax1 = plt.Axes(fig=fig, rect=[0.75, 0.75, 0.5, 0.5], facecolor='crimson')
       ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='steelblue')
       fig.add_axes(ax2)

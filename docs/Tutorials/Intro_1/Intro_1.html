@@ -160,7 +160,7 @@
     <hr>
     <p>
       <b>Subplots.</b>
-      As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots. The more basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:
+      As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots. The basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:
     </p>
     <pre><code class="python">
       fig = plt.figure(figsize=(2.5,2.5),(dpi=200))
@@ -244,13 +244,13 @@
     
     <hr>
     <h3>Plotting Details</h3>
-    <p> <b>Limits</b>
+    <p> <b>Limits.</b>
     </p>
     <hr>
-    <p><b>Ticks</b>
+    <p><b>Ticks.</b>
     </p>
     <hr>
-    <p><b>Spines</b>
+    <p><b>Spines.</b>
     </p>
 
 
@@ -280,14 +280,11 @@
       import matplotlib.pyplot as plt
       import matplotlib.font_manager as fm
 
-      fig, ax = plt.subplots()
-
       prop = fm.FontProperties(fname='/usr/share/fonts/truetype/fontname.ttf')
-      ax.set_title('text', fontproperties=prop)
+      plt.title('text', fontproperties=prop)
 
       plt.show()
     </code></pre>
-
     <p>
       If a font is not rendered this may have two reasons. Matplotlib might either need to refresh it's font cache:
     <pre><code class="python">

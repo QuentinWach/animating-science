@@ -145,16 +145,19 @@
     
     <hr>
     <h3>Figures & Subplots </h3>
-
     <p>
       <b>The Figure.</b>
 
 
     </p>
+
+    <hr>
     <p>
       <b>Axes.</b>
 
     </p>
+
+    <hr>
     <p>
       <b>Subplots.</b>
       As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots. The more basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:
@@ -202,9 +205,10 @@
 
     <p>We must also increase the total figure size if we want to have the ratios between labels, tics etc. in each subplot still
     similar to how they would be if we had plotted each of the axes seperately. As you scale the figure size keep in mind that markers, lines, text and labels won't change with it. So if you increase the figure the function at the center of the figure will seem tinier relative to the rest of the plot and the points might become quite small aswell. 
-    </p></p>
+    </p>
 
-    <p>Now, using <a>subplots()</a> is great to get basic subplots done quickly. And defining axes seperately and adding them gives us a lot of control, but can become a bit too complicated for more extensive figures. - We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We may want to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" target="_blank">subplot2grid</a> to define our overall plot structure and define the individual plots and their positions inside the grid in the second step.</p>
+    <hr>
+    <p><b>Subplot2grid.</b> Now, using <a>subplots()</a> is great to get basic subplots done quickly. And defining axes seperately and adding them gives us a lot of control, but can become a bit too complicated for more extensive figures. - We want to have control over the exact shapes and ratios of all the subplots so simply using Matplotlib's subplot method won't be enough. We may want to use <a href="https://matplotlib.org/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" target="_blank">subplot2grid</a> to define our overall plot structure and define the individual plots and their positions inside the grid in the second step.</p>
     <p>We define our figure:</p>
     <pre><code class="python">
       fig = plt.figure(figsize=(8,3), dpi=200)
@@ -233,13 +237,31 @@
 
     <img src="E3.svg" alt="E3" width=90% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
 
-    <p>Since you probably wonder, why we define the grid resolution each time, this is... Just like here:</p>
+    <p>Since you probably wonder, why we define the grid resolution each time, this is...</p>
 
-
-    <p>But it is still limiting and it is generally preferred to use the more general <a href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html#matplotlib.gridspec.GridSpec" target="_blank">GridSpec</a> which adds control over the spacing between the subplots aswell!</p>
     <hr>
+    <p><b>GridSpec.</b> It is still limiting and it is usually preferred to use the more general <a href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html#matplotlib.gridspec.GridSpec" target="_blank">GridSpec</a> which adds control over the spacing between the subplots aswell!</p>
     
+    <hr>
+    <h3>Plotting Details</h3>
+    <p> <b>Limits</b>
+    </p>
+    <hr>
+    <p><b>Ticks</b>
+    </p>
+    <hr>
+    <p><b>Spines</b>
+    </p>
+
+
+    <hr>
     <h3>Text, Math & Annotations</h3>
+    <p> 
+      Most of the time text of any kind won't be necessary or will in fact only confuse the recipient looking at the figure.
+      Relevant text must usually be added next to the picture and not be a part of it as to not distract or confuse. 
+      Nonetheless displaying some math, units and axes describtions are essential. To keep the figure as visually clean as possible
+      and get it's message across without throwing around with ugly fonts, we need to know how to customize these as well.
+    </p>
     <p><b>Fonts.</b>
       Matplotlib supports any type of font you throw at as long it is installed at your system and also a <a>.ttf</a> or <a>.afm</a> file. Here are a few more
       or less random examples: 
@@ -250,6 +272,22 @@
     <p> 
       Certain font families can change the personality of a plot drastically. In general, less is more, Comic Sans is a joke and if you can go without text, go without. I'll explain design guidelines like these quite extensively in the second part of the introduction, <a> Visual Principles </a>.
     </p>
+    <!-- TODO: ON MPL-DATA FILES -->
+    <p>
+      The general method of changing any text font to a new one (here 'fontname') goes somewhat like this:
+    </p>
+    <pre><code class="python">
+      import matplotlib.pyplot as plt
+      import matplotlib.font_manager as fm
+
+      fig, ax = plt.subplots()
+
+      prop = fm.FontProperties(fname='/usr/share/fonts/truetype/fontname.ttf')
+      ax.set_title('text', fontproperties=prop)
+
+      plt.show()
+    </code></pre>
+
     <p>
       If a font is not rendered this may have two reasons. Matplotlib might either need to refresh it's font cache:
     <pre><code class="python">
@@ -283,11 +321,11 @@
 
     <pre><code class="python">
       # red LaTeX expression
-      plt.text(0.45,8.5,r"$(x-1)^3 + 1$", color="crimson", size=10)
+      plt.text(0.25,8.5,r"$(x-1)^3 + 1$", color="crimson", size=15)
     </code></pre>
     <p> to plot the expression \((x-1)^3 + 1\) at the center of a given plot.
 
-    <img src="E1.svg" alt="E1" width=80% style="display: block;margin-left:auto;margin-right:auto; text-align: center; padding-top: 20px; padding-right: 60px;">
+    <img src="E1.svg" alt="E1" width=80% style="display: block;margin-left:auto;margin-right:auto; text-align: center; padding-top: 20px; padding-right: 40px;">
 
     <p>By changing the rc parameters you have now made changes to the style. To reverse this, you can use <a href="https://matplotlib.org/3.2.0/api/style_api.html" target="_blank">matplotlib.style.use('default')</a> or <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.rcdefaults.html" target="_blank">rcdefaults()</a> to restore the default rc parameters.</p>
 

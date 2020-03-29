@@ -33,15 +33,21 @@ fig.patch.set_facecolor('white')
 ax.plot(X,Y2,".", markersize=1)
 ax.plot(X,Y,"-", color="crimson")
 
+# no ticks
+ax.set_xticks([]); ax.set_yticks([])
+ax.axis("off")
+
 # y-axis
-plt.ylabel(r"$y$")
+#plt.ylabel(r"$y$")
 plt.ylim(-20, 20)
 # x-axis
-plt.xlabel(r"$x$")
+#plt.xlabel(r"$x$")
 plt.xlim(-2, 4) 
 
 # LaTeX function
-plt.text(0.45,8.5,r"$(x-1)^3 + 1$", color="crimson", size=10)
+plt.text(0.25,8.5,r"$(x-1)^3 + 1$", color="crimson", size=15)
+
+plt.tight_layout()
 
 # save graphic
 plt.savefig("E1.svg", bbox_inches="tight")

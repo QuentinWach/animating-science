@@ -6,7 +6,7 @@ TODO
     + [ ]  5% Tutorial 2 - VISUAL PRINCIPLES (Live Animations)
     + [ ] 15% Tutorial 3 - ANIMATE THE DATA (Save as mp4 and GIF)
     ---
-    (Advanced examples with a huge amount of math anc customization presented and explained) 
+    (Advanced examples with a huge amount of math and customization presented and explained) 
     (simple examples are given in the Tutorials)
     + [ ] Example 1
     + [ ] Example 2
@@ -17,3 +17,7 @@ TODO
 + [ ] custom squarespace domain or quentinwach.com/animating-science
 + [ ] loading animations 
     + https://webdesign.tutsplus.com/tutorials/quick-tip-how-to-enhance-a-page-with-css-animations--cms-32100
+
+---
+
++ [ ] write a manim documentation 

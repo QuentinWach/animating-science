@@ -25,54 +25,44 @@ body {
   padding-bottom: 200px;
 }
 hr {
-  width: 92.2%;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  width: 89%;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 h1 {
   font-family: "Open Sans";
   color: black;
-  font-size: 55px;
+  font-size: 45px;
   text-align: center;
   line-height: 54px;
-  margin: 50px;
+  margin: 18px;
+  margin-top: 50px;
 }
 h2 {
   font-family: "Open Sans";
   color: black;
-  font-size: 38px;
+  font-size: 29px;
   text-align: center;
-  margin: 50px;
-  margin-bottom: 32.5px;
-  margin-top: 26.5px;
-}
-h4 {
-  font-family: "Open Sans";
-  color: white;
-  background-color: black;
-  font-size: 38px;
-  border: 2px solid;
-  border-radius: 5px;
-  text-align: center;
-  padding: 5px;
+  margin-bottom: 22.5px;
+  margin-top: 75px;
 }
 h3 {
   font-family: "Open Sans";
   color: white;
   background-color: #DC143C;
-  font-size: 24px;
+  font-size: 18px;
   border: 2px solid;
   border-radius: 5px;
   text-align: left;
-  padding: 10px;
+  padding: 7px;
   padding-left: 50px;
 }
 p {
   font-family: "Barlow";
   text-align: left;
   color: black;
-  font-size: 20px;
-  line-height: 28px;
+  font-size: 15px;
+  line-height: 19px;
   margin: 50px;
   margin-top: 15px;
   margin-bottom: 2.5px;
@@ -109,7 +99,7 @@ a:hover {
   opacity: 1; /* Firefox */
 }
 code {
-  font-size:17px;
+  font-size:13px;
   margin: 45px;
   margin-top: 15px;
   margin-bottom: 17px;
@@ -129,8 +119,6 @@ ul {
   font-family: "Barlow";
   text-align: left;
   color: black;
-  font-size: 20px;
-  line-height: 28px; /*23*/
   margin: 50px;
   margin-top: 15px;
   margin-bottom: 2.5px;  
@@ -179,7 +167,7 @@ button.star {
   display: inline-block;
   font-size: 18px;
   margin-top: 1.5px;
-  width: 400px;
+  width: 380px;
 }
 .post:hover {
   background-color: #c4c4c4;
@@ -243,7 +231,7 @@ button.star {
 }
 .retweet {
   position: fixed;
-  left: 1500px;
+  left: 1410px;
   bottom: 75px;
   width: 70px;
   height: 70px;
@@ -266,7 +254,7 @@ button.star {
 }
 .GitStar {
   position: fixed;
-  left: 1500px;
+  left: 1410px;
   bottom: 150px;
   width: 70px;
   height: 70px;
@@ -288,8 +276,8 @@ button.star {
 }
 .attention {
   position: fixed;
-  left: 56px;
-  top: 2px;
+  left: 66px;
+  top: 15px;
   background-color: white 50%;
   color: white;
   border: 1.5px silver solid;
@@ -302,11 +290,10 @@ button.star {
 }
 
 /*-------------------------------------------------*/
-
 /* Style the side navigation */
 .sidenav {
   height: 100%;
-  width: 420px;
+  width: 400px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -315,12 +302,20 @@ button.star {
   overflow-x: hidden;
   padding-top:10px;
 }
-
+.rightnav {
+  height: 100%;
+  width: 400px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  background-color: darkgray;
+  overflow-x: hidden;
+  padding-top:10px;
+}
 /* Style the content */
 .content {
   position: relative;
   padding-top:10px;
-  margin-left: 420px;
-  padding-left: 55px;
-  width: 1375px;
-}
+  margin-left: 540px;
+  width: 750px;

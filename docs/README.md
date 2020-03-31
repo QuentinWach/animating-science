@@ -15,7 +15,10 @@ https://jakevdp.github.io/PythonDataScienceHandbook/index.html
     + [ ] Example 2
     + [ ] Example 3
 
-+ [ ] improve readability by resizing. More on the page --> better overview (100% TO 70% !!!!)
++ [X] improve readability by resizing.
++ [ ] make the pagte dynamic and center the post (so that it fits all screens nicely)
++ [ ] test other fonts to improve readability
+
 + [ ] start / home page
 + [ ] FAQ page with shameless advertising for myself 
 + [ ] custom squarespace domain or quentinwach.com/animating-science
@@ -25,4 +28,4 @@ https://jakevdp.github.io/PythonDataScienceHandbook/index.html
 ---
 
 + [ ] create a manim documentation
-+ [ ] create a research blog "understanding intelligence" (WT) for scientific machine learning, learning networks, statistics ...
++ [ ] create a personal + research blog "understanding intelligence" (WT) for scientific machine learning, learning networks, statistics ...

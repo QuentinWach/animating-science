@@ -1,5 +1,5 @@
 # Quentin Wach
-# FIGURE & AXES IMAGE
+# AXES & TICKS CONTAINER IMAGE
 
 import matplotlib.pyplot as plt
 import matplotlib

@@ -15,7 +15,7 @@ https://jakevdp.github.io/PythonDataScienceHandbook/index.html
     + [ ] Example 2
     + [ ] Example 3
 
-+ [ ] improve readability by resizing. More on the page --> better overview 
++ [ ] improve readability by resizing. More on the page --> better overview (100% TO 70% !!!!)
 + [ ] start / home page
 + [ ] FAQ page with shameless advertising for myself 
 + [ ] custom squarespace domain or quentinwach.com/animating-science

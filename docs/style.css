@@ -121,6 +121,8 @@ img {
 }
 ul {
   font-family: "Roboto";
+  color: #4D4D4D;
+  font-size: 15px;
   text-align: left;
   color: black;
   margin: 50px;
@@ -292,7 +294,6 @@ button.star {
   box-shadow: 0px 0px 5px silver ;
   z-index: 10;
 }
-
 /*-------------------------------------------------*/
 /* Style the side navigation */
 .sidenav {

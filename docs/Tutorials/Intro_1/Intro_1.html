@@ -33,7 +33,7 @@
   <p style="color: black; text-align: center;"><b>Advanced Visualizations with Python</b> </p>
   <p style="color: white; text-align: center; font-size: 16px;">Introduction</p>
   <div class="box">
-    <a href="Tutorials/Intro_1/Intro_1.html" class="postN">
+    <a href="" class="postN">
       <b>Plot Like a Pro</b> - Intro 1
     </a>
   </div>
@@ -136,10 +136,10 @@
     <h3>Primitives & Containers </h3>
     <p> In Matplotlib objects are seperate into primitives and containers.</p>
     <p class="quote">
-      "The primitives represent the standard graphical objects we want to paint onto our canvas: Line2D, Rectangle, Text, AxesImage, etc., and the containers are places to put them (Axis, Axes and Figure). The standard use is to create a Figure instance, use the Figure to create one or more Axes or Subplot instances, and use the Axes instance helper methods to create the primitives." <a href="https://matplotlib.org/3.2.1/api/index.html#usage-patterns"> Read more.</a>
+      "The primitives represent the standard graphical objects we want to paint onto our canvas: Line2D, Rectangle, Text, AxesImage, etc., and the containers are places to put them (Axis, Axes and Figure). The standard use is to create a Figure instance, use the Figure to create one or more Axes or Subplot instances, and use the Axes instance helper methods to create the primitives." <a href="https://matplotlib.org/3.2.1/api/index.html#usage-patterns"  target="_blank"> Read more.</a>
     </p>
     <p>
-      Most of the time we will be interested in customizing the primitives like the font family of a text or the thinkness and color of a line. Nonetheless knowing how to change the properties of the containers may give you the 1% edge over those that have no idea what you are talking about.
+      Most of the time we will be interested in customizing the primitives like the font family of a text or the thinkness and color of a line.
     </p>
 
     <hr>
@@ -148,23 +148,29 @@
       The class from which all other objects inherit their basic properties is the artist. It's list of basic options to configure is quite long. You can use <a href="https://matplotlib.org/3.2.0/api/_as_gen/matplotlib.artist.getp.html#matplotlib.artist.getp" target="_blank"> matplotlib.artist.getp() </a> to print out the properties of any object. This way you may change the background colors, the positioning order / z-order or fix objects so that they don't get animated etc..
       In general, properties of any object 'o' can be changed with <a>o.set(alpha=0.5, animated=False)</a> for example.
     </p>
-
+    <p>
+      The reason for why it is called Artist is that this is where Matplotlib defines how to render objects to the canvas.
+    </p>
 
     <hr>
     <p><b><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" target="_blank">The Figure</a></b></p>
+    <p>
+      The complete image we create - the all encompassing container - is the <a> matplotlib.figure.Figure </a>, and it holds everything in the figure. As one might expect this is where we will add our axes and subplots.
+    </p>
 
     <hr>
     <p><b><a href="https://matplotlib.org/3.2.1/api/axes_api.html#matplotlib.axes.Axes" target="_blank">Axes</a></b></p>
 
     <hr>
-    <p><b>Axis</b></p>
+    <p><b><a>Axis</a></b></p>
 
     <hr>
-    <p><b>Ticks</b></p>
+    <p><b><a>Ticks</a></b></p>
 
 
     <hr>
-    <h3>Subplots</h3>
+    <h3>Filling Figures</h3>
+    <a href="https://stackoverflow.com/questions/43326680/what-are-the-differences-between-add-axes-and-add-subplot"  target="_blank"> Difference Axes and Subplots WICHTIG</a>
     <p>
       ... The basic but complicated approach would be to do define axes independently and then add them together which allows for the creation of overlapping subplots like this:
     </p>

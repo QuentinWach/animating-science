@@ -30,8 +30,9 @@ hr {
   margin-bottom: 25px;
 }
 h1 {
-  font-family: "Open Sans";
+  font-family: "Roboto";
   color: black;
+  letter-spacing: 1px;
   font-size: 45px;
   text-align: center;
   line-height: 54px;
@@ -39,7 +40,7 @@ h1 {
   margin-top: 50px;
 }
 h2 {
-  font-family: "Open Sans";
+  font-family: "Roboto";
   color: black;
   font-size: 29px;
   text-align: center;
@@ -47,7 +48,7 @@ h2 {
   margin-top: 75px;
 }
 h3 {
-  font-family: "Open Sans";
+  font-family: "Roboto";
   color: white;
   background-color: #DC143C;
   font-size: 18px;
@@ -58,9 +59,9 @@ h3 {
   padding-left: 50px;
 }
 p {
-  font-family: "Barlow";
+  font-family: "Roboto";
   text-align: left;
-  color: black;
+  color: #4D4D4D;
   font-size: 15px;
   line-height: 19px;
   margin: 50px;
@@ -68,10 +69,10 @@ p {
   margin-bottom: 2.5px;
 }
 a {
-  font-family: "Barlow";
+  font-family: "Roboto";
   color: black;
   background-color: whitesmoke;
-  border: 2px solid;
+  border: 1.5px solid;
   border-color: whitesmoke;
   border-radius: 5px;
   margin: 50px;
@@ -116,7 +117,7 @@ img {
   padding-top: 20px;"
 }
 ul {
-  font-family: "Barlow";
+  font-family: "Roboto";
   text-align: left;
   color: black;
   margin: 50px;
@@ -187,8 +188,8 @@ button.star {
 }
 .quote {
   text-align: center;
-  padding-top:25px;
-  padding-bottom:25px;
+  padding-top:5px;
+  padding-bottom:5px;
 }
 .ASTit {
   color: black;

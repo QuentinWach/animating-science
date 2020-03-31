@@ -42,6 +42,7 @@ h1 {
 h2 {
   font-family: "Roboto";
   color: black;
+  letter-spacing: 0.2px;
   font-size: 29px;
   text-align: center;
   margin-bottom: 22.5px;
@@ -51,6 +52,7 @@ h3 {
   font-family: "Roboto";
   color: white;
   background-color: #DC143C;
+  letter-spacing: 0.2px;
   font-size: 18px;
   border: 2px solid;
   border-radius: 5px;
@@ -61,6 +63,7 @@ h3 {
 p {
   font-family: "Roboto";
   text-align: left;
+  letter-spacing: 0.2px;
   color: #4D4D4D;
   font-size: 15px;
   line-height: 19px;

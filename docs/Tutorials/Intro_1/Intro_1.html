@@ -24,7 +24,6 @@
   <!-- MATH -->
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 </head>
 <body>
 
@@ -69,7 +68,7 @@
       <b>Galaxy Collision</b> - Example 4
     </a>
   </div>
-  <p style="color: white; text-align: center;font-size: 16px; line-height: 18px; padding: 20px;"><b>Note</b>: This series is evolving over time. I highly encourage you to ask questions and make recommendations for improvement via Twitter <a href="https://twitter.com/QuentinWach" style="color: white; background-color: darkgray; border: none;">@QuentinWach</a>.</p>
+  <p style="color: #EDEDED; text-align: center;font-size: 16px; line-height: 18px; padding: 20px;"><b>Note</b>: This series is evolving over time. I highly encourage you to ask questions and make recommendations for improvement via Twitter <a href="https://twitter.com/QuentinWach" style="color: white; background-color: darkgray; border: none;">@QuentinWach</a>.</p>
 </div>
 
 <div class="content">
@@ -147,6 +146,7 @@
     <p><b><a href="https://matplotlib.org/3.2.0/tutorials/intermediate/artists.html" target="_blank">Artist Objects</a></b></p>
     <p>
       The class from which all other objects inherit their basic properties is the artist. It's list of basic options to configure is quite long. You can use <a href="https://matplotlib.org/3.2.0/api/_as_gen/matplotlib.artist.getp.html#matplotlib.artist.getp" target="_blank"> matplotlib.artist.getp() </a> to print out the properties of any object. This way you may change the background colors, the positioning order / z-order or fix objects so that they don't get animated etc..
+      In general, properties of any object 'o' can be changed with <a>o.set(alpha=0.5, animated=False)</a> for example.
     </p>
 
 

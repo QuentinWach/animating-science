@@ -1,6 +1,9 @@
 TODO
 ====
 
+BE BETTER THAN THIS SHIT SECTION ABOUT MATPLOTLIB:
+https://jakevdp.github.io/PythonDataScienceHandbook/index.html
+
 + [X] content
     + [ ] 40% Tutorial 1 - PLOT LIKE A PRO
     + [ ]  5% Tutorial 2 - VISUAL PRINCIPLES (Live Animations)
@@ -12,6 +15,7 @@ TODO
     + [ ] Example 2
     + [ ] Example 3
 
++ [ ] improve readability by resizing. More on the page --> better overview 
 + [ ] start / home page
 + [ ] FAQ page with shameless advertising for myself 
 + [ ] custom squarespace domain or quentinwach.com/animating-science
@@ -20,4 +24,5 @@ TODO
 
 ---
 
-+ [ ] write a manim documentation 
++ [ ] create a manim documentation
++ [ ] create a research blog "understanding intelligence" (WT) for scientific machine learning, learning networks, statistics ...

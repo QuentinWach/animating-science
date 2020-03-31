@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Quentin Wach | How To Plot</title>
+  <title>Quentin Wach | Plot Like a Pro</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- STYLE -->
-  <link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">
+  <!--<link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">-->
   <link rel="stylesheet" type="text/css" href="http://localhost:8000/Dokumente/Computerphysik/docs/style.css">
 
   <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
@@ -82,7 +82,7 @@
   <p style="color: white; text-align: center;font-size: 16px; line-height: 18px; padding: 20px;"><b>Note</b>: This series is evolving over time. I highly encourage you to ask questions and make recommendations for improvement via Twitter <a href="https://twitter.com/QuentinWach" style="color: white; background-color: darkgray; border: none;">@QuentinWach</a>.</p>
 </div>
 
-<div class="content" style="width: 1000px;">
+<div class="content">
     <!-- RETWEET -->
     <!--https://twitter.com/intent/retweet?tweet_id=1153018532369555456-->
     <a href="https://twitter.com/intent/tweet?text=Plot Like a Pro &amp;url=https://quentinwach.github.io/Animating-Science/Tutorials/Intro_1/Intro_1.html" target="_blank" style="all: unset;" class="retweet">
@@ -134,33 +134,41 @@
       Most tutorials are very focused on very rudimentary aspects of this library or only show you a very special example. Let's do things differently and get at least some overview so that we can actually form the general understanding we need to truly be able to grow our plotting powers.
     </p>
     <p>
-      With Matplotlib you have access to <b>56 submodules</b>.
+      With Matplotlib you have access to <b><a href="https://matplotlib.org/3.2.0/api/index.html" target="_blank">56 submodules</a></b>.
     </p>
     <p>
-      You might find this a bit overwelming at first, but the module is carefully desgined to be very <b>object oriented</b> and the naming conventions are mostly quite intuitive as you will realize soon. In fact, you won't even really have to understand anything at first, because you can simply load <a href="https://matplotlib.org/3.2.1/api/pyplot_summary.html" target="_blank" class="inline">matplotlib.pyplot</a> for a <b>command line approach</b> which makes it very easy to get the basics done quickly. (Sadly Matplotlib's biggest issue is it's API. This is mostly because it is heavily influenced by Matlab.) These two aspects, the pyplot and the object oriented approach are the most common ways of using this vast library. 
+      You might find this a bit overwelming at first, but the module is carefully desgined to be very <b>object oriented</b> and the naming conventions are mostly quite intuitive as you will realize soon. In fact, you won't even really have to understand anything at first, because you can simply load <a href="https://matplotlib.org/3.2.1/api/pyplot_summary.html" target="_blank" class="inline">matplotlib.pyplot</a> for a <b>command line approach</b> which makes it very easy to get the basics done quickly. (Sadly Matplotlib's biggest issue is it's <a href="https://matplotlib.org/3.2.1/api/index.html#usage-patterns" target="_blank">API</a>. This is mostly because it is heavily influenced by Matlab.) These two aspects, the pyplot and the object oriented approach are the most common ways of using this vast library. 
     </p>
     <p>
-      Matplotlib's objects form the core of the library. To understand them is absolutely necessary for the control and customization we desire.
+      Matplotlib's objects form the core of the library. Every element in the figure is represented using matplotlib's so called artist class, offering a wide range of properties to customize its design. To understand them is absolutely necessary for the control and customization of the appeareance we desire.
     </p>
     
     <hr>
-    <h3>Figures & Subplots </h3>
-    <p>
-      <b>The Figure.</b>
-
+    <h3>Primitives & Containers </h3>
+    <p> In Matplotlib objects are seperate into primitives and containers.  
 
     </p>
 
     <hr>
-    <p>
-      <b>Axes.</b>
-
-    </p>
+    <p><b><a href="https://matplotlib.org/3.2.0/tutorials/intermediate/artists.html" target="_blank">The Artist Class</a></b></p>
+    
+    <hr>
+    <p><b><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" target="_blank">The Figure</a></b></p>
 
     <hr>
+    <p><b><a href="https://matplotlib.org/3.2.1/api/axes_api.html#matplotlib.axes.Axes" target="_blank">Axes</a></b></p>
+
+    <hr>
+    <p><b>Axis</b></p>
+
+    <hr>
+    <p><b>Ticks</b></p>
+
+
+    <hr>
+    <h3>Subplots</h3>
     <p>
-      <b>Subplots.</b>
-      As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots. The basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:
+      ...As you can see, we have defined two primitives. The <a>figure</a> and <a>axes</a> which are places inside the figure forming subplots.... The basic but complicated approach would be to do define them independently and then add them together which allows for the creation of overlapping subplots like this:
     </p>
     <pre><code class="python">
       fig = plt.figure(figsize=(2.5,2.5),(dpi=200))

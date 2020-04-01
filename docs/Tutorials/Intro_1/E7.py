@@ -4,6 +4,7 @@
 import matplotlib.pyplot as plt
 import matplotlib
 import numpy as np
+np.random.seed(42)
 
 fig = plt.figure(figsize=(16,4), dpi=300)
 
@@ -17,8 +18,8 @@ ax1.set_xlabel("Axis Container")
 matplotlib.artist.getp(ax1)
 
 N = 50
-x1 = 0.021 * np.arange(0.3,N)
-y1 = 0.62 * np.random.rand(N) + 0.17 
+x1 = 0.0197 * np.arange(2,N)
+y1 = 0.62 * np.random.rand(N-2) + 0.17 
 ax1.plot(x1,y1,"o-", color="lightgray", alpha=0.85)
 ax1.set_xlim([0,1])
 ax1.set_ylim([0,1])

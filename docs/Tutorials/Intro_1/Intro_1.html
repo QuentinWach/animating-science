@@ -72,106 +72,109 @@
 </div>
 
 <div class="content">
-    <!-- RETWEET -->
-    <!--https://twitter.com/intent/retweet?tweet_id=1153018532369555456-->
+  <!-- TWEET BUTTON -->
     <a href="https://twitter.com/intent/tweet?text=Plot Like a Pro &amp;url=https://quentinwach.github.io/Animating-Science/Tutorials/Intro_1/Intro_1.html" target="_blank" style="all: unset;" class="retweet">
       <img src="https://quentinwach.github.io/Animating-Science/tweet_pic.png" alt="Tweet" class="retweet">   
     </a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    
-    <!-- STAR ON GITHUB -->
+      
+  <!-- STAR BUTTON -->
     <a href="https://github.com/QuentinWach/Animating-Science"  target="_blank" class="GitStar">
       <i alt="Star" class="material-icons" style="font-size: 40px; padding-top: 7px;">grade</i>  
     </a>
 
-    <!-- BLOG POST -->
-    <h2>PLOT LIKE A PRO</h2>
-    <p style="text-align: center; margin-bottom: 55px;"><b><a href="https://twitter.com/QuentinWach" target="_blank">Quentin Wach</a></b></p>
+  <!-- BLOG POST -->
 
-    <p>
-    In this series you will learn how to create animations with <a href="https://www.python.org/" target="_blank">Python</a> starting with an 
-    overview about plotting in general. If you take only one idea out of this tutorial, let it be this:</p>
+    <!-- HEADER, INTRODUCTION & QUESTIONS -->
+      <h2>PLOT LIKE A PRO</h2>
+      <p style="text-align: center; margin-bottom: 55px;"><b><a href="https://twitter.com/QuentinWach" target="_blank">Quentin Wach</a></b></p>
 
-    <p class="quote">DO NOT TRUST THE DEFAULT! - CUSTOMIZE EVERYTHING!</p>
-    <p>
+      <p>
+      In this series you will learn how to create animations with <a href="https://www.python.org/" target="_blank">Python</a> starting with an 
+      overview about plotting in general. If you take only one idea out of this tutorial, let it be this:</p>
 
-    Hence this tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experience coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, and do so properly, this is the guide you have been searching for.
+      <p class="quote">DO NOT TRUST THE DEFAULT! - CUSTOMIZE EVERYTHING!</p>
+      <p>
 
-    </p>
-    <img src="python.png" alt="Python" width=10% style="filter: grayscale(100%);">
+      Hence this tutorial and all the following are not oriented towards students just starting out and searching for coding advice or directions in how to set up their environment. - If however you already have some experience coding and using Python, and you want to start visualizing your data or simulation without moving to another tool, and do so properly, this is the guide you have been searching for.
 
-    <p><b>Why choose Python with Matplotlib?</b>
+      </p>
+      <img src="python.png" alt="Python" width=10% style="filter: grayscale(100%);">
 
-    <p>There are many great tools to create interactive visualizations and animations for science most notably Mathematica and Matlab. Many academics in STEM use them, but there is no discussion that if you want to create beautifull, solid and creative visualizations that are to be published, Matplotlib is the way to go.</p>
+      <p><b>Why choose Python with Matplotlib?</b>
+
+      <p>There are many great tools to create interactive visualizations and animations for science most notably Mathematica and Matlab. Many academics in STEM use them, but there is no discussion that if you want to create beautifull, solid and creative visualizations that are to be published, Matplotlib is the way to go.</p>
+      
+      <p>It offers the precision other tools lack and creates clean plots without aliasing, correct vectorizations and formatting no matter what backend. There is nothing you can't access and thus you can customize anything you desire. Every single plot object like figures and axes or even individual ticks, lines, labels or points can be changed to fit your needs.</p>
+
+      <p>All of that can be done with Python which is the most popular programming language in STEM research mostly because it's very high level and therefore very easy to use especially for bigger projects. It offers a wide range of other modules besides Matplotlib that can be imported to extend it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Analyze big data? Run with Python.</p>
+      
+      <p>Both are completely free for everyone.</p>
+
+      <img src="matplot.png" alt="Matplot" width=10% style="filter: grayscale(100%);">
+
+      <p><b>How do I work through this?</b></p>
+      <p>I encourage you to create a Jupyter notebook for this particular tutorial so that you can play around with the given codesnippets and examples, but later on, when we start animating, it will be best to work with a simple editor and the terminal.</p>
+      <p>Please install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.
+      Do not use Pylab all the much if at all, please.</p>
+
+    <!-- THE MATPLOTLIB API -->
+      <hr>
+      <h3> The Matplotlib API </h3>
+      <p>
+        Most tutorials are very focused on very rudimentary aspects of this library or only show you a very special example. Let's do things differently and get at least some overview so that we can actually form the general understanding we need to truly be able to grow our plotting powers.
+      </p>
+      <p>
+        With Matplotlib you have access to <b><a href="https://matplotlib.org/3.2.0/api/index.html" target="_blank">56 submodules</a></b>.
+      </p>
+      <p>
+        You might find this a bit overwelming at first, but the module is carefully desgined to be very <b>object oriented</b> and the naming conventions are mostly quite intuitive as you will realize soon. In fact, you won't even really have to understand anything at first, because you can simply load <a href="https://matplotlib.org/3.2.1/api/pyplot_summary.html" target="_blank" class="inline">matplotlib.pyplot</a> for a <b>command line approach</b> which makes it very easy to get the basics done quickly. (Sadly Matplotlib's biggest issue is it's <a href="https://matplotlib.org/3.2.1/api/index.html#usage-patterns" target="_blank">API</a>. This is mostly because it is heavily influenced by Matlab.) These two aspects, the pyplot and the object oriented approach are the most common ways of using this vast library. 
+      </p>
     
-    <p>It offers the precision other tools lack and creates clean plots without aliasing, correct vectorizations and formatting no matter what backend. There is nothing you can't access and thus you can customize anything you desire. Every single plot object like figures and axes or even individual ticks, lines, labels or points can be changed to fit your needs.</p>
+    <!-- PRIMITIVES & CONTAINERS -->
+      <hr>
+      <h3>Primitives & Containers </h3>
+      <p> In Matplotlib objects are seperated into primitives and containers.</p>
+      <p class="quote">
+        "The primitives represent the standard graphical objects we want to paint onto our canvas: Line2D, Rectangle, Text, AxesImage, etc., and the containers are places to put them (Axis, Axes and Figure). The standard use is to create a Figure instance, use the Figure to create one or more Axes or Subplot instances, and use the Axes instance helper methods to create the primitives." <a href="https://matplotlib.org/3.2.1/api/index.html#usage-patterns"  target="_blank"> Read more.</a>
+      </p>
+      <p>
+        Most of the time we will be interested in customizing the primitives like the font family of a text or the thinkness and color of a line.
+      </p>
 
-    <p>All of that can be done with Python which is the most popular programming language in STEM research mostly because it's very high level and therefore very easy to use especially for bigger projects. It offers a wide range of other modules besides Matplotlib that can be imported to extend it's functionality and the community is working relentlessly to enable anyone to do anything with Python. You want to create and test new algorithms and design circuits for quantum computing? You want to prototype custom machine learning models as fast as possible? Analyze big data? Run with Python.</p>
-    
-    <p>Both are completely free for everyone.</p>
+    <!-- ARTIST OBJECTS -->
+      <hr>
+      <p><b><a href="https://matplotlib.org/3.2.0/tutorials/intermediate/artists.html" target="_blank">Artist Objects</a></b></p>
+      <p>
+        The class from which all other objects inherit their basic properties is the artist. It's list of basic options to configure is quite long. You can use <a href="https://matplotlib.org/3.2.0/api/_as_gen/matplotlib.artist.getp.html#matplotlib.artist.getp" target="_blank"> matplotlib.artist.getp() </a> to print out the properties of any object. This way you may change the background colors, the positioning order / z-order or fix objects so that they don't get animated etc..
+        In general, properties of any object 'o' can be changed with <a>o.set(alpha=0.5, animated=False)</a> for example.
+      </p>
+      <p>
+        The reason for why it is called Artist is that this is where Matplotlib defines how to render objects to the canvas.
+      </p>
 
-    <img src="matplot.png" alt="Matplot" width=10% style="filter: grayscale(100%);">
+    <!-- THE FIGURE & AXES -->
+      <hr>
+      <p><b><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" target="_blank">The Figure</a> & <a href="https://matplotlib.org/3.2.1/api/axes_api.html#matplotlib.axes.Axes" target="_blank">Axes</a></b></p>
+      <p>
+        The complete image we create is the <a> matplotlib.figure.Figure </a>, and it holds all the axes objects.
+      </p>
+      <img src="E6.svg" alt="E6" width=90% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
+      <p>
+        The axes container holds the vast majority of all the objects used in a figures. Here we can directly add our data and create a plot, which makes this object the center of our work most of the time. There are a bunch of helper methods like <a>ax.plot()</a>, <a>ax.scatter()</a> or <a>ax.imshow()</a> which enable the display of your data inside these containers. We do not have to limit ourselves to simple x-y-plots, yet as the name of this object also tells us, there are still the axis container that we have to explore:
+      </p>
 
-    <p><b>How do I work through this?</b></p>
-    <p>I encourage you to create a Jupyter notebook for this particular tutorial so that you can play around with the given codesnippets and examples, but later on, when we start animating, it will be best to work with a simple editor and the terminal.</p>
-    <p>Please install Numpy aswell if you dared not to do until now despite it being the fundamental Python package for scientific computing.
-    Do not use Pylab all the much if at all, please.</p>
-
-    <hr>
-    <h3> The Matplotlib API </h3>
-    <p>
-      Most tutorials are very focused on very rudimentary aspects of this library or only show you a very special example. Let's do things differently and get at least some overview so that we can actually form the general understanding we need to truly be able to grow our plotting powers.
-    </p>
-    <p>
-      With Matplotlib you have access to <b><a href="https://matplotlib.org/3.2.0/api/index.html" target="_blank">56 submodules</a></b>.
-    </p>
-    <p>
-      You might find this a bit overwelming at first, but the module is carefully desgined to be very <b>object oriented</b> and the naming conventions are mostly quite intuitive as you will realize soon. In fact, you won't even really have to understand anything at first, because you can simply load <a href="https://matplotlib.org/3.2.1/api/pyplot_summary.html" target="_blank" class="inline">matplotlib.pyplot</a> for a <b>command line approach</b> which makes it very easy to get the basics done quickly. (Sadly Matplotlib's biggest issue is it's <a href="https://matplotlib.org/3.2.1/api/index.html#usage-patterns" target="_blank">API</a>. This is mostly because it is heavily influenced by Matlab.) These two aspects, the pyplot and the object oriented approach are the most common ways of using this vast library. 
-    </p>
-    <!--<p>
-      Matplotlib's objects form the core of the library. Every element in the figure is represented using matplotlib's so called artist class, offering a wide range of properties to customize its design. To understand them is absolutely necessary for the control and customization of the appeareance we desire.
-    </p> -->
-    
-    <hr>
-    <h3>Primitives & Containers </h3>
-    <p> In Matplotlib objects are seperate into primitives and containers.</p>
-    <p class="quote">
-      "The primitives represent the standard graphical objects we want to paint onto our canvas: Line2D, Rectangle, Text, AxesImage, etc., and the containers are places to put them (Axis, Axes and Figure). The standard use is to create a Figure instance, use the Figure to create one or more Axes or Subplot instances, and use the Axes instance helper methods to create the primitives." <a href="https://matplotlib.org/3.2.1/api/index.html#usage-patterns"  target="_blank"> Read more.</a>
-    </p>
-    <p>
-      Most of the time we will be interested in customizing the primitives like the font family of a text or the thinkness and color of a line.
-    </p>
-
-    <hr>
-    <p><b><a href="https://matplotlib.org/3.2.0/tutorials/intermediate/artists.html" target="_blank">Artist Objects</a></b></p>
-    <p>
-      The class from which all other objects inherit their basic properties is the artist. It's list of basic options to configure is quite long. You can use <a href="https://matplotlib.org/3.2.0/api/_as_gen/matplotlib.artist.getp.html#matplotlib.artist.getp" target="_blank"> matplotlib.artist.getp() </a> to print out the properties of any object. This way you may change the background colors, the positioning order / z-order or fix objects so that they don't get animated etc..
-      In general, properties of any object 'o' can be changed with <a>o.set(alpha=0.5, animated=False)</a> for example.
-    </p>
-    <p>
-      The reason for why it is called Artist is that this is where Matplotlib defines how to render objects to the canvas.
-    </p>
-
-
-    <hr>
-    <p><b><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" target="_blank">The Figure</a></b></p>
-    <p>
-      The complete image we create - the all encompassing container - is the <a> matplotlib.figure.Figure </a>, and it holds all the axes and subplots.
-    </p>
-    <img src="E6.svg" alt="E6" width=90% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
-    
-    <hr>
-    <p><b><a href="https://matplotlib.org/3.2.1/api/axes_api.html#matplotlib.axes.Axes" target="_blank">Axes</a></b></p>
-    <p>
-      The axes container holds the vast majority of all the objects used in a figures. Most importantly, here we can directly add our data and create a plot. There are a bunch of helper methods like <a>ax.plot()</a>, <a>ax.scatter()</a> or <a>ax.imshow()</a> which enable the display of your data inside these containers. We do not have to limit ourselves to simple x-y-plots, yet as the name of this object also tells us, there are still the axis container that we have to explore:
-    </p>
-
-    <hr>
-    <p><b><a>Axis</a></b></p>
-    <img src="E7.svg" alt="E7" width=50% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
-
-    <hr>
-    <p><b><a>Ticks</a></b></p>
+    <!-- AXIS & TICKS -->
+      <hr>
+      <p><b><a>Axis</a> & <a>Ticks</a></b></p>
+      <p>
+        The Axis is the place where our data is actually stored and will be generated automatically by the named helper methods. This instance of the Artist then draws the tick lines, the grid lines, the tick labels as well as the axis label, which can then be customized seperately, too!
+      </p>
+      <img src="E7.svg" alt="E7" width=45% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px; padding-right:15px">
+      <p>
+        The then created Tick object is the container which holds these tick and grid line instances, and also the label instances to name each axis.
+        We will learn to customize all of those soon!
+      </p>
 
 
     <hr>

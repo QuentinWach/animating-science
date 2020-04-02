@@ -87,7 +87,7 @@
 
     <!-- HEADER, INTRODUCTION & QUESTIONS -->
       <h2>PLOT LIKE A PRO</h2>
-      <p style="text-align: center; margin-bottom: 55px;"><b><a href="https://twitter.com/QuentinWach" target="_blank">Quentin Wach</a></b></p>
+      <!-- <p style="text-align: center; margin-bottom: 55px;"><b><a href="https://twitter.com/QuentinWach" target="_blank">Quentin Wach</a></b></p> -->
 
       <p>
       In this series you will learn how to create animations with <a href="https://www.python.org/" target="_blank">Python</a> starting with an 
@@ -166,7 +166,7 @@
 
     <!-- AXIS & TICKS -->
       <hr>
-      <p><b><a>Axis</a> & <a>Ticks</a></b></p>
+      <p><b><a href="https://matplotlib.org/3.2.1/api/axis_api.html?highlight=axis#module-matplotlib.axis" target="_blank">Axis</a> & <a href="https://matplotlib.org/3.2.1/api/axis_api.html?highlight=tick#matplotlib.axis.Tick" target="_blank">Ticks</a></b></p>
       <p>
         The Axis is the place where our data is actually stored and will be generated automatically by the named helper methods. This instance of the Artist then draws the tick lines, the grid lines, the tick labels as well as the axis label, which can then be customized seperately, too!
       </p>
@@ -214,8 +214,19 @@
     </p>
     <p> 
       I've already explained that Matplotlib uses the Axes container to hold and draw data, sometimes as subplots. <b>What is the difference between Axes and Subplots?</b>
-    <!--<a href="https://stackoverflow.com/questions/43326680/what-are-the-differences-between-add-axes-and-add-subplot"  target="_blank"> Difference Axes and Subplots WICHTIG</a> -->
+    </p> 
+    <p>     
+      Although both create a matplotlib.axes.Axes object, the way they do so is quite different. We already saw that we can 'add_axes(rect)' and specify the exact absolute position of the rectangle of this object on the canvas. But this results in us having to constantly tweek the positioning as the plot becomes more complicated. Instead of that, we might aswell just call 'add_subplots' which handles the placing of axes objects in an even grid automatically. All we have to do is to specify at which cell of the grid the axes should go.
     </p>
+
+    <img src="E8.svg" alt="E8" width=85% style="margin-bottom: 25px; margin-right: 65px;">
+
+    <p>
+      When creating these subplots this leaves enough space around the axes for the title, ticks and labels. The positioning changes dynamically as we continue to work
+      on our figure.
+    </p>
+
+
     <p>
     You may have previously defined parameters like <a href="">dpi</a> and size of your plot when exporting. But you can do so already when you set up the plot as a figure object. Here is a nice <a href="https://matplotlib.org/matplotblog/posts/an-inquiry-into-matplotlib-figures/" target="_blank">post on figures</a>. Often times we can simply
     define all <a href="">subplots</a> in such a figure with</p>
@@ -279,8 +290,6 @@
     </code></pre>
 
     <img src="E3.svg" alt="E3" width=90% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
-
-    <p>Since you probably wonder, why we define the grid resolution each time, this is...</p>
 
     <hr>
     <p><b>GridSpec.</b> It is still limiting and it is usually preferred to use the more general <a href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html#matplotlib.gridspec.GridSpec" target="_blank">GridSpec</a> which adds control over the spacing between the subplots aswell!</p>

@@ -180,9 +180,8 @@
       <hr>
       <h3>Filling Figures</h3>
 
-      <p> Let's start at the top by defining our figure. We'll then be adding axes or subplots, fill it with the data and then fine tune the details!
-      <p>
-        After importing the helpfull little 'pyplot' submodule as 'plt', we create our figure and define the axes independently and then add them together which allows for the creation of overlapping subplots like this:
+      <p> Let's start at the top by defining our figure. We'll then be adding axes or subplots, fill it with the data and then fine tune the details! - 
+        After importing the helpfull little <b>pyplot</b> submodule as <b>plt</b>, we create our figure, define the axes independently and then add them together by writing:
       </p>
       <pre><code class="python">
         import matplotlib.pyplot as plt
@@ -204,29 +203,25 @@
         Which returns a plot similar to the one shown here:
       </p>
 
-      <img src="E5.svg" alt="E5" width=45% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;">
+      <img src="E5.svg" alt="E5" width=45% style="display: block;margin-left:auto;margin-right:auto; text-align: center;padding-top: 20px;padding-left:35px;">
 
-    <!-- SUBPLOTS -->
-      <hr>
-      <p><b><a>Subplots</a> & <a>Grid</a></b></p>
       <p>
         In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper.
       </p>
+    <!-- SUBPLOTS -->
+      <hr>
+      <p><b><a>Subplots</a> & <a>Grid</a></b></p>
       <p> 
-        I've already explained that Matplotlib uses the Axes container to hold and draw data, sometimes as subplots. <b>What is the difference between Axes and Subplots?</b>
-      </p> 
-
-      <img src="E9.svg" alt="E9" width=85% style="margin-bottom: 25px; margin-right: 65px;">
-
-      <p>     
-        Although both create a matplotlib.axes.Axes object, the way they do so is quite different. We already saw that we can 'add_axes(rect)' and specify the exact absolute position of the rectangle of this object on the canvas. But this results in us having to constantly tweek the positioning as the plot becomes more complicated. Instead of that, we might aswell just call 'add_subplots' which handles the placing of axes objects in an even grid automatically. All we have to do is to specify at which cell of the grid the axes should go.
-      </p>
+        I've already explained that Matplotlib uses the Axes container to hold and draw data. Mulitple plots in a single figure are called <b>subplots</b> and Matplotlib offers an additional functionality <a>add_subplot()</a> to simplify their creation.</p>
       <p>
-        When creating these subplots this leaves enough space around the axes for the title, ticks and labels. The positioning changes dynamically as we continue to work
+        <b>What is the difference between Axes and Subplots?</b>
+      </p> 
+      <p>     
+        Although both <a>add_axes()</a> and <a>add_subplot()</a> create a <b><a>matplotlib.axes.Axes</a></b> object, the way they do so is quite different. We can use <a>add_axes()</a> and specify the exact absolute position of the rectangle of this object on the canvas. But this results in us having to constantly tweek the positioning as the plot becomes more complicated. Instead of that, we might aswell just call <a>add_subplot()</a> which handles the placing of axes objects in an even grid automatically. All we have to do is specify at which cell of the grid the axes should go. When creating these subplots, this leaves enough space around the axes for the title, ticks and labels. The positioning changes dynamically as we continue to work
         on our figure.
       </p>
 
-
+      <img src="E9.svg" alt="E9" width=85% style="margin-bottom: 25px; margin-right: 65px;">
 
       <p>
       You may have previously defined parameters like <a href="">dpi</a> and size of your plot when exporting. But you can do so already when you set up the plot as a figure object. Here is a nice <a href="https://matplotlib.org/matplotblog/posts/an-inquiry-into-matplotlib-figures/" target="_blank">post on figures</a>. Often times we can simply

@@ -290,7 +290,7 @@ button.star {
   overflow-x: hidden;
   padding-top:10px;
 
-  transition-duration: 1s;
+  transition-duration: 0.5s;
   animation-timing-function: ease-in-out;
 }
 .rightnav {
@@ -310,6 +310,8 @@ button.star {
   padding-top:10px;
   margin-left: 540px;
   width: 750px;
+  transition-duration: 0.5s;
+  animation-timing-function: ease-in-out;
 }
 
 /*################################################*/
@@ -329,7 +331,7 @@ button.star {
     margin-right: auto;
     width: 98%;
 
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     animation-timing-function: ease-in-out;
   }
   .GitStar {

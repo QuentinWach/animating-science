@@ -290,7 +290,7 @@ button.star {
   overflow-x: hidden;
   padding-top:10px;
 
-  transition-duration: 0.5s;
+  transition-duration: 0.35s;
   animation-timing-function: ease-in-out;
 }
 .rightnav {
@@ -310,7 +310,8 @@ button.star {
   padding-top:10px;
   margin-left: 540px;
   width: 750px;
-  transition-duration: 0.5s;
+
+  transition-duration: 0.35s;
   animation-timing-function: ease-in-out;
 }
 
@@ -318,6 +319,8 @@ button.star {
 @media (max-width: 1450px) {                  
   .sidenav {
     display: none;
+    transition-duration: 0.35s;
+    animation-timing-function: ease-in-out;
   }
   .rightnav {
     display: none;
@@ -331,7 +334,7 @@ button.star {
     margin-right: auto;
     width: 98%;
 
-    transition-duration: 0.5s;
+    transition-duration: 0.35s;
     animation-timing-function: ease-in-out;
   }
   .GitStar {

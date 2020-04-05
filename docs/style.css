@@ -1,25 +1,8 @@
 * {
   box-sizing: border-box;
 }
-/*
-@media (max-width: 767px) {                  
-    .sidenav {
-      display: none;
-   }
-   .content {
-      padding-top:10px;
-      margin-left: 10px;
-      padding-left: 10px;
-      width: 100%;
-  }
-}
-*/
-
-
 body {  
   background-color: white;
-  min-width: 650px; /*1000*/
-  max-width: 1000px;
   margin-top: 0px;
   padding: 0px;
   padding-bottom: 200px;
@@ -306,6 +289,9 @@ button.star {
   background-color: darkgray;
   overflow-x: hidden;
   padding-top:10px;
+
+  transition-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 .rightnav {
   height: 100%;
@@ -324,3 +310,45 @@ button.star {
   padding-top:10px;
   margin-left: 540px;
   width: 750px;
+}
+
+/*################################################*/
+@media (max-width: 1450px) {                  
+  .sidenav {
+    display: none;
+  }
+  .rightnav {
+    display: none;
+  }
+  /* Style the content */
+  .content {
+    position: relative;
+    padding-top:10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+
+    transition-duration: 1s;
+    animation-timing-function: ease-in-out;
+  }
+  .GitStar {
+    display: none;
+  }
+  .attention {
+    display: none;
+  }
+}
+/*################################################*/
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

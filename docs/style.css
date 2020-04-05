@@ -220,7 +220,7 @@ button.star {
 }
 .retweet {
   position: fixed;
-  left: 1410px;
+  right: 200px;
   bottom: 75px;
   width: 70px;
   height: 70px;
@@ -243,7 +243,7 @@ button.star {
 }
 .GitStar {
   position: fixed;
-  left: 1410px;
+  right: 200px;
   bottom: 150px;
   width: 70px;
   height: 70px;
@@ -329,10 +329,10 @@ button.star {
   .content {
     position: relative;
     padding-top:10px;
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 98%;
+    max-width: 750px;
 
     transition-duration: 0.35s;
     animation-timing-function: ease-in-out;

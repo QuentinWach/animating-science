@@ -8,7 +8,7 @@ body {
   padding-bottom: 200px;
 }
 hr {
-  width: 89%;
+  width: 100%;
   margin-top: 25px;
   margin-bottom: 25px;
 }
@@ -343,17 +343,31 @@ button.star {
   .attention {
     display: none;
   }
+  .post:hover {
+  background-color: black;
+  box-shadow: 0px 1px 5px gray ;
+  transform: translateY(-1px);
+  }
+  .post:active {
+    background-color: #cccccc;
+  }
+  .postN:hover {
+    background-color: black;
+    box-shadow: 0px 1px 5px black ;
+    transform: translateY(-1px);
+  }
+  .postN:active {
+    background-color: #cccccc;
+  }
 }
 /*################################################*/
-
-@keyframes fadeInRight {
-  0% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0);
+@media (max-width: 800px) {
+  p {
+    margin-left:10px;
+    margin-right:10px;
   }
-
-  100% {
-    opacity: 1;
-    transform: none;
+  h3 {
+    text-align: center;
+    padding: 4px 0px 5px 0px;
   }
-}
+} 

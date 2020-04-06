@@ -141,7 +141,7 @@ button.star {
   display: inline-block;
   font-size: 18px;
   margin-top: 1.5px;
-  width: 400px;
+  width: 380px;
 
   transition-duration: 0.1s;
 }
@@ -395,5 +395,11 @@ button.star {
   }
   .retweet:hover {
     opacity: 1;
+  }
+  .post {
+    width:98%;
+  }
+  .postN {
+    width:98%;
   }
 } 

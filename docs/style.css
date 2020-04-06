@@ -365,6 +365,12 @@ button.star {
   .retweet {
     right: 25px;
   }
+  code {
+    font-size:11px;
+    width: 98%;
+    padding:0px;
+    margin-bottom: 17px;
+  }
 }
 /*################################################*/
 @media (max-width: 800px) {

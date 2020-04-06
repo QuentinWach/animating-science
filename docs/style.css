@@ -304,7 +304,7 @@ button.star {
   overflow-x: hidden;
   padding-top:10px;
 }
-/* Style the content */
+/*
 .content {
   position: relative;
   padding-top:10px;
@@ -313,10 +313,22 @@ button.star {
 
   transition-duration: 0.35s;
   animation-timing-function: ease-in-out;
-}
+}*/
+  /* Style the content */
+  .content {
+    position: relative;
+    padding-top:10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    max-width: 750px;
+
+    transition-duration: 0.35s;
+    animation-timing-function: ease-in-out;
+  }
 
 /*################################################*/
-@media (max-width: 1450px) {                  
+@media (max-width: 1550px) {                  
   .sidenav {
     display: none;
     transition-duration: 0.35s;
@@ -337,9 +349,6 @@ button.star {
     transition-duration: 0.35s;
     animation-timing-function: ease-in-out;
   }
-  .GitStar {
-    display: none;
-  }
   .attention {
     display: none;
   }
@@ -359,6 +368,12 @@ button.star {
   .postN:active {
     background-color: #cccccc;
   }
+  .GitStar {
+    right: 25px;
+  }
+  .retweet {
+    right: 25px;
+  }
 }
 /*################################################*/
 @media (max-width: 800px) {
@@ -369,5 +384,19 @@ button.star {
   h3 {
     text-align: center;
     padding: 4px 0px 5px 0px;
+  }
+  .GitStar {
+    right: 25px;
+    opacity: 0.5;
+  }
+  .GitStar:hover {
+    opacity: 1;
+  }
+  .retweet {
+    right: 25px;
+    opacity: 0.5;
+  }
+  .retweet:hover {
+    opacity: 1;
   }
 } 

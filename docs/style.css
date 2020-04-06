@@ -289,7 +289,7 @@ button.star {
   background-color: darkgray;
   overflow-x: hidden;
   padding-top:10px;
-
+  
   transition-duration: 0.35s;
   animation-timing-function: ease-in-out;
 }
@@ -364,9 +364,6 @@ button.star {
   }
   .retweet {
     right: 25px;
-  }
-  code {
-    font-size:11px;
   }
 }
 /*################################################*/

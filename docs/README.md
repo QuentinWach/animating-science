@@ -4,6 +4,11 @@ TODO
 BE BETTER THAN THIS SHIT SECTION ABOUT MATPLOTLIB:
 https://jakevdp.github.io/PythonDataScienceHandbook/index.html
 
++ [X] make the page dynamic and center the post (so that it fits all screens nicely)
++ [X] test other fonts to improve readability
++ [X] start / home page
++ [X] FAQ page (with shameless advertising for myself, only if people like it *ugh*) 
++ [X] improve readability by resizing.
 + [X] content
     + [ ] 40% Tutorial 1 - PLOT LIKE A PRO
     + [ ]  5% Tutorial 2 - VISUAL PRINCIPLES (Live Animations)
@@ -15,17 +20,17 @@ https://jakevdp.github.io/PythonDataScienceHandbook/index.html
     + [ ] Example 2
     + [ ] Example 3
 
-+ [X] improve readability by resizing.
-+ [ ] make the pagte dynamic and center the post (so that it fits all screens nicely)
-+ [ ] test other fonts to improve readability
-
-+ [ ] start / home page
-+ [ ] FAQ page with shameless advertising for myself 
 + [ ] custom squarespace domain or quentinwach.com/animating-science
 + [ ] loading animations 
     + https://webdesign.tutsplus.com/tutorials/quick-tip-how-to-enhance-a-page-with-css-animations--cms-32100
 
 ---
 
++ [ ] BREAK & STUDY FOR TESTS
+
+---
+
 + [ ] create a manim documentation
++ [ ] create a public list of resources regarding scientific machine learning (SML)
+    + Papers, Web Content, Repositories
 + [ ] create a personal + research blog "understanding intelligence" (WT) for scientific machine learning, learning networks, statistics ...

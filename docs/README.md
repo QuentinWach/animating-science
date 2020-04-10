@@ -34,3 +34,4 @@ https://jakevdp.github.io/PythonDataScienceHandbook/index.html
 + [ ] create a public list of resources regarding scientific machine learning (SML)
     + Papers, Web Content, Repositories
 + [ ] create a personal + research blog "understanding intelligence" (WT) for scientific machine learning, learning networks, statistics ...
++ [ ] create a short post about climate change with an impressive visualization

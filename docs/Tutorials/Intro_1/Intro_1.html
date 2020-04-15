@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- STYLE -->
-  <link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">
-  <!--<link rel="stylesheet" type="text/css" href="http://localhost:8000/Dokumente/Computerphysik/docs/style.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">-->
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/Dokumente/Computerphysik/docs/style.css">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -47,6 +47,7 @@
       <b>Animate the Data</b> - Intro 3
     </a>
   </div>
+  <!--
   <p style="color: white; text-align: center;font-size: 16px;">Examples</p>
   <div class="box">
     <a class="postN" style="text-decoration: line-through;">
@@ -68,16 +69,16 @@
       Example 4
     </a>
   </div>
+  -->
   <p style="color: #EDEDED; text-align: center;font-size: 16px; line-height: 18px; padding: 20px;"><b>Note</b>: This series is evolving over time. I highly encourage you to ask questions and make recommendations for improvement via Twitter <a href="https://twitter.com/QuentinWach" style="color: white; background-color: darkgray; border: none;">@QuentinWach</a>.</p>
 </div>
 
 <div class="content">
 
   <!-- HOME BUTTON -->
-  <a href="https://quentinwach.github.io/Animating-Science/"class="GitStar" style="bottom: 228px;">
-    <i alt="Star" class="material-icons" style="font-size: 40px; padding-top: 7px;">home</i>  
-  </a>
-
+    <a href="https://quentinwach.github.io/Animating-Science/"class="GitStar" style="bottom: 228px;">
+      <i alt="Star" class="material-icons" style="font-size: 40px; padding-top: 7px;">home</i>  
+    </a>
 
   <!-- TWEET BUTTON -->
     <a href="https://twitter.com/intent/tweet?text=Plot Like a Pro &amp;url=https://quentinwach.github.io/Animating-Science/Tutorials/Intro_1/Intro_1.html" target="_blank" style="all: unset;" class="retweet">
@@ -190,22 +191,21 @@
       <p> Let's start at the top by defining our figure. We'll then be adding axes or subplots, fill it with the data and then fine tune the details! - 
         After importing the helpfull little <b>pyplot</b> submodule as <b>plt</b>, we create our figure, define the axes independently and then add them together by writing:
       </p>
-      <pre><code class="python">
-        import matplotlib.pyplot as plt
+      <pre><code class="python">import matplotlib.pyplot as plt
 
-        # create figure
-        fig = plt.figure(figsize=(2.5,2.5),(dpi=200))
+# create figure
+fig = plt.figure(figsize=(2.5,2.5),(dpi=200))
 
-        # define axes
-        ax1 = plt.Axes(fig=fig, rect=[0.75, 0.75, 0.5, 0.5], facecolor='crimson')
-        ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='steelblue')
+# define axes
+ax1 = plt.Axes(fig=fig, rect=[0.75, 0.75, 0.5, 0.5], facecolor='crimson')
+ax2 = plt.Axes(fig=fig, rect=[0, 0, 1, 1], facecolor='steelblue')
 
-        # add axes to figure
-        fig.add_axes(ax2)
-        fig.add_axes(ax1)
+# add axes to figure
+fig.add_axes(ax2)
+fig.add_axes(ax1)
 
-        plt.show()
-      </code></pre>
+plt.show()</code></pre>
+
       <p>
         Which returns a plot similar to the one shown here:
       </p>
@@ -215,39 +215,102 @@
       <p>
         Here is a nice <a href="https://matplotlib.org/matplotblog/posts/an-inquiry-into-matplotlib-figures/" target="_blank">post on figures</a>. - In some of the examples we will visualize the propagation of a simulation and then measure a few features we are interested in and plot them in an additional subplot next to the main one. This comes handy also when we want to plot a series of images from your animation in your paper.
       </p>
-    <!-- SUBPLOTS -->
+    <!-- SUBPLOTS & THE GRID -->
       <hr>
-      <p><b><a>Subplots</a> & <a>Grid</a></b></p>
+      <p><b><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.pyplot.subplots.html#matplotlib.pyplot.subplots" target="_blank">Subplots & the Grid</a></b></p>
       <p> 
         I've already explained that Matplotlib uses the Axes container to hold and draw data. Mulitple plots in a single figure are called <b>subplots</b> and Matplotlib offers an additional functionality <a>add_subplot()</a> to simplify their creation.</p>
       <p>     
-        Although both <a>add_axes()</a> and <a>add_subplot()</a> create a <b><a>matplotlib.axes.Axes</a></b> object, the way they do so is quite different. We can use <a>add_axes()</a> and specify the exact absolute position of the rectangle of this object on the canvas. But this results in us having to constantly tweek the positioning as the plot becomes more complicated. Instead of that, we might aswell just call <a>add_subplot()</a> which handles the placing of axes objects in an even grid automatically. All we have to do is specify at which cell of the grid the axes should go. When creating these subplots, this leaves enough space around the axes for the title, ticks and labels. The positioning changes dynamically as we continue to work
-        on our figure.
+        Although both <a>add_axes()</a>and <a>add_subplot()</a> create a <a>matplotlib.axes.Axes</a> object, the way they do so is quite different. We can use<a>add_axes()</a> and specify the exact absolute position of the rectangle of this object on the canvas. But this results in us having to constantly tweek the positioning as the plot becomes more complicated. Instead of that, we might aswell just call <a>add_subplot()</a> which handles the placing of axes objects in an even grid with a certain number of cells automatically. All we have to do is specify in which cell of the grid the axes should go. When creating subplots, this leaves enough space around the axes for the title, ticks and labels. The positioning changes dynamically as we continue to work on our figure.
       </p>
 
       <img src="E9.svg" alt="E9" width=85% style="margin-bottom: 25px;">
 
       <p>
-        Both aren't the most elegant way to create subpots. And so of course there are additional ways to create nice subplots quickly, e.g.
-        using plt.subplots() or plt.subplot2grid().</p>
-
-      <hr>
-      <p><b><a>GridSpec.</a></b></p> 
-      <p>
-        Many of these are still limiting and it is usually preferred to use <a href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.GridSpec.html#matplotlib.gridspec.GridSpec" target="_blank">GridSpec</a> which...
+        Another nice way which allows for subplots to occupy multiple cells as seen in the image is <a>subplot2grid()</a>. The subplots span over several columns and rows of the grid. This functionality builds on another fundamental part, in fact, the grid itself.
       </p>
-    
+
+    <!-- GRIDSPEC -->
+      <hr>
+      <p><b><a href="https://matplotlib.org/3.2.1/api/_as_gen/matplotlib.gridspec.GridSpec.html" target="_blank">GridSpec</a></b></p> 
+      <p>
+        We can specify the geometry of the grid in which a subplot will be placed with <a>gridspec()</a>. But not just by defining the number of rows and columns. We can also specify where the grid should be placed and how much distance their should be between subplots etc. ... This allows us to become very creative with our grid designs. We can place multiple grids in a figure and even grids inside grids!
+      </p>
+
+      <img src="E10.svg" alt="E10" width=75% style="margin-bottom: 25px;">
+
+      <p> The basic procedure here goes as follows:
+      <pre><code class="python">import matplotlib.pyplot as plt
+
+# create figure
+fig = plt.figure(figsize=(6,8), constrained_layout=False)
+
+# define grid specifications
+gs = fig.add_gridspec(nrows=3, ncols=3, left=0.2, right=0.90, wspace=0.6)
+
+# add subplots to the grid
+ax1 = fig.add_subplot(gs[:-1, :])
+ax2 = fig.add_subplot(gs[-1, :-1])
+ax3 = fig.add_subplot(gs[-1, -1])
+
+plt.show()</code></pre>
+      
+      <p>
+        Go on and test it out. It can easily be extended for more complicated grid arrangements. <a href="https://matplotlib.org/3.2.1/tutorials/intermediate/gridspec.html" target="_blank">Read more.</a>
+      </p>
+      <p>
+        After adding the grid specifications, embedding axes as subplots on the grid or grids and filling in the data, then - if the general ratios of the image seem right - we start finalizing the details.
+      </p>
+
 
     <hr>
     <h3>Plotting Details</h3>
-    <p> <b>Limits.</b>
+    <p>
+
     </p>
+
+
+    <p><b><a>Limits</a></b></p>
+
     <hr>
-    <p><b>Ticks.</b>
+    <p><b><a href="https://matplotlib.org/3.2.1/api/ticker_api.html" target="_blank">Ticks</a></b></p>
+    <p>
+      They are small but well formatted ticks are integral for publishing-ready figures and again Matplotlib enables us to fully configure them, both major and minor ticks independently. 
     </p>
+    <p>
+      <b>Tick formatters</b> can be used to change their appearance the way we want, deleting the labels on the ticks, display them as percentages and <a href="https://matplotlib.org/3.2.1/api/ticker_api.html" target="_blank">more</a>.
+
+    </p>
+    
+    <p>
+      <b>Tick locators</b> are used to specify where ticks should appear. These derive from the base class <b>matplotlib.ticker.Locator</b>.
+    </p>
+
+    <img src="E11.svg" alt="E11" width=75% style="margin-bottom: 25px;">
+
+    <p>
+      (<b>Note</b>: Because handling dates as ticks can be especially tricky matplotlib provides additional locators in <a href="https://matplotlib.org/3.2.1/api/dates_api.html" target="_blank">matplotlib.dates</a>. Read <a href="https://matplotlib.org/3.2.1/gallery/text_labels_and_annotations/date.html" target="_blank">more</a>)
+    </p>
+
+    <p>
+      The tick locations can be changed either change the scaling when setting up the axes object like here:
+    </p>
+      <pre><code class="python">ax = plt.axes(xscale='log', yscale='log')</code></pre>
+    <p>
+      Or by importing the ticker class and adding one or two lines similar to this example:
+    </p>
+      <pre><code class="python">import matplotlib.ticker as ticker
+ax.xaxis.set_major_locator(ticker.FixedLocator([0,0.4,0.7, 1]))</code></pre>
+
+    <p> We can hide both ticks and labels using</p>
+
+      <pre><code class="python">ax.xaxis.set_major_locator(plt.NullLocator())     # x-axis without ticks
+ax.xaxis.set_major_formatter(plt.NullFormatter()) # x-axis without labels</code></pre>
+
+    <p> The same holds true for minor ticks, which aren't visible by default. </p>
+
     <hr>
-    <p><b>Spines.</b>
-    </p>
+    <p><b><a>Spines</a></b></p>
 
 
     <hr>
@@ -276,20 +339,17 @@
     <p>
       The general method of changing any text font to a new one (here 'fontname') goes somewhat like this:
     </p>
-    <pre><code class="python">
-      import matplotlib.pyplot as plt
-      import matplotlib.font_manager as fm
+    <pre><code class="python">import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
-      prop = fm.FontProperties(fname='/usr/share/fonts/truetype/fontname.ttf')
-      plt.title('text', fontproperties=prop)
+prop = fm.FontProperties(fname='/usr/share/fonts/truetype/fontname.ttf')
+plt.title('text', fontproperties=prop)
 
-      plt.show()
+plt.show()
     </code></pre>
     <p>
       If a font is not rendered this may have two reasons. Matplotlib might either need to refresh it's font cache:
-    <pre><code class="python">
-      matplotlib.font_manager._rebuild()
-    </code></pre>
+    <pre><code class="python">matplotlib.font_manager._rebuild()</code></pre>
 
     <hr>
     <p><b>Title & Subtitle</b></p>
@@ -308,19 +368,16 @@
     <p>
       By importing Matplotlib's <a>rc</a> module</p>
 
-    <pre><code class="python">
-      # for LaTeX font
-      from matplotlib import rc
-      rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
-      rc('text', usetex=True)
-    </code></pre>
+    <pre><code class="python"># for LaTeX font
+from matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+rc('text', usetex=True)</code></pre>
 
     <p>we can add <a href="https://www.latex-project.org/"> LaTeX </a> equations to our plot. For example, we may write</p>
 
-    <pre><code class="python">
-      # red LaTeX expression
-      plt.text(0.25,8.5,r"$(x-1)^3 + 1$", color="crimson", size=15)
-    </code></pre>
+    <pre><code class="python"># red LaTeX expression
+plt.text(0.25,8.5,r"$(x-1)^3 + 1$", color="crimson", size=15)</code></pre>
+
     <p> to plot the expression \((x-1)^3 + 1\) at the center of a given plot.
 
     <img src="E1.svg" alt="E1" width=80% style="display: block;margin-left:auto;margin-right:auto; text-align: center; padding-top: 20px;">

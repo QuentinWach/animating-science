@@ -11,8 +11,14 @@ https://jakevdp.github.io/PythonDataScienceHandbook/index.html
 + [X] improve readability by resizing.
 + [X] content
     + [ ] 40% Tutorial 1 - PLOT LIKE A PRO
+        + https://realpython.com/python-matplotlib-guide/
+        + https://matplotlib.org/3.2.1/tutorials/introductory/lifecycle.html
     + [ ]  5% Tutorial 2 - VISUAL PRINCIPLES (Live Animations)
     + [ ] 15% Tutorial 3 - ANIMATE THE DATA (Save as mp4 and GIF)
+        + https://jakevdp.github.io/blog/2012/08/18/matplotlib-animation-tutorial/
+        + https://towardsdatascience.com/animations-with-matplotlib-d96375c5442c
+        + https://jakevdp.github.io/blog/2012/08/18/matplotlib-animation-tutorial/
+        + https://towardsdatascience.com/quick-code-exporting-matplotlib-animations-49cd0ecf32ba
     ---
     (Advanced examples with a huge amount of math and customization presented and explained) 
     (simple examples are given in the Tutorials)
@@ -30,6 +36,8 @@ https://jakevdp.github.io/PythonDataScienceHandbook/index.html
 
 ---
 
++ [ ] create a basic personal website with GitHub & custom domain 
+    + http://jmcglone.com/guides/github-pages/
 + [ ] create a manim documentation
 + [ ] create a public list of resources regarding scientific machine learning (SML)
     + Papers, Web Content, Repositories

@@ -28,7 +28,7 @@ h2 {
   letter-spacing: 0.2px;
   font-size: 29px;
   text-align: center;
-  margin-bottom: 22.5px;
+  margin-bottom: 0px;
   margin-top: 75px;
 }
 h3 {
@@ -68,7 +68,7 @@ a {
   margin-left:auto;
   margin-right:auto;
   text-decoration: none;
-
+2
   transition-duration: 0.05s;
 }
 a:hover {
@@ -85,6 +85,10 @@ a:hover {
   color: rgba(0,0,0,0.35);
   opacity: 1; /* Firefox */
 }
+pre {
+  margin: 0px;
+  padding: 0px;
+}
 code {
   font-size:13px;
   margin: 45px;
@@ -93,7 +97,6 @@ code {
 }
 code.inline {
   margin: 0px;
-  background-color: whitesmoke;
 }
 img {
   display: block;
@@ -265,8 +268,8 @@ button.star {
 }
 .attention {
   position: fixed;
-  left: 60px;
-  top: 15px;
+  left: 63.5px;
+  top: 16px;
   background-color: white 50%;
   color: white;
   border: 1.5px silver solid;

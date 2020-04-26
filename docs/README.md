@@ -26,18 +26,19 @@ https://jakevdp.github.io/PythonDataScienceHandbook/index.html
     + [ ] Example 2
     + [ ] Example 3
 
++ [ ] add a follow on Twitter Button
 + [ ] custom squarespace domain or quentinwach.com/animating-science
 + [ ] loading animations 
     + https://webdesign.tutsplus.com/tutorials/quick-tip-how-to-enhance-a-page-with-css-animations--cms-32100
 
 ---
 
-+ [ ] BREAK & STUDY FOR TESTS
++ [ ] create a basic personal website with GitHub & custom domain 
+    + http://jmcglone.com/guides/github-pages/
++ [ ] add a mailing list
 
 ---
 
-+ [ ] create a basic personal website with GitHub & custom domain 
-    + http://jmcglone.com/guides/github-pages/
 + [ ] create a manim documentation
 + [ ] create a public list of resources regarding scientific machine learning (SML)
     + Papers, Web Content, Repositories

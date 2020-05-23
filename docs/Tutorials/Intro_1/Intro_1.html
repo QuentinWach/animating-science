@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- STYLE -->
-  <link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">
-  <!--<link rel="stylesheet" type="text/css" href="http://localhost:8000/Dokumente/Computerphysik/docs/style.css">-->
+  <!--<link rel="stylesheet" type="text/css" href="https://quentinwach.github.io/Animating-Science/style.css">-->
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/Dokumente/Computerphysik/docs/style.css">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -272,6 +272,20 @@ plt.show()</code></pre>
     <!-- LIMITS -->
     <hr>
     <p><b><a>Limits</a></b></p>
+    <p>
+      Although Matplotlib automatically sets the axis range of the ticks so that all of the data is displayed, not only does it often look plain ugly, you may also be primarily interested in a certain area of the plot, which you want to highlight of course.
+    </p>
+    <p>
+      You can either do this the quick and dirty way with pyplot e.g. like this:
+    </p>
+      <pre><code class="python">ax.xaxis.set_major_locator(plt.NullLocator())     # x-axis without ticks
+ax.xaxis.set_major_formatter(plt.NullFormatter()) # x-axis without labels</code></pre>
+    <p>
+      Or the right way, specifying the limits of the indivdual axes oject:
+    </p>
+      <pre><code class="python">ax.xaxis.set_major_locator(plt.NullLocator())     # x-axis without ticks
+ax.xaxis.set_major_formatter(plt.NullFormatter()) # x-axis without labels</code></pre>
+    </p>
 
     <hr>
     <p><b><a href="https://matplotlib.org/3.2.1/api/ticker_api.html" target="_blank">Ticks</a></b></p>
@@ -312,7 +326,7 @@ ax.xaxis.set_major_formatter(plt.NullFormatter()) # x-axis without labels</code>
 
     <hr>
     <p><b><a>Spines</a></b></p>
-
+    <a href="https://matplotlib.org/3.2.1/gallery/ticks_and_spines/spine_placement_demo.html" target="_blank">SPINE LINK </a>
 
     <hr>
     <h3>Text, Math & Annotations</h3>

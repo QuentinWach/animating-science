@@ -1,4 +1,4 @@
-# Website
+# Website (currently down)
 https://quentinwach.github.io/Animating-Science/
 
 # Author

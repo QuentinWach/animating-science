@@ -5,7 +5,8 @@ body {
   background-color: white;
   margin-top: 0px;
   padding: 0px;
-  padding-bottom: 200px;}
+  padding-bottom: 200px;
+}
 hr {
   width: 100%;
   margin-top: 25px;
@@ -33,7 +34,7 @@ h2 {
 h3 {
   font-family: "Roboto";
   color: white;
-  background-color: gray ; /*#DC143C;*/
+  background-color: #DC143C;
   letter-spacing: 0.2px;
   font-size: 18px;
   border: 2px solid;
@@ -399,5 +400,3 @@ button.star {
     width:98%;
   }
 } 
-
-/* -------------- */

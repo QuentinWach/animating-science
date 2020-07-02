@@ -1,6 +1,6 @@
 """
 This module enables the user to combine images from a given directory into a single mp4.
-Created by Quentin Wach and can be used, adapted and shared under the MIT license.
+Created by Quentin Wach.
 """
 import cv2
 import os

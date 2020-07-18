@@ -9,7 +9,7 @@ In the bachelor studies already one finds problems that may very well be solvabl
 ## Dependencies
 Written in `Python3`. To work with the code you will also need:
 + `Matplotlib` - Figures
-+ `Numpy` - Numeric Algebra
++ `Numpy` - Numerics & Algebra
 + `Sympy` - Symbolic Algebra
 + `Scipy` - General Library for Scientific Computing
 + `Jupyter Notebook` - Interactive Programming

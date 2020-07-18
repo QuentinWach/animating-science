@@ -1,4 +1,4 @@
-# Website (currently down)
+# Animating Science Web [![Status](https://img.shields.io/badge/status-alpha-lightgrey)
 https://quentinwach.github.io/Animating-Science/
 
 # Author

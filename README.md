@@ -1,4 +1,4 @@
-# ![Animating Science Website](https://quentinwach.github.io/Animating-Science/) ![Status](https://img.shields.io/badge/status-alpha-lightgrey)
+# [Animating Science Website](https://quentinwach.github.io/Animating-Science/) ![Status](https://img.shields.io/badge/status-alpha-lightgrey)
 
-# Author
+## Author
 Quentin Wach, https://twitter.com/QuentinWach 

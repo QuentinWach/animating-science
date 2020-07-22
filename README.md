@@ -5,6 +5,8 @@
 
 In the bachelor studies already one finds problems that may very well be solvable mathematically, yet are quite tough to imagine. Other times it is in fact not possible to find analytical solutions and so we have to settle for numerical methods. The computer can help us with the boring calculations and show what we could barely imagine before, if at all. Here you find a collection of diverse scripts simulating and animating science, some very basic, laying out the foundations of plotting and animating, other more focusing on certain numerical methods.
 
+[Header Image](top_pic.png)
+
 ---
 ## Dependencies
 Written in `Python3`. To work with the code you will also need:

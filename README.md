@@ -19,4 +19,4 @@ Written in `Python3`. To work with the code you will also need:
 ## Author
 Quentin Wach, https://twitter.com/QuentinWach 
 
-Note: *As of now the project is going through major restructuring offline while I streamline the publishing process for the website.*
+>Note: *As of now the project is going through major restructuring offline while I streamline the publishing process for the website.*
